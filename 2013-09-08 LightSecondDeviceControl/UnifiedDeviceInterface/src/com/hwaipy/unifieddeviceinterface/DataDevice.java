@@ -3,7 +3,7 @@ package com.hwaipy.unifieddeviceinterface;
 import com.hwaipy.unifieddeviceinterface.datadispatch.DataIncomeListener;
 
 /**
- *
+ * Test
  * @author Hwaipy
  */
 public interface DataDevice<DATA_TYPE> extends Device {
