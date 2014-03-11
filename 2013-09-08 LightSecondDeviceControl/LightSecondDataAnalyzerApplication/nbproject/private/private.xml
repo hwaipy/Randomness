@@ -5,10 +5,6 @@
         <group name="LightSecondDeviceControl">
             <file>file:/Users/Hwaipy/Documents/Dropbox/Code/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/SyncTest.java</file>
         </group>
-        <group name="2013-09-08 LightSecondDeviceControl">
-            <file>file:/C:/Workshop/Dropbox/Code/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/pxianalyzer/PXIDataParse.java</file>
-            <file>file:/C:/Workshop/Dropbox/Code/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/formal/DelayScanner.java</file>
-            <file>file:/C:/Workshop/Dropbox/Code/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/formal/DataWatcher.java</file>
-        </group>
+        <group name="2013-09-08 LightSecondDeviceControl"/>
     </open-files>
 </project-private>
