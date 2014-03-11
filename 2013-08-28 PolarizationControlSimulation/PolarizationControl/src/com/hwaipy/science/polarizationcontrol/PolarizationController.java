@@ -3,6 +3,7 @@ package com.hwaipy.science.polarizationcontrol;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
+import java.util.Random;
 
 /**
  *
@@ -21,7 +22,7 @@ public class PolarizationController {
     }
 
     public PolarizationController(PolarizationControlStrategy strategy) {
-        this(strategy, FiberTransform.createRandomFiber());
+        this(strategy, FiberTransform.createRandomFiber(new Random()));
     }
 
     public Polarization transform(Polarization polarization) {

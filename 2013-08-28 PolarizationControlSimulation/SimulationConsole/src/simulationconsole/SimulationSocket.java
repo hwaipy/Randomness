@@ -10,6 +10,10 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,13 +23,37 @@ import java.util.logging.Logger;
  */
 public class SimulationSocket {
 
-    private static FiberTransform ft = FiberTransform.createRandomFiber();
+    private static Random random = null;
+    private static FiberTransform ft;
     private static final WavePlate qwp1 = new WavePlate(Math.PI / 2, 0);
     private static final WavePlate qwp2 = new WavePlate(Math.PI / 2, 0);
     private static final WavePlate hwp = new WavePlate(Math.PI, 0);
     private static int laser = 0;//1 for H, 2 for D
+    private static boolean debug = false;
 
     public static void main(String[] args) throws IOException {
+        LinkedList<String> paras = new LinkedList<>(Arrays.asList(args));
+        Iterator<String> iterator = paras.iterator();
+        while (iterator.hasNext()) {
+            String para = iterator.next();
+            switch (para) {
+                case "-r":
+                    String seedString = iterator.next();
+                    long seed = Long.parseLong(seedString);
+                    random = new Random(seed);
+                    debug("Seeded: " + seed + System.lineSeparator());
+                    break;
+                case "-d":
+                    debug = true;
+                    break;
+            }
+        }
+        if (random == null) {
+            random = new Random();
+            debug("Random" + System.lineSeparator());
+        }
+        ft = FiberTransform.createRandomFiber(random);
+
         ServerSocket serverSocket = new ServerSocket(54321);
         while (true) {
             final Socket socket = serverSocket.accept();
@@ -136,8 +164,15 @@ public class SimulationSocket {
     }
 
     private static void reset(PrintWriter printWriter) {
-        ft = FiberTransform.createRandomFiber();
+        ft = FiberTransform.createRandomFiber(random);
         printWriter.println("OK");
         printWriter.flush();
     }
+
+    private static void debug(String output) {
+        if (debug) {
+            System.out.print(output);
+        }
+    }
+
 }

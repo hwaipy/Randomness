@@ -12,12 +12,12 @@ public class FiberTransform extends MuellerMatrix {
     private FiberTransform(Matrix matrix) {
         super(matrix);
     }
-    private static final Random RANDOM = new Random(System.nanoTime());
+//    private static final Random RANDOM = new Random(System.nanoTime());
 
-    public static FiberTransform createRandomFiber() {
-        HalfWavePlate hwp = new HalfWavePlate(RANDOM.nextDouble() * Math.PI);
-        QuarterWavePlate qwp2 = new QuarterWavePlate(RANDOM.nextDouble() * Math.PI);
-        QuarterWavePlate qwp1 = new QuarterWavePlate(RANDOM.nextDouble() * Math.PI);
+    public static FiberTransform createRandomFiber(Random random) {
+        HalfWavePlate hwp = new HalfWavePlate(random.nextDouble() * Math.PI);
+        QuarterWavePlate qwp2 = new QuarterWavePlate(random.nextDouble() * Math.PI);
+        QuarterWavePlate qwp1 = new QuarterWavePlate(random.nextDouble() * Math.PI);
         return new FiberTransform(MuellerMatrix.merge(hwp, qwp2, qwp1).getMatrix());
     }
 
