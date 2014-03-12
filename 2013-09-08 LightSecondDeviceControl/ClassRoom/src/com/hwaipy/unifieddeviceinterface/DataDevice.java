@@ -1,5 +1,7 @@
 package com.hwaipy.unifieddeviceinterface;
 
+import com.hwaipy.unifieddeviceinterface.Device;
+import com.hwaipy.unifieddeviceinterface.Device;
 import com.hwaipy.unifieddeviceinterface.datadispatch.DataIncomeListener;
 
 /**

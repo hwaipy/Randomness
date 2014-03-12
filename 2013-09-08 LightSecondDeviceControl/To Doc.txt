@@ -1,28 +1,7 @@
-UnifiedDeviceInterface
-	com.hwaipy.unifieddeviceinterface
-		DeviceException
-		DataDevice
-		Component
-		DataComponent
-	com.hwaipy.unifieddeviceinterface.components
-	com.hwaipy.unifieddeviceinterface.datadispatch
+Device是基础
+Device有很多种类，包括计数器、TDC、功率计、CCD、开关、SLM、板卡IO。。。
 
-TimeEventDevice
-
-TimeEventData
-
-PXI40PS1Data
-
-PicoQuantTimeEventDevice
-
-PicoHarp300Device
-
-LightSecondDataAnalyzerApplication
-
-HydraHarp400Device
-
-HydraHarp400Data
-
-CounterApplication
-
-AdvantechADCPCIDevice
+分类：
+1. 数据流式输入，如TDC、计数器、CCD、板卡IO
+2. 数据按需输入，如功率计、CCD、板卡IO
+3. 数据输出，如开关、SLM、板卡IO
