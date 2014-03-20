@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author Hwaipy
  */
-public class ApproachProcess3 {
+public class ApproachProcess7 {
 
     private final Random random;
     private double fiberTransformTheta1;
@@ -24,7 +24,7 @@ public class ApproachProcess3 {
     FiberTransform ft = FiberTransform.createReverse(fiberTransformTheta1 + Math.PI / 2, fiberTransformTheta2 + Math.PI / 2, fiberTransformTheta3 + Math.PI / 2);
     private int loggingLevel = -1;
 
-    public ApproachProcess3() {
+    public ApproachProcess7() {
         random = new Random();
         wavePlates[0] = new WavePlate(Math.PI / 2, 0);
         wavePlates[1] = new WavePlate(Math.PI / 2, 0);
@@ -81,13 +81,13 @@ public class ApproachProcess3 {
         System.out.println(sb.toString());
     }
 
-    public ApproachProcess3.ApproachResult approach() {
+    public ApproachProcess7.ApproachResult approach() {
         logging(0, "Start Approching", false);
         logging(0, "", true);
         int left = rotate();
         logging(0, "End Approching", false);
         logging(0, "", true);
-        return new ApproachProcess3.ApproachResult(left > 0,
+        return new ApproachProcess7.ApproachResult(left > 0,
                 fiberTransformTheta1, fiberTransformTheta2, fiberTransformTheta3,
                 contrastH(), contrastD(), maxStepsCount - left);
     }
@@ -115,14 +115,13 @@ public class ApproachProcess3 {
     private int rotateCollective(int index, int contrast, int rotationCountMax) {
         recordWavePlatesStatus();
         rotationCountMax = doRotateCollective(index, false, contrast, rotationCountMax);
-//        logging(1, "WavePlates Status Checkpoint", false);
-        if (wavePlatesStatusUnchanged()) {
-            for (int i = 0; i < 3; i++) {
-                wavePlates[i].increase(Math.PI * 2 * random.nextDouble());
+        for (int i = 0; i < 8; i++) {
+            if (!wavePlatesStatusUnchanged()) {
+                break;
             }
-//            wavePlates[index].increase(Math.PI / 2);
-//            logging(1, "HWP increased Pi/2", false);
-            rotationCountMax = doRotateCollective(index, true, contrast, rotationCountMax);
+            recordWavePlatesStatus();
+            wavePlates[1 - index].increase(Math.PI / 8);
+            rotationCountMax = doRotateCollective(index, false, contrast, rotationCountMax);
         }
         return rotationCountMax;
     }
@@ -220,12 +219,11 @@ public class ApproachProcess3 {
     }
 
     /**
-     * Total: 10000 Success: 9258 MeanStep: 514.0777705767985
      *
      * @param args
      */
     public static void main(String[] args) {
-        ApproachProcess3 p = new ApproachProcess3();
+        ApproachProcess7 p = new ApproachProcess7();
         p.loggingLevel = -1;
         int count = 0;
         int overallCount = 0;
@@ -233,7 +231,7 @@ public class ApproachProcess3 {
         int overallSuccessSteps = 0;
         for (int i = 0; i < 10000; i++) {
             p.generateRandomFiberTransform();
-            ApproachProcess3.ApproachResult result = p.approach();
+            ApproachProcess7.ApproachResult result = p.approach();
             overallCount++;
             if (result.success) {
                 successCount++;
