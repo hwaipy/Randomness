@@ -4,7 +4,9 @@ package com.hwaipy.systemutilities;
  *
  * @author Hwaipy
  */
-public class Properties {
+public class Preferences {
+
+    private static final String PREFERENCES_FILE_PATH = "utilities.preferences";
 
     public static String getProperty(String key) {
         String property = System.getProperty(key);
