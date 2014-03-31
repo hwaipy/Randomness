@@ -3,6 +3,7 @@ package com.hwaipy.science.polarizationcontrol.m1;
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,15 +13,18 @@ import java.util.logging.Logger;
  */
 public class AccuracyEstimate {
 
-    private static final double theta1 = 20. / 180 * Math.PI;
-    private static final double theta2 = 60. / 180 * Math.PI;
-    private static final double theta3 = -29.945 / 180 * Math.PI;
+    private static final double theta1 = new Random().nextDouble() * Math.PI;
+    private static final double theta2 = new Random().nextDouble() * Math.PI;
+    private static final double theta3 = new Random().nextDouble() * Math.PI;
+    private static final double delayPrecisionQwp1 = 1. / 200;
+    private static final double delayPrecisionQwp2 = 1. / 200;
+    private static final double delayPrecisionHwp = 1. / 200;
 
     public static void main(String[] args) {
         FiberTransform ft = FiberTransform.createReverse(theta1 + Math.PI / 2, theta2 + Math.PI / 2, theta3 + Math.PI / 2);
-        WavePlate qwp1 = new WavePlate(Math.PI / 2 * (1 / Math.cos(9 / 180. * Math.PI)), 0);
-        WavePlate qwp2 = new WavePlate(Math.PI / 2 * (1 / Math.cos(9 / 180. * Math.PI)), 0);
-        WavePlate hwp = new WavePlate(Math.PI * (1 / Math.cos(9 / 180. * Math.PI)), 0);
+        WavePlate qwp1 = new WavePlate(Math.PI * 2 * (0.25 + delayPrecisionQwp1), 0);
+        WavePlate qwp2 = new WavePlate(Math.PI * 2 * (0.25 + delayPrecisionQwp2), 0);
+        WavePlate hwp = new WavePlate(Math.PI * 2 * (0.5 + delayPrecisionHwp), 0);
 
         Polarization measurementH1 = Polarization.H.transform(ft)
                 .transform(qwp1).transform(qwp2).transform(hwp);

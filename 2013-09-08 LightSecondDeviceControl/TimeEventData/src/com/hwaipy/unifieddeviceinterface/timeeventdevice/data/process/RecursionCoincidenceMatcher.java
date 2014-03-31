@@ -60,15 +60,18 @@ public class RecursionCoincidenceMatcher implements Iterable<Coincidence> {
             long time2 = event2.getTime() - delay;
             if (time1 < time2 - gate) {
                 event1 = iterator1.hasNext() ? iterator1.next() : null;
+//                System.out.println("Jump 1");
 //                System.out.println("C:\t" + (time2 - time1));
             } else if (time2 < time1 - gate) {
                 event2 = iterator2.hasNext() ? iterator2.next() : null;
+//                System.out.println("Jump 2");
 //                System.out.println("C:\t" + (time1 - time2));
             } else {
                 coincidences.add(new Coincidence(event1, event2, delay));
                 delay = event2.getTime() - event1.getTime();
                 event1 = iterator1.hasNext() ? iterator1.next() : null;
                 event2 = iterator2.hasNext() ? iterator2.next() : null;
+//                System.out.println("New delay " + delay);
             }
         }
         coincidenceCount = coincidences.size();

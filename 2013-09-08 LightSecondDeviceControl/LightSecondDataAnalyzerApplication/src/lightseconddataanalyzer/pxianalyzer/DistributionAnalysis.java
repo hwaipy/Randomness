@@ -3,7 +3,7 @@ package lightseconddataanalyzer.pxianalyzer;
 import com.hwaipy.unifieddeviceinterface.DeviceException;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventDataManager;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventLoader;
-import com.hwaipy.unifieddeviceinterface.timeeventdevice.hydraharp400data.HydraHarp400T3Loader;
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.pxi40ps1data.PXI40PS1Loader;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
 import java.io.File;
@@ -18,24 +18,31 @@ import java.util.TreeMap;
 public class DistributionAnalysis {
 
     public static void main(String[] args) throws IOException, DeviceException {
-        File earthFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2013-12-21 时间精度复查/20131223222959TDC.dat");
-        File caliFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2013-12-21 时间精度复查/INL_1222U.csv");
-        File hhFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2013-12-21 时间精度复查/201312241354-120M.ht3");
+        File earthFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-03-25 双TDC同步测试/20140331002141TDC.dat");
+        File caliFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-03-25 双TDC同步测试/cali01.csv");
+//        File file = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-03-25 双TDC同步测试/20140331002141TDC.ht3");
 
-//        TimeEventLoader earthLoader = new PXI40PS1Loader(earthFile, caliFile);
-        TimeEventLoader earthLoader = new HydraHarp400T3Loader(hhFile, 100000);
-        TimeEventSegment segment = TimeEventDataManager.loadTimeEventSegment(earthLoader);
+        TimeEventLoader loader = new PXI40PS1Loader(earthFile, caliFile);
+//        TimeEventLoader loader = new HydraHarp400T3Loader(file, 100000);
+        TimeEventSegment segment = TimeEventDataManager.loadTimeEventSegment(loader);
 
-        System.out.println(segment.getEventCount());
         TimeEventList list = segment.getEventList(0);
         System.out.println("Count " + list.size());
 
-        int inteval = 1;
+        long period = 10000000;
+        int inteval = 10;
+        int discarded = 0;
         ArrayList<Long> diffList = new ArrayList<>();
         for (int i = 0; i < list.size() - inteval; i += inteval) {
-            diffList.add(list.get(i + 1).getTime() - list.get(i).getTime());
+            long diff = list.get(i + inteval).getTime() - list.get(i).getTime();
+            if (diff < period * (inteval - 0.5) || diff > period * (inteval + 0.5)) {
+                discarded++;
+                continue;
+            }
+            diffList.add(diff);
         }
-//        long[] diffs = new long[list.size() - 1];
+        System.out.println("Discarded: " + discarded);
+        System.out.println("Diff list: " + diffList.size());
 
         double sum = 0;
         for (long diff : diffList) {
@@ -47,9 +54,6 @@ public class DistributionAnalysis {
         double varSum = 0;
         double varCount = 0;
         for (long diff : diffList) {
-            if (Math.abs(diff - ave) > 1000) {
-                continue;
-            }
             varSum += (diff - ave) * (diff - ave);
             varCount++;
         }
@@ -65,47 +69,12 @@ public class DistributionAnalysis {
                 statMap.put(diff, 1 + get);
             }
         }
-//
-//        Set<Long> keySet = statMap.keySet();
-//        for (Long key : keySet) {
-//            System.out.println(key + "\t" + statMap.get(key));
-//        }
-//
+
         long startKey = statMap.firstKey();
         long endKey = statMap.lastKey();
         for (long i = startKey; i < endKey; i += 1) {
             outputBinCount(statMap, i, 1);
         }
-//
-//        sum = 0;
-//        for (long key = 10000000; key < statMap.lastKey(); key++) {
-//            int v = statMap.containsKey(key) ? statMap.get(key) : 0;
-//            sum += v;
-//            System.out.println(key + "\t" + sum);
-//        }
-//
-//        long standard = list.get(0).getTime();
-//        long period = 10000000;
-//        TreeMap<Long, Integer> statMap = new TreeMap<>();
-//        Iterator<TimeEvent> iterator = list.iterator();
-//        while (iterator.hasNext()) {
-//            TimeEvent timeEvent = iterator.next();
-//            long time = timeEvent.getTime();
-//            while (Math.abs(time - standard) > 1000000) {
-//                standard += period;
-//            }
-//            Integer get = statMap.get(time);
-//            if (get == null) {
-//                statMap.put(time, 1);
-//            } else {
-//                statMap.put(time, 1 + get);
-//            }
-//        }
-//        long startKey = statMap.firstKey();
-//        long endKey = statMap.lastKey();
-//        for (long i = startKey; i < endKey; i += 1) {
-//            outputBinCount(statMap, i, 1);
-//        }
     }
 
     private static void outputBinCount(TreeMap<Long, Integer> statMap, long startKey, long length) {

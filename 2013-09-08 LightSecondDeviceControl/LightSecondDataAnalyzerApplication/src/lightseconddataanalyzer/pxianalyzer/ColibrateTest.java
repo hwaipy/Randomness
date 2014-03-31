@@ -19,7 +19,7 @@ import java.io.IOException;
 public class ColibrateTest {
 
     public static void main(String[] args) throws IOException, DeviceException {
-        File pxiFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-02-21 改进TDC同步测试/20140221202407TDC.dat");
+        File pxiFile = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-03-25 双TDC同步测试/20140319175010TDC.dat");
 
         TimeEventLoader loader = new PXI40PS1Loader(pxiFile, null);
         TimeEventSegment segment = TimeEventDataManager.loadTimeEventSegment(loader);

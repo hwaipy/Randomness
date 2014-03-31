@@ -72,6 +72,28 @@ public class CoincidenceMatcher {
         return coincident;
     }
 
+    public int count() {
+        Iterator<TimeEvent> iterator1 = list1.iterator();
+        Iterator<TimeEvent> iterator2 = list2.iterator();
+        TimeEvent event1 = iterator1.hasNext() ? iterator1.next() : null;
+        TimeEvent event2 = iterator2.hasNext() ? iterator2.next() : null;
+        int coincident = 0;
+        while (event1 != null && event2 != null) {
+            long time1 = event1.getTime();
+            long time2 = event2.getTime() - delay;
+            if (time1 < time2 - gate) {
+                event1 = iterator1.hasNext() ? iterator1.next() : null;
+            } else if (time2 < time1 - gate) {
+                event2 = iterator2.hasNext() ? iterator2.next() : null;
+            } else {
+                coincident++;
+                event1 = iterator1.hasNext() ? iterator1.next() : null;
+                event2 = iterator2.hasNext() ? iterator2.next() : null;
+            }
+        }
+        return coincident;
+    }
+
     public int getCoincicenceCount() {
         if (!find) {
             throw new RuntimeException();

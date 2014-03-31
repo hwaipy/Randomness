@@ -1,5 +1,7 @@
 package com.hwaipy.systemutilities;
 
+import java.nio.file.Path;
+
 /**
  *
  * @author Hwaipy
@@ -14,7 +16,8 @@ public class Paths {
 //        Path p = java.nio.file.Paths.get("");
 //    }
     public static void main(String[] args) {
-        
+        Path p = java.nio.file.Paths.get(".");
+        System.out.println(p.toAbsolutePath().toFile().getAbsolutePath());
     }
 
 }

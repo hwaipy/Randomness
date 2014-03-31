@@ -41,7 +41,7 @@ public class HydraHarp400T3Loader implements TimeEventLoader {
             fileChannel = raf.getChannel();
             reader = new MappingReader(fileChannel);
             readHead();
-//            reader.skip(8000);
+////            reader.skip(8000);
         }
         this.period = period;
     }
@@ -167,7 +167,7 @@ public class HydraHarp400T3Loader implements TimeEventLoader {
         reader.getLong();
         reader.skip(imgHdrSize * 1 * 4);
 //        System.out.println(binning);
-        System.out.println(syncRate);
+//        System.out.println(syncRate);
         step = 1;
         for (int i = 0; i < binning; i++) {
             step *= 2;

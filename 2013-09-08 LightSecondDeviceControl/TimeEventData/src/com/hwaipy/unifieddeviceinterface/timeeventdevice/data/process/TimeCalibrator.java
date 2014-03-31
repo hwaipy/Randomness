@@ -20,6 +20,7 @@ public class TimeCalibrator {
 
     public void calibrate() {
         Iterator<Coincidence> iterator = mapping.iterator();
+        boolean isError = false;
         Coincidence coincidenceStart = iterator.next();
         long timeStart1 = coincidenceStart.getEvent1().getTime();
         long timeStart2 = coincidenceStart.getEvent2().getTime();
@@ -32,12 +33,17 @@ public class TimeCalibrator {
             Coincidence coincidenceEnd = iterator.next();
             long timeEnd1 = coincidenceEnd.getEvent1().getTime();
             long timeEnd2 = coincidenceEnd.getEvent2().getTime();
+            isError = (timeEnd1 - timeStart1) < 10000000;
             while (index < list.size()) {
                 TimeEvent event = list.get(index);
                 long time = event.getTime();
                 if (time < timeEnd2) {
                     time = (long) (((double) (time - timeStart2)) / (timeEnd2 - timeStart2) * (timeEnd1 - timeStart1) + timeStart1);
-                    list.set(new TimeEvent(time, event.getChannel()), index);
+                    if (isError) {
+                        list.set(TimeEvent.ERROR_EVENT, index);
+                    } else {
+                        list.set(new TimeEvent(time, event.getChannel()), index);
+                    }
                     index++;
                     if (index >= list.size()) {
                         break;
