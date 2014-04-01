@@ -8,18 +8,20 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 /**
- * 封装默认系统属性。 属性从多个地方载入，依次为：PREFERENCES_FILE_PATH()
+ * 封装系统属性。属性从多个地方载入，依次为：内存动态，
+ * PROPERTIES_FILE_PATH(utilitiesproperties.xml)，和系统preferences。
+ * 对属性的修改修改体现在内存动态中。
  *
  * @author Hwaipy
  */
-public class Preferences {
+public class Properties {
 
-    private static final String PREFERENCES_FILE_PATH = "utilities.preferences";
+    private static final String PROPERTIES_FILE_PATH = "utilitiesproperties.xml";
 //    private static final Preferences[] PREFERENCESES;
 
     static {
         try {
-            Path preferencesFilePath = java.nio.file.Paths.get(PREFERENCES_FILE_PATH);
+            Path preferencesFilePath = java.nio.file.Paths.get(PROPERTIES_FILE_PATH);
             SAXReader saxReader = new SAXReader();
             Document document = saxReader.read(preferencesFilePath.toFile());
             Element rootElement = document.getRootElement();
