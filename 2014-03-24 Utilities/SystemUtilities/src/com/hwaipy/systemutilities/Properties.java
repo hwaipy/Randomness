@@ -50,7 +50,6 @@ public class Properties {
     }
 
     public static String getProperty(String key) {
-        System.out.println("get pro "+key);
         String property = PROPERTIES.get(key);
         if (property == null) {
             property = PROPERTIES_FILE.get(key);
