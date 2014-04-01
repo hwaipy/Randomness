@@ -9,15 +9,11 @@ import java.nio.file.Path;
 public class Paths {
 
     private static final String KEY_PATH_DATA_STORAGY = "KeyPathDataStorage";
-    private static final String DEF_PATH_DATA_STORAGY = "KeyPathDataStorage";
+    private static final String DEF_PATH_DATA_STORAGY = ".";
 
-//    public static Path getDataStoragyPath() {
-//
-//        Path p = java.nio.file.Paths.get("");
-//    }
-    public static void main(String[] args) {
-        Path p = java.nio.file.Paths.get(".");
-        System.out.println(p.toAbsolutePath().toFile().getAbsolutePath());
+    public static Path getDataStoragyPath() {
+        String directory = Properties.getProperty(KEY_PATH_DATA_STORAGY, DEF_PATH_DATA_STORAGY);
+        Path path = java.nio.file.Paths.get(directory);
+        return path;
     }
-
 }

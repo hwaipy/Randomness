@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <properties>
     <property key="testPropertiesFileKey" value="testPropertiesFileValue"></property>
+    <property key="KeyPathDataStorage" value="/Users/Hwaipy/Documents/Data/"></property>
 </properties>
