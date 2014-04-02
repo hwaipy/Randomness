@@ -1,15 +1,17 @@
 package com.hwaipy.systemutilities;
 
-import java.nio.file.Path;
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.prefs.Preferences;
-import org.dom4j.Attribute;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  * 封装系统属性。属性从多个地方载入，依次为： 内存， PROPERTIES_FILE_PATH(utilitiesproperties.xml)
@@ -26,26 +28,29 @@ public class Properties {
 
     static {
         try {
-            Path preferencesFilePath = java.nio.file.Paths.get(PROPERTIES_FILE_PATH);
-            SAXReader saxReader = new SAXReader();
-            Document document = saxReader.read(preferencesFilePath.toFile());
-            Element rootElement = document.getRootElement();
-            if ("properties".equals(rootElement.getName())) {
-                Iterator elementIterator = rootElement.elementIterator("property");
-                while (elementIterator.hasNext()) {
-                    Element element = (Element) elementIterator.next();
-                    Attribute attributeKey = element.attribute("key");
-                    Attribute attributeValue = element.attribute("value");
-                    if (attributeKey != null && attributeValue != null) {
-                        String key = attributeKey.getValue();
-                        String value = attributeValue.getValue();
-                        if (key != null && !key.isEmpty() && value != null && !value.isEmpty()) {
-                            PROPERTIES_FILE.put(key, value);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder();
+            Document document = dbBuilder.parse(PROPERTIES_FILE_PATH);
+            Node root = document.getFirstChild();
+            if (root != null && "properties".equals(root.getNodeName())) {
+                NodeList childNodes = root.getChildNodes();
+                for (int i = 0; i < childNodes.getLength(); i++) {
+                    Node node = childNodes.item(i);
+                    if ("property".equals(node.getNodeName())) {
+                        NamedNodeMap attributes = node.getAttributes();
+                        Node keyNode = attributes.getNamedItem("key");
+                        Node valueNode = attributes.getNamedItem("value");
+                        if (keyNode != null && valueNode != null) {
+                            String key = keyNode.getNodeValue();
+                            String value = valueNode.getNodeValue();
+                            if (key != null && !key.isEmpty() && value != null && !value.isEmpty()) {
+                                PROPERTIES_FILE.put(key, value);
+                            }
                         }
                     }
                 }
             }
-        } catch (DocumentException ex) {
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
         }
     }
 
@@ -72,4 +77,8 @@ public class Properties {
     public static String removeProperty(String key) {
         return PROPERTIES.remove(key);
     }
+
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+    }
+
 }
