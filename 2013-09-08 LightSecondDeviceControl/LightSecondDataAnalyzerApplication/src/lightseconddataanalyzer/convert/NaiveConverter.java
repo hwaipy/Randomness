@@ -62,7 +62,11 @@ public class NaiveConverter {
         MergedTimeEventList pxiList = new MergedTimeEventList(new MergedTimeEventList(pxiSyncList, pxiSignalList), pxiGPSList);
         MergedTimeEventList hhList = new MergedTimeEventList(new MergedTimeEventList(hhSyncList, hhSignalList), hhGPSList);
 
-        convert(pxiList, new File("pxi.tdc"));
-        convert(hhList, new File("hh.tdc"));
+//        convert(pxiList, new File("pxi.tdc"));
+//        convert(hhList, new File("hh.tdc"));
+        check(pxiGPSList, pxiSyncList);
+    }
+
+    private static void check(TimeEventList gpsList, TimeEventList signalList) {
     }
 }
