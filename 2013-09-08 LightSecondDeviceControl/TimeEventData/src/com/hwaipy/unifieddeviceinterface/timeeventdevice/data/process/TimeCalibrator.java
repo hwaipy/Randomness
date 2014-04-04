@@ -1,8 +1,10 @@
 package com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process;
 
+import com.hwaipy.mathematics.fitting.LineFitting;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 /**
  *
@@ -91,6 +93,86 @@ public class TimeCalibrator {
                 if (index >= list.size()) {
                     break;
                 }
+            } else {
+                break;
+            }
+        }
+        while (index < list.size()) {
+            list.set(TimeEvent.ERROR_EVENT, index);
+            index++;
+        }
+    }
+
+    public void calibrateByLineFitting() {
+        System.out.println("Hello calibration");
+        LinkedList<Coincidence> fittingList = new LinkedList<>();
+        Iterator<Coincidence> mappingIterator = mapping.iterator();
+        while (mappingIterator.hasNext() && fittingList.size() < 10) {
+            fittingList.addLast(mappingIterator.next());
+        }
+        if (fittingList.size() < 10) {
+            throw new RuntimeException();
+        }
+
+        int index = 0;
+        boolean isError = false;
+        while (true) {
+            System.out.println("Calibration loop begins. Here shows the fitting list");
+            for (Coincidence coincidence : fittingList) {
+                System.out.println("----\t" + coincidence.getEvent1().getTime() + "\t" + coincidence.getEvent2().getTime());
+            }
+            Coincidence coincidenceStart = fittingList.get(4);
+            Coincidence coincidenceEnd = fittingList.get(5);
+            long timeStart1 = coincidenceStart.getEvent1().getTime();
+            long timeStart2 = coincidenceStart.getEvent2().getTime();
+            long timeEnd1 = coincidenceEnd.getEvent1().getTime();
+            long timeEnd2 = coincidenceEnd.getEvent2().getTime();
+            System.out.println("Start Time 1 = " + timeStart1);
+            System.out.println("Start Time 2 = " + timeStart2);
+            System.out.println("End Time 1 = " + timeEnd1);
+            System.out.println("End Time 1 = " + timeEnd2);
+            while (index < list.size() && list.get(index).getTime() < timeStart2) {
+                list.set(TimeEvent.ERROR_EVENT, index);
+                index++;
+            }
+            double[] dataX = new double[10];
+            double[] dataY = new double[10];
+            for (int i = 0; i < 10; i++) {
+                dataX[i] = fittingList.get(i).getEvent2().getTime();
+                dataY[i] = fittingList.get(i).getEvent1().getTime();
+            }
+            LineFitting lineFitting = new LineFitting(dataX, dataY);
+            double slope = lineFitting.getSlope();
+            double intercept = lineFitting.getIntercept();
+            System.out.println("Slope = " + slope);
+            System.out.println("Intercept = " + intercept);
+            isError = (timeEnd1 - timeStart1) < 10000000;
+            if (isError) {
+                System.out.println("isError");
+            }
+            while (index < list.size()) {
+                TimeEvent event = list.get(index);
+                long time = event.getTime();
+                if (time < timeEnd2) {
+                    System.out.println("An event need to be calibrated. Time = " + time);
+                    time = (long) (time * slope + intercept);
+                    System.out.println("New time is " + time);
+//                    if (isError) {
+//                        list.set(TimeEvent.ERROR_EVENT, index);
+//                    } else {
+                    list.set(new TimeEvent(time, event.getChannel()), index);
+//                    }
+                    index++;
+                    if (index >= list.size()) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+            if (mappingIterator.hasNext()) {
+                fittingList.removeFirst();
+                fittingList.addLast(mappingIterator.next());
             } else {
                 break;
             }

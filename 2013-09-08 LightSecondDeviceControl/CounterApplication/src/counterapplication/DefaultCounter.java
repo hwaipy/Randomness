@@ -15,81 +15,51 @@ public class DefaultCounter implements Counter {
 
     private final CounterDataSource dataSource;
 
-    @Override
-    public void start() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private final EventListenerList eventListenerList = new EventListenerList();
+    private final ActionListener listener = new ActionListener() {
 
-    @Override
-    public void stop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Collection<TimeEvent> data = dataSource.getData();
+            System.out.println("New data incoming: " + data.size());
+        }
+    };
+    private int coincidenceGate = 1000;
+    private int scanStepLength = 100;
+
+    public DefaultCounter(CounterDataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     @Override
     public void addCounterListener(CounterListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        eventListenerList.add(CounterListener.class, listener);
     }
 
     @Override
     public void removeCounterListener(CounterListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        eventListenerList.remove(CounterListener.class, listener);
+    }
+
+    @Override
+    public void start() {
+        dataSource.setAtionListener(listener);
+        dataSource.start();
+    }
+
+    @Override
+    public void stop() {
+        dataSource.setAtionListener(null);
+        dataSource.stop();
     }
 
     @Override
     public void setCoincidenceGata(int gate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        coincidenceGate = gate;
     }
 
     @Override
     public void setScanStepLength(int stepLength) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        scanStepLength = stepLength;
     }
-
-//    private final EventListenerList eventListenerList = new EventListenerList();
-//    private final ActionListener listener = new ActionListener() {
-//
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            Collection<TimeEvent> data = dataSource.getData();
-//            System.out.println("New data incoming: " + data.size());
-//        }
-//    };
-//    private int coincidenceGate = 1000;
-//    private int scanStepLength = 100;
-//
-//    public DefaultCounter(CounterDataSource dataSource) {
-//        this.dataSource = dataSource;
-//    }
-//
-//    @Override
-//    public void addCounterListener(CounterListener listener) {
-//        eventListenerList.add(CounterListener.class, listener);
-//    }
-//
-//    @Override
-//    public void removeCounterListener(CounterListener listener) {
-//        eventListenerList.remove(CounterListener.class, listener);
-//    }
-//
-//    @Override
-//    public void start() {
-//        dataSource.setAtionListener(listener);
-//        dataSource.start();
-//    }
-//
-//    @Override
-//    public void stop() {
-//        dataSource.setAtionListener(null);
-//        dataSource.stop();
-//    }
-//
-//    @Override
-//    public void setCoincidenceGata(int gate) {
-//        coincidenceGate = gate;
-//    }
-//
-//    @Override
-//    public void setScanStepLength(int stepLength) {
-//        scanStepLength = stepLength;
-//    }
 }

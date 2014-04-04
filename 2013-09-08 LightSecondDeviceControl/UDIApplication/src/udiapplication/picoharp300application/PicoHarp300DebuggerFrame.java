@@ -102,18 +102,18 @@ public class PicoHarp300DebuggerFrame extends javax.swing.JFrame {
             device.start(1000000);
             System.out.println("Run");
             while (true) {
-                try {
-                    ByteBuffer buffer = device.takeBuffer();
-                    counterParser.offer(buffer);
-                    if (counterParser.hasNewView()) {
-                        jLabelC1.setText("" + counterParser.getC1());
-                        jLabelC2.setText("" + counterParser.getC2());
-                        jLabelCc.setText("" + counterParser.getCc());
-                    }
-                } catch (InterruptedException | IOException ex) {
-                    Logger.getLogger(PicoHarp300DebuggerFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    break;
-                }
+//                try {
+//                    ByteBuffer buffer = device.takeBuffer();
+//                    counterParser.offer(buffer);
+//                    if (counterParser.hasNewView()) {
+//                        jLabelC1.setText("" + counterParser.getC1());
+//                        jLabelC2.setText("" + counterParser.getC2());
+//                        jLabelCc.setText("" + counterParser.getCc());
+//                    }
+//                } catch (InterruptedException | IOException ex) {
+//                    Logger.getLogger(PicoHarp300DebuggerFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                    break;
+//                }
             }
         }
     };
