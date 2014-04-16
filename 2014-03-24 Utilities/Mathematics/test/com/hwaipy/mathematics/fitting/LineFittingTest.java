@@ -75,4 +75,22 @@ public class LineFittingTest {
         assertEquals(exceptIntercept, intercept, interceptAccuracy);
     }
 
+    @Test
+    public void testRandomApplication() {
+        double exceptSlope = 1.0001;
+        double exceptIntercept = 1.9381e12;
+        double slopeAccuracy = 0.0001;
+        double interceptAccuracy = 0.0001e12;
+        double[] dataX = new double[]{51628612237256., 51628622237233.,
+            51628632237208., 51628642237208., 51628652237233., 51628662237256.,
+            51628672237256., 51628682237233., 51628692237233., 51628702237233.};
+        double[] dataY = new double[]{3571904350776., 3571914350784.,
+            3571924350780., 3571934350784., 3571944350776., 3571954350776.,
+            3571964350792., 3571974350760., 3571984350776., 3571994350768.};
+        LineFitting lineFitting = new LineFitting(dataX, dataY);
+        double slope = lineFitting.getSlope();
+        double intercept = lineFitting.getIntercept();
+        assertEquals(exceptSlope, slope, slopeAccuracy);
+        assertEquals(exceptIntercept, intercept, interceptAccuracy);
+    }
 }

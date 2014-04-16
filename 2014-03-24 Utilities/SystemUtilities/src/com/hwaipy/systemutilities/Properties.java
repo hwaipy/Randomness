@@ -77,8 +77,4 @@ public class Properties {
     public static String removeProperty(String key) {
         return PROPERTIES.remove(key);
     }
-
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-    }
-
 }

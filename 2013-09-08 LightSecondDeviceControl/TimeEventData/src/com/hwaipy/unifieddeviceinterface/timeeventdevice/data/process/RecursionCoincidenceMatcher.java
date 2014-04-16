@@ -2,6 +2,7 @@ package com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process;
 
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -15,7 +16,7 @@ public class RecursionCoincidenceMatcher implements Iterable<Coincidence> {
     private final TimeEventList list2;
     private long gate;
     private long initDelay;
-    private final LinkedList<Coincidence> coincidences = new LinkedList<>();
+    private final ArrayList<Coincidence> coincidences = new ArrayList<>();
     private boolean find = false;
     private int coincidenceCount = 0;
 
@@ -92,5 +93,19 @@ public class RecursionCoincidenceMatcher implements Iterable<Coincidence> {
             throw new RuntimeException();
         }
         return coincidences.iterator();
+    }
+
+    public int size() {
+        if (!find) {
+            throw new RuntimeException();
+        }
+        return coincidences.size();
+    }
+
+    public Coincidence get(int index) {
+        if (!find) {
+            throw new RuntimeException();
+        }
+        return coincidences.get(index);
     }
 }

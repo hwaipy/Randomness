@@ -3,6 +3,7 @@ package lightseconddataanalyzer.synctest;
 import com.hwaipy.unifieddeviceinterface.DeviceException;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventDataManager;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventLoader;
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.Coincidence;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.RecursionCoincidenceMatcher;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.hydraharp400data.HydraHarp400T3Loader;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.pxi40ps1data.PXI40PS1Loader;
@@ -10,6 +11,7 @@ import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.Time
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 
 /**
  *
@@ -32,13 +34,21 @@ public class SyncTest2 {
         TimeEventList hhSignalList = hhSegment.getEventList(1);
         System.out.println("PXI:\tSync " + pxiSyncList.size() + "\tSignal " + pxiSignalList.size());
         System.out.println("HH:\tSync " + hhSyncList.size() + "\tSignal " + hhSignalList.size());
-        long coarseDelay = hhSyncList.get(1).getTime() - pxiSyncList.get(0).getTime();
+        long coarseDelay = -hhSyncList.get(1).getTime() + pxiSyncList.get(0).getTime();
         System.out.println("CoarseDelay " + coarseDelay);
-        RecursionCoincidenceMatcher cmSync = new RecursionCoincidenceMatcher(pxiSyncList, hhSyncList, 10000, coarseDelay);
+        RecursionCoincidenceMatcher cmSync = new RecursionCoincidenceMatcher(hhSyncList, pxiSyncList, 10000, coarseDelay);
         System.out.println("Sync coincidence find " + cmSync.find());
-        RecursionCoincidenceMatcher cmSignal = new RecursionCoincidenceMatcher(pxiSignalList, hhSignalList, 10000, coarseDelay);
-        System.out.println("Sync coincidence find " + cmSignal.find());
+        RecursionCoincidenceMatcher cmSignal = new RecursionCoincidenceMatcher(hhSignalList, pxiSignalList, 10000, coarseDelay);
+        System.out.println("Signal coincidence find " + cmSignal.find());
 
+        Calibrator calibrator = new Calibrator(cmSync, cmSignal);
+        Collection<Coincidence> calibratedCoincidence = calibrator.calibrateByLineFitting(5);
+
+        DistributionStat distributionStat = new DistributionStat();
+        for (Coincidence coincidence : calibratedCoincidence) {
+            distributionStat.increase((int) coincidence.getTimeDifferent());
+        }
+        distributionStat.show();
 //        TimeCalibrator timeCalibrator = new TimeCalibrator(cm, hhSignalList);
 //        timeCalibrator.calibrateByLineFitting();
 //        CoincidenceMatcher cmSignal = new CoincidenceMatcher(pxiSignalList, hhSignalList, 2, 0);
