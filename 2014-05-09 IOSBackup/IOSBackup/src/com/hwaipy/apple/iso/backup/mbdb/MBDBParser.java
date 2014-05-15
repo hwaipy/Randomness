@@ -1,5 +1,7 @@
-package com.hwaipy.apple.iso.backup.old;
+package com.hwaipy.apple.iso.backup.mbdb;
 
+import com.hwaipy.apple.iso.backup.old.Filter;
+import com.hwaipy.apple.iso.backup.old.FilteredIterator;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -10,7 +12,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- *
+ * 解析MBDB文件。MBDB文件用于存储file records.
+ * 其包含的Domain和Location字段相连后，通过SHA1得到相应备份文件的名称。
  * @author Hwaipy
  */
 public class MBDBParser implements Iterable<MBDBEntry> {

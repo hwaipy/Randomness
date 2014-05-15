@@ -1,4 +1,4 @@
-package com.hwaipy.systemutilities;
+package com.hwaipy.utilities.system;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,10 +19,10 @@ import org.xml.sax.SAXException;
  *
  * @author Hwaipy
  */
-public class Properties {
+public class PropertiesUtilities {
 
     private static final String PROPERTIES_FILE_PATH = "utilitiesproperties.xml";
-    private static final Preferences PREFERENCES = Preferences.userNodeForPackage(Properties.class);
+    private static final Preferences PREFERENCES = Preferences.userNodeForPackage(PropertiesUtilities.class);
     private static final Map<String, String> PROPERTIES = new HashMap<>();
     private static final Map<String, String> PROPERTIES_FILE = new HashMap<>();
 

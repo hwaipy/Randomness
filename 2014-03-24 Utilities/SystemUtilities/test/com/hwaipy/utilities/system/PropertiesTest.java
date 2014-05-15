@@ -1,4 +1,4 @@
-package com.hwaipy.systemutilities;
+package com.hwaipy.utilities.system;
 
 import java.util.prefs.Preferences;
 import org.junit.After;
@@ -40,8 +40,8 @@ public class PropertiesTest {
     public void testGetPropertyDefault() {
         String key = "nonexistent";
         String def = "default";
-        String result1 = Properties.getProperty(key);
-        String result2 = Properties.getProperty(key, def);
+        String result1 = PropertiesUtilities.getProperty(key);
+        String result2 = PropertiesUtilities.getProperty(key, def);
         assertEquals(null, result1);
         assertEquals(def, result2);
     }
@@ -54,14 +54,14 @@ public class PropertiesTest {
         String key = "testSetKey";
         String value1 = "testSetValue1";
         String value2 = "testSetValue2";
-        String result1 = Properties.getProperty(key);
-        String result2 = Properties.setProperty(key, value1);
-        String result3 = Properties.getProperty(key);
-        String result4 = Properties.setProperty(key, value2);
-        String result5 = Properties.getProperty(key);
-        String result6 = Properties.removeProperty(key);
-        String result7 = Properties.getProperty(key);
-        String result8 = Properties.removeProperty(key);
+        String result1 = PropertiesUtilities.getProperty(key);
+        String result2 = PropertiesUtilities.setProperty(key, value1);
+        String result3 = PropertiesUtilities.getProperty(key);
+        String result4 = PropertiesUtilities.setProperty(key, value2);
+        String result5 = PropertiesUtilities.getProperty(key);
+        String result6 = PropertiesUtilities.removeProperty(key);
+        String result7 = PropertiesUtilities.getProperty(key);
+        String result8 = PropertiesUtilities.removeProperty(key);
         assertEquals(null, result1);
         assertEquals(null, result2);
         assertEquals(value1, result3);
@@ -79,7 +79,7 @@ public class PropertiesTest {
     public void testGetPropertyInFile() {
         String key = "testPropertiesFileKey";
         String expResult = "testPropertiesFileValue";
-        String result = Properties.getProperty(key);
+        String result = PropertiesUtilities.getProperty(key);
         assertEquals(expResult, result);
     }
 
@@ -90,10 +90,10 @@ public class PropertiesTest {
     public void testGetPropertyInPreferences() {
         String key = "testPreferencesKey";
         String value = "testPreferencesValue";
-        Preferences preferences = Preferences.userNodeForPackage(Properties.class);
-        String result1 = Properties.getProperty(key);
+        Preferences preferences = Preferences.userNodeForPackage(PropertiesUtilities.class);
+        String result1 = PropertiesUtilities.getProperty(key);
         preferences.put(key, value);
-        String result2 = Properties.getProperty(key);
+        String result2 = PropertiesUtilities.getProperty(key);
         preferences.remove(key);
         assertEquals(null, result1);
         assertEquals(value, result2);
@@ -110,13 +110,13 @@ public class PropertiesTest {
         String fileValue = "testPropertiesFileValue";
         String preferencesKey = "testPreferencesKey";
         String preferencesValue = "testPreferencesValue";
-        String result1 = Properties.getProperty(fileKey);
-        Preferences preferences = Preferences.userNodeForPackage(Properties.class);
+        String result1 = PropertiesUtilities.getProperty(fileKey);
+        Preferences preferences = Preferences.userNodeForPackage(PropertiesUtilities.class);
         preferences.put(preferencesKey, preferencesValue);
-        String result2 = Properties.getProperty(fileKey);
-        Properties.setProperty(memoryKey, memoryValue);
-        String result3 = Properties.getProperty(memoryKey);
-        Properties.removeProperty(memoryKey);
+        String result2 = PropertiesUtilities.getProperty(fileKey);
+        PropertiesUtilities.setProperty(memoryKey, memoryValue);
+        String result3 = PropertiesUtilities.getProperty(memoryKey);
+        PropertiesUtilities.removeProperty(memoryKey);
         preferences.remove(preferencesKey);
         assertEquals(fileValue, result1);
         assertEquals(fileValue, result2);

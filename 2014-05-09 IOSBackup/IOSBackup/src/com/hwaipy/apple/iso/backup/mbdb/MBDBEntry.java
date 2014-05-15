@@ -1,5 +1,6 @@
-package com.hwaipy.apple.iso.backup.old;
+package com.hwaipy.apple.iso.backup.mbdb;
 
+import com.hwaipy.apple.iso.backup.old.MessageDigestUtilities;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
@@ -7,7 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- *
+ * 代表MBDB文件中的一个Record。通常代表一个备份文件。
+ * 其包含的Domain和Location字段相连后，通过SHA1得到相应备份文件的名称。
  * @author Hwaipy
  */
 public class MBDBEntry {
