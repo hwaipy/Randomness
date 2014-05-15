@@ -8,8 +8,4 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MessageDigestUtilities {
 
-    public static String hashForString(String algorithm, byte[] data) throws NoSuchAlgorithmException {
-        byte[] hash = hash(algorithm, data);
-        return bytesToString(hash);
-    }
 }

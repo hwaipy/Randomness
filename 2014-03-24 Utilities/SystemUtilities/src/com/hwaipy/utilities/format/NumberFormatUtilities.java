@@ -6,8 +6,15 @@ package com.hwaipy.utilities.format;
  */
 public class NumberFormatUtilities {
 
+    private static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+    /**
+     * 将一列byte改写为16进制的形式。每个byte两位。
+     *
+     * @param data
+     * @return
+     */
     public static String toHex(byte[] data) {
-        char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         char[] temp = new char[data.length * 2];
         for (int i = 0; i < data.length; i++) {
             byte b = data[i];
