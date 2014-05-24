@@ -1,5 +1,7 @@
 package com.hwaipy.apple.iso.backup.old;
 
+import com.hwaipy.apple.iso.backup.DatabaseException;
+import com.hwaipy.apple.iso.backup.AddressBook;
 import java.nio.file.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;

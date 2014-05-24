@@ -72,4 +72,21 @@ public class MessageDigestUtilitiesTest {
         }
     }
 
+    /**
+     * Test of hash method, with "MD5" and "SHA1".
+     *
+     * @throws java.io.UnsupportedEncodingException
+     * @throws java.security.NoSuchAlgorithmException
+     */
+    @Test
+    public void testHashtoStringStringString() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        String[] algorithms = {"MD5", "SHA1"};
+        String data = "com.hwaipy.utilities.secure";
+        String[] expResults = {"3585FDD528590415355C4A3FD225441F", "812BFF847BDFF64CE6B8836D9834AE6B14730EFC"};
+        for (int i = 0; i < algorithms.length; i++) {
+            String algorithm = algorithms[i];
+            String result = MessageDigestUtilities.hashToString(algorithm, data);
+            assertEquals(expResults[i], result);
+        }
+    }
 }

@@ -1,7 +1,4 @@
-package com.hwaipy.apple.iso.backup.old;
-
-import java.io.File;
-import java.util.Arrays;
+package com.hwaipy.apple.iso.backup;
 
 /**
  *
@@ -11,11 +8,9 @@ public abstract class Message implements Comparable<Message> {
 
     private String name;
     private String address;
-    private Direction direction;
+    private boolean isFromMe;
     private long date;
-    private String context;
-    private String subject;
-    private File[] attachments;
+    private Object content;
 
     public String getName() {
         return name;
@@ -37,51 +32,33 @@ public abstract class Message implements Comparable<Message> {
         return (address == null || "".equals(address)) ? "Unknown" : address;
     }
 
-    void setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public Direction getDirection() {
-        return direction;
+    public boolean isFromMe() {
+        return isFromMe;
     }
 
-    void setDirection(Direction direction) {
-        this.direction = direction;
+    public void setIsFromMe(boolean isFromMe) {
+        this.isFromMe = isFromMe;
     }
 
     public long getDate() {
         return date;
     }
 
-    void setDate(long date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
-    public String getContext() {
-        return context;
+    public Object getContent() {
+        return content;
     }
 
-    void setContext(String context) {
-        this.context = context;
+    public void setContent(Object content) {
+        this.content = content;
     }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public File[] getAttachments() {
-        return Arrays.copyOf(attachments, attachments.length);
-    }
-
-    void setAttachments(File[] attachments) {
-        this.attachments = Arrays.copyOf(attachments, attachments.length);
-    }
-// a -1,0,+1
-//     *          is less than, equal to, or greater than the specified object.
 
     @Override
     public int compareTo(Message o) {

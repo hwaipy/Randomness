@@ -1,4 +1,4 @@
-package com.hwaipy.apple.iso.backup.old;
+package com.hwaipy.apple.iso.backup;
 
 import java.nio.file.Path;
 import java.sql.Connection;
@@ -35,6 +35,7 @@ public class AddressBook {
             ds.setUrl("jdbc:sqlite:" + path);
             connection = ds.getConnection();
             Statement statement = connection.createStatement();
+            statement.execute("PRAGMA journal_mode = DELETE");
             ResultSet resultSet = statement.executeQuery("select ABPerson.First,ABPerson.Last,ABMultiValue.value from ABPerson,ABMultiValue where ABPerson.ROWID=ABMultiValue.record_id");
             while (resultSet.next()) {
                 String last = resultSet.getString("Last");
