@@ -1,7 +1,12 @@
-package D20140516.GroupVelocity;
+package D20140516.GroupVelocity_Reconstructed;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -60,14 +65,61 @@ public class CorrelationPloter {
     }
 
     public BufferedImage createImage() {
-        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 double result = results[y][x];
-                int gray = (int) ((maxValue - result) / (maxValue - minValue) * 255);
+//                int gray = (int) ((maxValue - result) / (maxValue - minValue) * 255);
+                int gray = (int) ((1 - result) * 255);
                 image.setRGB(x, y, new Color(gray, gray, gray).getRGB());
             }
         }
         return image;
+    }
+
+    public double[] statistics(boolean horizontal) {
+        double[] result = new double[horizontal ? width : height];
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                result[horizontal ? x : y] += results[y][x];
+            }
+        }
+        return result;
+    }
+
+    public double totalIntensity() {
+        double result = 0;
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                result += results[y][x];
+            }
+        }
+        return result;
+    }
+
+    public double filtedIntensity(double centerX, double centerY, double r) {
+        double stepOfArg1 = (maxArg1 - minArg1) / (width - 1);
+        double stepOfArg2 = (maxArg2 - minArg2) / (height - 1);
+        BufferedImage image = createImage();
+        double result = 0;
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                double argX = minArg1 + x * stepOfArg1;
+                double argY = maxArg2 - y * stepOfArg2;
+                double distanceX = argX - centerX;
+                double distanceY = argY - centerY;
+                double distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+                if (distance <= r) {
+                    result += results[y][x];
+                    image.setRGB(x, y, Color.RED.brighter().getRGB());
+                }
+            }
+        }
+        try {
+            ImageIO.write(image, "png", new File("test.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(CorrelationPloter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result;
     }
 }

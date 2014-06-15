@@ -1,4 +1,4 @@
-package D20140516.GroupVelocity;
+package D20140516.GroupVelocity_Reconstructed;
 
 import com.hwaipy.utilities.system.PathsUtilities;
 import java.awt.image.BufferedImage;
@@ -13,10 +13,10 @@ import javax.imageio.ImageIO;
  */
 public class CorrelationTest {
 
-    private static final double minOmigaS = 1530;
-    private static final double maxOmigaS = 1590;
-    private static final double minOmigaI = 1530;
-    private static final double maxOmigaI = 1590;
+    private static final double minOmigaI = 793;
+    private static final double maxOmigaI = 795;
+    private static final double minOmigaS = 1611;
+    private static final double maxOmigaS = 1613;
     private static final int width = 1000;
     private static final int height = 1000;
 
@@ -32,13 +32,37 @@ public class CorrelationTest {
         BufferedImage image = correlationPloter.createImage();
         Path path = PathsUtilities.getDataStoragyPath();
         ImageIO.write(image, "png", new File(path.toFile(), "join.png"));
+//        double[] statistics = correlationPloter.statistics(false);
+//        for (int i = 0; i < statistics.length; i++) {
+//            System.out.println(i + "\t" + statistics[i]);
+//        }
+//        System.out.println(correlationPloter.totalIntensity());
+//        System.out.println(correlationPloter.filtedIntensity(779.973, 780.027, 0.0148));
+//        double maxFilterdIntensity = 0;
+//        double maxS = 0;
+//        double maxI = 0;
+//        for (double s = 779.95; s < 779.99; s += 1. / 1000) {
+//            System.out.println(s);
+//            for (double i = 780.01; i < 780.05; i += 1. / 1000) {
+//                double fi = correlationPloter.filtedIntensity(s, i, 0.0148);
+//                if (fi > maxFilterdIntensity) {
+//                    maxFilterdIntensity = fi;
+//                    maxS = s;
+//                    maxI = i;
+//                }
+//            }
+//        }
+//        System.out.println(maxS);
+//        System.out.println(maxI);
+//        System.out.println(maxFilterdIntensity);
     }
 
     private static final CorrelationFunction functionJoin = new CorrelationFunction() {
 
         @Override
         public double value(double lamdaSignal, double lamdaIdler) {
-            return functionPump.value(lamdaSignal, lamdaIdler) * functionPhaseMatch.value(lamdaSignal, lamdaIdler);
+            double result = functionPump.value(lamdaSignal, lamdaIdler) * functionPhaseMatch.value(lamdaSignal, lamdaIdler);
+            return result;
         }
     };
 
@@ -46,23 +70,25 @@ public class CorrelationTest {
 
         @Override
         public double value(double lamdaSignal, double lamdaIdler) {
-            double lengthOfCrystal = 10e-3;
+            double lengthOfCrystal = 30e-3;
             double lamdaPump = 1 / (1 / lamdaSignal + 1 / lamdaIdler);
             double kPump = Light.k(lamdaPump / 1e9, true);
             double kSignal = Light.k(lamdaSignal / 1e9, true);
             double kIdler = Light.k(lamdaIdler / 1e9, false);
-            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler + 2 * Math.PI / 46.2e-6);
-            return Math.sin(arg) / arg;
+            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler - 2 * Math.PI / -27.4e-6);
+            double result = Math.sin(arg) / arg;
+            return result * result;
         }
     };
     private static final CorrelationFunction functionPump = new CorrelationFunction() {
 
         @Override
         public double value(double arg1, double arg2) {
-            double mu = 780;
-            double sigma = 0.425;
+            double mu = 532;
+            double sigma = 0.09;
             double lamdaPump = 1 / (1 / arg1 + 1 / arg2);
-            return Math.exp(-(lamdaPump - mu) * (lamdaPump - mu) / 2 / sigma / sigma);
+            double result = Math.exp(-(lamdaPump - mu) * (lamdaPump - mu) / 2 / sigma / sigma);
+            return result * result;
         }
     };
 
@@ -80,27 +106,5 @@ public class CorrelationTest {
         BufferedImage image = correlationPloter.createImage();
         Path path = PathsUtilities.getDataStoragyPath();
         ImageIO.write(image, "png", new File(path.toFile(), "pump.png"));
-    }
-
-    public static void firstTry() throws IOException {
-        double minOmigaS = 0;
-        double maxOmigaS = 100;
-        double minOmigaI = 200;
-        double maxOmigaI = 400;
-        int width = 1000;
-        int height = 900;
-        CorrelationFunction function = new CorrelationFunction() {
-
-            @Override
-            public double value(double arg1, double arg2) {
-                return Math.pow(arg1 * 5 - arg2, 2);
-            }
-        };
-
-        CorrelationPloter correlationPloter = new CorrelationPloter(minOmigaS, maxOmigaS, minOmigaI, maxOmigaI, function, width, height);
-        correlationPloter.calculate();
-        BufferedImage image = correlationPloter.createImage();
-        Path path = PathsUtilities.getDataStoragyPath();
-        ImageIO.write(image, "png", new File(path.toFile(), "correlation.png"));
     }
 }

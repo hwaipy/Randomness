@@ -1,4 +1,4 @@
-package D20140516.GroupVelocity;
+package D20140516.GroupVelocity_Reconstructed;
 
 /**
  *
@@ -7,7 +7,7 @@ package D20140516.GroupVelocity;
 public class Test {
 
     public static void main(String[] args) {
-        diffNgBetweenPumpAndDegenerateSignal();
+        ngAndNWithLamda();
     }
 
     public static void diffNgsWithDifferentPumpWhenPPFixed() {
@@ -46,10 +46,12 @@ public class Test {
         }
     }
 
-    public static void ngWithLamda() {
+    public static void ngAndNWithLamda() {
         for (int lamda = 300; lamda < 2000; lamda++) {
             System.out.println(lamda + "\t" + GroupVelocity.indexGroupVelocity(lamda / 1e9, true)
-                    + "\t" + GroupVelocity.indexGroupVelocity(lamda / 1e9, false));
+                    + "\t" + GroupVelocity.indexGroupVelocity(lamda / 1e9, false)
+                    + "\t" + Light.index(lamda / 1e9, true)
+                    + "\t" + Light.index(lamda / 1e9, false));
         }
     }
 }
