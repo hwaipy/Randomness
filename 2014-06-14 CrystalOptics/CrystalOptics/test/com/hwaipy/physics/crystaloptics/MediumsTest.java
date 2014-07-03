@@ -1,7 +1,5 @@
-package javax.measure.unit;
+package com.hwaipy.physics.crystaloptics;
 
-import javax.measure.quantity.Length;
-import org.jscience.physics.amount.Amount;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,9 +11,9 @@ import static org.junit.Assert.*;
  *
  * @author Hwaipy
  */
-public class UnitsTest {
+public class MediumsTest {
 
-    public UnitsTest() {
+    public MediumsTest() {
     }
 
     @BeforeClass
@@ -35,10 +33,8 @@ public class UnitsTest {
     }
 
     @Test
-    public void testNanpMetre() {
-        double expected = 1550;
-        Amount<Length> length = Amount.valueOf(1.55e-6, SI.METRE);
-        double result = length.doubleValue(Units.NANOMETRE);
-        assertEquals(expected, result, 0.000001);
+    public void testIndexAndGroupIndex() {
     }
+//    private void testIndexAndGroupIndex(String name , ) {
+//    }
 }

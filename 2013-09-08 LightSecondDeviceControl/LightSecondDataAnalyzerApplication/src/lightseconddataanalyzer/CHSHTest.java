@@ -17,6 +17,14 @@ public class CHSHTest {
 
     public static void main(String[] args) throws Exception {
         File file = new File("/Users/Hwaipy/Documents/Dropbox/LabWork/实验/2013-12-03 光秒恢复状态采数/2014-01-12 单TDC采数尝试/201401130049.ht2");
+//    
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401121712.ht2");
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401121750.ht2");
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401121935.ht2");
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401122050.ht2");
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401122327.ht2");
+//        File file = new File("/Users/Hwaipy/Desktop/2014-01-12 单TDC采数尝试/201401130049.ht2");
+//
         HydraHarp400T2Loader loader = new HydraHarp400T2Loader(file);
         TimeEventSegment segment = TimeEventDataManager.loadTimeEventSegment(loader);
 
@@ -69,7 +77,7 @@ public class CHSHTest {
         System.out.println("List3 High: " + list3MarkeredHigh.size());
         System.out.println("List3 Low: " + list3MarkeredLow.size());
 
-        int gate = 60;
+        int gate = 100;
         CoincidenceMatcher cm02HH = new CoincidenceMatcher(list0MarkeredHigh, list2MarkeredHigh, gate, 15925);
         CoincidenceMatcher cm02HL = new CoincidenceMatcher(list0MarkeredHigh, list2MarkeredLow, gate, 15925);
         CoincidenceMatcher cm02LH = new CoincidenceMatcher(list0MarkeredLow, list2MarkeredHigh, gate, 15925);
@@ -110,6 +118,24 @@ public class CHSHTest {
         int c13LH = cm13LH.find();
         int c13LL = cm13LL.find();
 
+          //
+//        c02HH = 44;
+//        c02HL = 27;
+//        c02LH = 56;
+//        c02LL = 71;
+//        c03HH = 8;
+//        c03HL = 70;
+//        c03LH = 18;
+//        c03LL = 23;
+//        c12HH = 19;
+//        c12HL = 63;
+//        c12LH = 9;
+//        c12LL = 21;
+//        c13HH = 65;
+//        c13HL = 30;
+//        c13LH = 69;
+//        c13LL = 57;
+        //
         System.out.println("--------------------------------------------------");
         System.out.println("CM02HH " + c02HH);
         System.out.println("CM02HL " + c02HL);

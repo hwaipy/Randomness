@@ -5,6 +5,9 @@
         <group name="Daily">
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140516/GroupVelocity/CorrelationTest.java</file>
         </group>
-        <group name="2014-06-14 CrystalOptics"/>
+        <group name="2014-06-14 CrystalOptics">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140516/GroupVelocity_Reconstructed/Test.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140516/GroupVelocity_Reconstructed/CorrelationTest.java</file>
+        </group>
     </open-files>
 </project-private>

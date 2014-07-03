@@ -65,4 +65,5 @@ public class Polarization implements Cloneable {
     public static final Polarization A = new Polarization(0, -1, 0);
     public static final Polarization R = new Polarization(0, 0, 1);
     public static final Polarization L = new Polarization(0, 0, -1);
+    public static final Polarization ZERO = new Polarization(0, 0, 0);
 }

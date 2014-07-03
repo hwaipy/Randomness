@@ -1,4 +1,4 @@
-package com.hwaipy.physics.optics;
+package com.hwaipy.physics.crystaloptics;
 
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
