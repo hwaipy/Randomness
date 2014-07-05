@@ -3,6 +3,7 @@ package com.hwaipy.science.polarizationcontrol.approach;
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -80,11 +81,50 @@ public class ApproachProcessOnboard {
         ERROR, DEBUG, INFO, DETAIL
     }
 
+    private void loggingPower() {
+        StringBuilder sb = new StringBuilder();
+        if (Polarization.H.equals(laser)) {
+            sb.append("H,");
+        } else if (Polarization.D.equals(laser)) {
+            sb.append("D,");
+        } else {
+            throw new RuntimeException();
+        }
+        DecimalFormat formatPower = new DecimalFormat("0.000");
+        double[] powers = readPower();
+        for (double power : powers) {
+            sb.append(formatPower.format(power)).append(",");
+        }
+        logging(LoggingLevel.DEBUG, sb.substring(0, sb.length() - 1));
+    }
+
+    private void loggingWaveplates() {
+        StringBuilder sb = new StringBuilder();
+        DecimalFormat formatWaveplates = new DecimalFormat("0.000");
+        for (WavePlate wavePlate : wavePlates) {
+            sb.append(formatWaveplates.format(wavePlate.getTheta() / Math.PI * 180)).append(",");
+        }
+        logging(LoggingLevel.DEBUG, sb.substring(0, sb.length() - 1));
+    }
+
+    private void wavePlateRotate(int wpIndex, double delta) {
+        loggingPower();
+        wavePlates[wpIndex].increase(delta);
+        loggingWaveplates();
+    }
+
+    private void wavePlateSet(int wpIndex, double theta) {
+        loggingPower();
+        wavePlates[wpIndex].setTheta(theta);
+        loggingWaveplates();
+    }
+
     public ApproachResult approach(int maxCount, double thresholdOuter, double thresholdInner, double stepLength) {
         return rotate(maxCount, thresholdOuter, thresholdInner, stepLength);
     }
 
     private ApproachResult rotate(int maxCount, double thresholdOuter, double thresholdInner, double stepLength) {
+        loggingWaveplates();
         int rotationCountRemaining = maxCount;
         double validConstractH = 0;
         double validConstractD = 0;
@@ -139,7 +179,7 @@ public class ApproachProcessOnboard {
             return new Object[]{rotationCountRemaining, stepLength};
         }
         double contrast1 = contrast();
-        wavePlates[wpIndex].increase(stepLength);
+        wavePlateRotate(wpIndex, stepLength);
         rotationCountRemaining--;
         double contrast2 = contrast();
         boolean reverse = contrast2 < contrast1;
@@ -148,9 +188,10 @@ public class ApproachProcessOnboard {
         while (rotationCountRemaining > 0) {
             if (reverse) {
                 stepLength = -stepLength;
-                wavePlates[wpIndex].increase(2 * stepLength);
+                wavePlateRotate(wpIndex, 2 * stepLength);
+                reverse = false;
             } else {
-                wavePlates[wpIndex].increase(stepLength);
+                wavePlateRotate(wpIndex, stepLength);
             }
             rotationCountRemaining--;
             double contrast = contrast();
@@ -162,31 +203,32 @@ public class ApproachProcessOnboard {
                 break;
             }
         }
-        wavePlates[wpIndex].setTheta(maxTheta);
+        wavePlateSet(wpIndex, maxTheta);
         return new Object[]{rotationCountRemaining, stepLength};
     }
 
     public class ApproachResult {
 
         private final boolean success;
-        private final double cH;
-        private final double cD;
+        private final double contrastH;
+        private final double contrastD;
         private final int stepCount;
 
-        public ApproachResult(boolean success, double cH, double cD, int stepCount) {
+        public ApproachResult(boolean success, double contrastH, double contrastD, int stepCount) {
             this.success = success;
-            this.cH = cH;
-            this.cD = cD;
+            this.contrastH = contrastH;
+            this.contrastD = contrastD;
             this.stepCount = stepCount;
         }
     }
 
     public static void main(String[] args) {
-        ApproachProcessOnboard p = new ApproachProcessOnboard(100);
+        ApproachProcessOnboard p = new ApproachProcessOnboard(0);
         p.generateRandomFiberTransform();
         ApproachProcessOnboard.ApproachResult result = p.approach(10000, 1.1, 0.9, 1. / 180 * Math.PI);
         System.out.println(result.success);
-        System.out.println(result.cH);
-        System.out.println(result.cD);
+        System.out.println(result.contrastH);
+        System.out.println(result.contrastD);
+        System.out.println(result.stepCount);
     }
 }

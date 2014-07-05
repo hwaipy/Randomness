@@ -25,7 +25,7 @@ public class ApproachProcessContrast {
     private int loggingLevel = -1;
 
     public ApproachProcessContrast() {
-        random = new Random(100);
+        random = new Random(10086);
         wavePlates[0] = new WavePlate(Math.PI / 2, 0);
         wavePlates[1] = new WavePlate(Math.PI / 2, 0);
         wavePlates[2] = new WavePlate(Math.PI, 0);
@@ -54,6 +54,7 @@ public class ApproachProcessContrast {
     }
 
     private int rotate() {
+        System.out.println(wavePlates[0].getTheta() / Math.PI * 180 + "," + wavePlates[1].getTheta() / Math.PI * 180 + "," + wavePlates[2].getTheta() / Math.PI * 180 + ",");
         int rotationCountMax = maxStepsCount;
         while (rotationCountMax > 0) {
             if (contrastH() > 300 && contrastD() > 300) {
@@ -107,51 +108,13 @@ public class ApproachProcessContrast {
         return rotationCountMax;
     }
 
-    private int rotateBoth(int index, int contrast, boolean reverse, int rotationCountMax) {
-        double step = stepLength;
-        double c1 = contrasts()[contrast];
-        logging(2, "Detected Contrast 1:", false);
-        logging(2, "", true);
-        wavePlates[index].increase(step);
-        wavePlates[2].increase(reverse ? -step : step);
-        double c2 = contrasts()[contrast];
-        logging(2, "Detected Contrast 2:", false);
-        logging(2, "", true);
-        double cMax = c2;
-        double thetaMaxI = wavePlates[index].getTheta();
-        double thetaMax2 = wavePlates[2].getTheta();
-        if (c2 < c1) {
-            step = -step;
-            logging(2, "Reverse", false);
-        }
-        while (rotationCountMax > 0) {
-            wavePlates[index].increase(step);
-            wavePlates[2].increase(reverse ? -step : step);
-            logging(2, "Steped", false);
-            logging(2, "", true);
-            rotationCountMax--;
-            double c = contrasts()[contrast];
-            if (c > cMax) {
-                cMax = c;
-                thetaMaxI = wavePlates[index].getTheta();
-                thetaMax2 = wavePlates[2].getTheta();
-                logging(2, "New Max", false);
-            }
-            if (c < cMax * innerThreshold) {
-                break;
-            }
-        }
-        wavePlates[index].setTheta(thetaMaxI);
-        wavePlates[2].setTheta(thetaMax2);
-        return rotationCountMax;
-    }
-
     private int rotateInner(int index, int contrast, int rotationCountMax) {
         double step = stepLength;
         double c1 = contrasts()[contrast];
         logging(2, "Detected Contrast 1:", false);
         logging(2, "", true);
         wavePlates[index].increase(step);
+        System.out.println(wavePlates[0].getTheta() / Math.PI * 180 + "," + wavePlates[1].getTheta() / Math.PI * 180 + "," + wavePlates[2].getTheta() / Math.PI * 180 + ",");
         double c2 = contrasts()[contrast];
         logging(2, "Detected Contrast 2:", false);
         logging(2, "", true);
@@ -163,6 +126,7 @@ public class ApproachProcessContrast {
         }
         while (rotationCountMax > 0) {
             wavePlates[index].increase(step);
+            System.out.println(wavePlates[0].getTheta() / Math.PI * 180 + "," + wavePlates[1].getTheta() / Math.PI * 180 + "," + wavePlates[2].getTheta() / Math.PI * 180 + ",");
             logging(2, "Steped", false);
             logging(2, "", true);
             rotationCountMax--;
@@ -177,6 +141,7 @@ public class ApproachProcessContrast {
             }
         }
         wavePlates[index].setTheta(thetaMax);
+        System.out.println(wavePlates[0].getTheta() / Math.PI * 180 + "," + wavePlates[1].getTheta() / Math.PI * 180 + "," + wavePlates[2].getTheta() / Math.PI * 180 + ",");
         return rotationCountMax;
     }
     private double[] status = new double[3];
@@ -260,12 +225,13 @@ public class ApproachProcessContrast {
 
     public static void main(String[] args) {
         ApproachProcessContrast p = new ApproachProcessContrast();
-        p.loggingLevel = 5;
+        p.loggingLevel = -1;
         int count = 0;
         p.generateRandomFiberTransform();
         ApproachProcessContrast.ApproachResult result = p.approach();
         System.out.println(result.success);
         System.out.println(result.cH);
         System.out.println(result.cD);
+        System.out.println(result.stepCount);
     }
 }
