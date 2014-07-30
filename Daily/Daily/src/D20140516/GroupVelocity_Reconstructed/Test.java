@@ -7,7 +7,12 @@ package D20140516.GroupVelocity_Reconstructed;
 public class Test {
 
     public static void main(String[] args) {
-        ngAndNWithLamda();
+//        ngAndNWithLamda();
+        double kPump = Light.k(405. / 1e9, false);
+        double kSignal = Light.k(810. / 1e9, false);
+        double kIdler = Light.k(810. / 1e9, false);
+        double omg = 2 * Math.PI / (kPump - kSignal - kIdler);
+        System.out.println(omg);
     }
 
     public static void diffNgsWithDifferentPumpWhenPPFixed() {

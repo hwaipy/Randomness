@@ -1,5 +1,7 @@
 package com.hwaipy.physics.crystaloptics.refractivemodel;
 
+import com.hwaipy.physics.crystaloptics.MonochromaticWave;
+
 /**
  *
  * @author Hwaipy
@@ -7,16 +9,14 @@ package com.hwaipy.physics.crystaloptics.refractivemodel;
 public interface RefractiveModel {
 
     /**
-     *
-     * @param waveLength in MicroMetre
+     * @param monochromaticWave
      * @return
      */
-    public double getIndex(double waveLength);
+    public double getIndex(MonochromaticWave monochromaticWave);
 
     /**
-     *
-     * @param waveLength in MicroMetre
+     * @param monochromaticWave
      * @return
      */
-    public double getGroupIndex(double waveLength);
+    public double getGroupIndex(MonochromaticWave monochromaticWave);
 }

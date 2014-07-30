@@ -13,10 +13,10 @@ import javax.imageio.ImageIO;
  */
 public class CorrelationTest {
 
-    private static final double minOmigaS = 779.5;
-    private static final double maxOmigaS = 780.5;
-    private static final double minOmigaI = 779.5;
-    private static final double maxOmigaI = 780.5;
+    private static final double minOmigaS = 1555;
+    private static final double maxOmigaS = 1565;
+    private static final double minOmigaI = 1555;
+    private static final double maxOmigaI = 1565;
     private static final int width = 1000;
     private static final int height = 1000;
 
@@ -32,9 +32,9 @@ public class CorrelationTest {
         BufferedImage image = correlationPloter.createImage();
         Path path = PathsUtilities.getDataStoragyPath();
         ImageIO.write(image, "png", new File(path.toFile(), "join.png"));
-        double[] statistics = correlationPloter.statistics(false);
+        double[] statistics = correlationPloter.statistics(true);
         for (int i = 0; i < statistics.length; i++) {
-            System.out.println((779.5 + i / 1000.) + "\t" + statistics[i]);
+            System.out.println((809 + i / 1000. * 2) + "\t" + statistics[i]);
         }
 //        System.out.println(correlationPloter.totalIntensity());
 //        System.out.println(correlationPloter.filtedIntensity(779.973, 780.027, 0.0148));
@@ -70,13 +70,15 @@ public class CorrelationTest {
 
         @Override
         public double value(double lamdaSignal, double lamdaIdler) {
-            double lengthOfCrystal = 30e-3;
+            double lengthOfCrystal = 15e-3;
             double lamdaPump = 1 / (1 / lamdaSignal + 1 / lamdaIdler);
             double kPump = Light.k(lamdaPump / 1e9, true);
             double kSignal = Light.k(lamdaSignal / 1e9, true);
             double kIdler = Light.k(lamdaIdler / 1e9, false);
 //            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler - 2 * Math.PI / 7.8825e-6);
-            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler - 2 * Math.PI / 7.8825e-6);
+//            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler - 2 * Math.PI / 3.4377532602689514e-6);
+//            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler - 2 * Math.PI / 10.035e-6);
+            double arg = lengthOfCrystal / 2 * (kPump - kSignal - kIdler + 2 * Math.PI / 46.1e-6);
             double result = Math.sin(arg) / arg;
             return result * result;
         }
@@ -85,8 +87,8 @@ public class CorrelationTest {
 
         @Override
         public double value(double arg1, double arg2) {
-            double mu = 390;
-            double sigma = 0.0089;
+            double mu = 780;
+            double sigma = 0.00087;
             double lamdaPump = 1 / (1 / arg1 + 1 / arg2);
             double result = Math.exp(-(lamdaPump - mu) * (lamdaPump - mu) / 2 / sigma / sigma);
             return result * result;

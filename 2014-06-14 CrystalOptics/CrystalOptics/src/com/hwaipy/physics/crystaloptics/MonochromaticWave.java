@@ -1,5 +1,7 @@
 package com.hwaipy.physics.crystaloptics;
 
+import com.hwaipy.measure.quantity.WaveNumber;
+import javafx.scene.transform.MatrixType;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
 import org.jscience.physics.amount.Amount;
@@ -31,6 +33,11 @@ public class MonochromaticWave {
 
     public Amount<Frequency> getAngularFrequency() {
         return angularFrequency;
+    }
+
+    public Amount<WaveNumber> getWaveNumber(Medium medium, Axis axis) {
+        double n = medium.getIndex(this, axis);
+        return (Amount<WaveNumber>) Amount.ONE.times(2 * Math.PI * n).divide(getWaveLength());
     }
 
     public static MonochromaticWave byWaveLength(Amount<Length> waveLength) {

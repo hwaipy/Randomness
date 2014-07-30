@@ -3,7 +3,7 @@ package com.hwaipy.physics.optics;
 import com.hwaipy.physics.crystaloptics.MonochromaticWave;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
-import javax.measure.unit.Units;
+import com.hwaipy.measure.unit.Units;
 import org.jscience.physics.amount.Amount;
 import org.junit.After;
 import org.junit.AfterClass;

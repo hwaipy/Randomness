@@ -1,7 +1,10 @@
-package javax.measure.unit;
+package com.hwaipy.measure.unit;
 
+import com.hwaipy.measure.quantity.WaveNumber;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
+import javax.measure.unit.SI;
+import javax.measure.unit.Unit;
 import static javax.measure.unit.SI.*;
 
 /**
@@ -18,4 +21,5 @@ public class Units {
     public static final Unit<Length> NANOMETRE = METRE.divide(1e9);
     public static final Unit<Frequency> GIGAHERTZ = HERTZ.times(1e9);
     public static final Unit<Frequency> TERAHERTZ = HERTZ.times(1e12);
+    public static final Unit<WaveNumber> RECIPROCALMETRE = (Unit<WaveNumber>) Unit.ONE.divide(SI.METRE);
 }

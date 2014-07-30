@@ -90,18 +90,17 @@ public class M1Process {
         Matrix SR1 = qwp1.getMatrix().times(SR);
         Matrix SH1 = qwp1.getMatrix().times(SH);
 
-        System.out.println("SR:");
-        System.out.println(SR.get(1, 0));
-        System.out.println(SR.get(2, 0));
-        System.out.println(SR.get(3, 0));
-        System.out.println("SR1:");
-        System.out.println(SR1.get(1, 0));
-        System.out.println(SR1.get(2, 0));
-        System.out.println("SH1");
-        System.out.println(SH1.get(1, 0));
-        System.out.println(SH1.get(2, 0));
-        System.out.println(SH1.get(3, 0));
-
+//        System.out.println("SR:");
+//        System.out.println(SR.get(1, 0));
+//        System.out.println(SR.get(2, 0));
+//        System.out.println(SR.get(3, 0));
+//        System.out.println("SR1:");
+//        System.out.println(SR1.get(1, 0));
+//        System.out.println(SR1.get(2, 0));
+//        System.out.println("SH1");
+//        System.out.println(SH1.get(1, 0));
+//        System.out.println(SH1.get(2, 0));
+//        System.out.println(SH1.get(3, 0));
         double a2 = 0.5 * Math.atan(SH1.get(2, 0) / SH1.get(1, 0));
         double a3 = 0.5 * Math.asin(SH1.get(3, 0));
         results = new double[3];
@@ -146,7 +145,7 @@ public class M1Process {
             case 11:
             case 5:
             case 1:
-                System.out.println(123);
+//                System.out.println(123);
                 //C
                 results[1] = a2;
                 results[2] = (a2 - a3) / 2;

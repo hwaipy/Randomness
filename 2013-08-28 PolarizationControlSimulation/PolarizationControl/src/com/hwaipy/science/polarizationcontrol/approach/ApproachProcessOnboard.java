@@ -3,8 +3,12 @@ package com.hwaipy.science.polarizationcontrol.approach;
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
+import java.io.File;
+import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,6 +21,7 @@ public class ApproachProcessOnboard {
     private final WavePlate[] wavePlates = new WavePlate[3];
     private LoggingLevel loggingLevel = LoggingLevel.DEBUG;
     private Polarization laser = Polarization.ZERO;
+    private int validNumber = 4;
 
     public ApproachProcessOnboard() {
         random = new Random();
@@ -52,10 +57,21 @@ public class ApproachProcessOnboard {
         laser = Polarization.ZERO;
     }
 
+    public double fixPower(double power) {
+        double accu = Math.pow(10, validNumber);
+        long p = (long) (power * accu);
+        return p / accu;
+//        return power;
+    }
+
     public double[] readPower() {
         Polarization measurement = laser.transform(ft)
                 .transform(wavePlates[0]).transform(wavePlates[1]).transform(wavePlates[2]);
-        return new double[]{measurement.getH(), measurement.getV(), measurement.getD(), measurement.getA()};
+        return new double[]{
+            fixPower(measurement.getH()),
+            fixPower(measurement.getV()),
+            fixPower(measurement.getD()),
+            fixPower(measurement.getA())};
     }
 
     public double contrast() {
@@ -73,7 +89,8 @@ public class ApproachProcessOnboard {
         if (level.compareTo(loggingLevel) > 0) {
             return;
         }
-        System.out.println("[" + level + "]" + message);
+//        System.out.println("[" + level + "]" + message);
+        System.out.println(message);
     }
 
     private enum LoggingLevel {
@@ -90,7 +107,7 @@ public class ApproachProcessOnboard {
         } else {
             throw new RuntimeException();
         }
-        DecimalFormat formatPower = new DecimalFormat("0.000");
+        DecimalFormat formatPower = new DecimalFormat("0.0000");
         double[] powers = readPower();
         for (double power : powers) {
             sb.append(formatPower.format(power)).append(",");
@@ -155,20 +172,25 @@ public class ApproachProcessOnboard {
 
     private int rotateOuter(int maxCount, int qwpIndex, double thresholdOuter, double thresholdInner, double stepLength) {
         int rotationCountRemaining = maxCount;
-        int wpIndexSum = qwpIndex + 2;
-        int wpIndex = qwpIndex;
+//        int wpIndexSum = qwpIndex + 2;
+//        int wpIndex = qwpIndex;
         double lastContrast = 0;
         double[] stepLengthes = new double[]{stepLength, stepLength, stepLength};
         while (rotationCountRemaining > 0) {
-            Object[] result = rotateSingle(rotationCountRemaining, wpIndex, stepLengthes[wpIndex], thresholdInner);
-            rotationCountRemaining = (int) result[0];
-            stepLengthes[wpIndex] = (double) result[1];
+            Object[] resultQWP = rotateSingle(rotationCountRemaining, qwpIndex, stepLengthes[qwpIndex], thresholdInner);
+            rotationCountRemaining = (int) resultQWP[0];
+            stepLengthes[qwpIndex] = (double) resultQWP[1];
+            Object[] resultHWP = rotateSingle(rotationCountRemaining, 2, stepLengthes[2], thresholdInner);
+            rotationCountRemaining = (int) resultHWP[0];
+            stepLengthes[2] = (double) resultHWP[1];
             double contrast = contrast();
+//            System.out.println("\t\t\t\t\tRotated, contrast = " + contrast + ", last contrast = " + lastContrast);
             if (contrast < lastContrast * thresholdOuter) {
+//                System.out.println("\t\t\t\t\tbreak!");
                 break;
             }
             lastContrast = contrast;
-            wpIndex = wpIndexSum - wpIndex;
+//            wpIndex = wpIndexSum - wpIndex;
         }
         return rotationCountRemaining;
     }
@@ -223,12 +245,55 @@ public class ApproachProcessOnboard {
     }
 
     public static void main(String[] args) {
-        ApproachProcessOnboard p = new ApproachProcessOnboard(0);
-        p.generateRandomFiberTransform();
-        ApproachProcessOnboard.ApproachResult result = p.approach(10000, 1.1, 0.9, 1. / 180 * Math.PI);
-        System.out.println(result.success);
-        System.out.println(result.contrastH);
-        System.out.println(result.contrastD);
-        System.out.println(result.stepCount);
+//        int succeedHigh = 0;
+//        int succeedLow = 0;
+//        for (int i = 0; i < 1000; i++) {
+//            ApproachProcessOnboard p = new ApproachProcessOnboard(i * 12000);
+//            p.validNumber = 10;
+//            p.generateRandomFiberTransform();
+//            ApproachProcessOnboard.ApproachResult resultHigh = p.approach(1024, 1.1, 0.9, 1. / 180 * Math.PI);
+//            if (resultHigh.success) {
+//                succeedHigh++;
+//            }
+//            p = new ApproachProcessOnboard(i * 12000);
+//            p.validNumber = 4;
+//            p.generateRandomFiberTransform();
+//            ApproachProcessOnboard.ApproachResult resultLow = p.approach(1024, 1.1, 0.9, 1. / 180 * Math.PI);
+//            if (resultLow.success) {
+//                succeedLow++;
+//            }
+//            if (resultHigh.success != resultLow.success) {
+//                System.out.println(resultHigh.success + ", " + resultLow.success);
+//            }
+//        }
+//        System.out.println(succeedHigh);
+//        System.out.println(succeedLow);
+        outputSingle(args);
+    }
+
+    public static void outputSingle(String[] args) {
+        try (PrintStream out = new PrintStream(new File("test.txt"))) {
+            long randomSeed = 1000;
+            int maxCount = 10000;
+            double thresholdOuter = 1.1;
+            double thresholdInner = 0.9;
+            double stepLength = 1;
+            if (args != null && args.length > 0) {
+                randomSeed = Long.parseLong(args[0]);
+                maxCount = Integer.parseInt(args[1]);
+                thresholdOuter = Double.parseDouble(args[2]);
+                thresholdInner = Double.parseDouble(args[3]);
+                stepLength = Double.parseDouble(args[4]);
+                System.setOut(out);
+            }
+            ApproachProcessOnboard p = new ApproachProcessOnboard(randomSeed);
+            p.generateRandomFiberTransform();
+            ApproachProcessOnboard.ApproachResult result = p.approach(maxCount, thresholdOuter, thresholdInner, stepLength / 180 * Math.PI);
+            System.out.println("Step " + result.stepCount);
+            System.out.println("Contrast H: " + result.contrastH);
+            System.out.println("Contrast D: " + result.contrastD);
+        } catch (Exception ex) {
+            Logger.getLogger(ApproachProcessOnboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
