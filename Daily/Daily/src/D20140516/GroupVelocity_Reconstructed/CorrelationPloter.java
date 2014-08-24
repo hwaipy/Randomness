@@ -62,6 +62,15 @@ public class CorrelationPloter {
                 }
             }
         }
+        System.out.println("----------");
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                double result = results[y][x];
+                System.out.print(result);
+                System.out.print("\t");
+            }
+            System.out.println();
+        }
     }
 
     public BufferedImage createImage() {
