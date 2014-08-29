@@ -16,7 +16,6 @@
  */
 
 /* $Id: EPSExample1.java 750418 2009-03-05 11:03:54Z vhennebert $ */
-
 package D20140128.ApacheXMLGraphicsTest;
 
 import java.awt.Color;
@@ -30,14 +29,16 @@ import org.apache.commons.io.IOUtils;
 import org.apache.xmlgraphics.java2d.ps.EPSDocumentGraphics2D;
 
 /**
- * This example demonstrates how you can generate an EPS (Encapsulated PostScript) file in Java
- * using the EPSDocumentGraphics2D class from Apache XML Graphics Commons.
+ * This example demonstrates how you can generate an EPS (Encapsulated
+ * PostScript) file in Java using the EPSDocumentGraphics2D class from Apache
+ * XML Graphics Commons.
  */
 public class EPSExample1 {
 
     /**
-     * Creates an EPS file. The contents are painted using a Graphics2D implementation that
-     * generates an EPS file.
+     * Creates an EPS file. The contents are painted using a Graphics2D
+     * implementation that generates an EPS file.
+     *
      * @param outputFile the target file
      * @throws IOException In case of an I/O error
      */
@@ -56,14 +57,14 @@ public class EPSExample1 {
             g2d.drawRect(0, 0, 400, 200);
 
             //A few rectangles rotated and with different color
-            Graphics2D copy = (Graphics2D)g2d.create();
+            Graphics2D copy = (Graphics2D) g2d.create();
             int c = 12;
             for (int i = 0; i < c; i++) {
-                float f = ((i + 1) / (float)c);
+                float f = ((i + 1) / (float) c);
                 Color col = new Color(0.0f, 1 - f, 0.0f);
                 copy.setColor(col);
                 copy.fillRect(70, 90, 50, 50);
-                copy.rotate(-2 * Math.PI / (double)c, 70, 90);
+                copy.rotate(-2 * Math.PI / (double) c, 70, 90);
             }
             copy.dispose();
 
@@ -85,6 +86,7 @@ public class EPSExample1 {
 
     /**
      * Command-line interface
+     *
      * @param args command-line arguments
      */
     public static void main(String[] args) {
