@@ -8,6 +8,8 @@ import java.util.Random;
  */
 public class PhaseLockingTest {
 
+    private static final double visibilityOriginal = 0.9;
+
     public static void main(String[] args) {
         statisticsIndexed();
 //        statistics();
@@ -27,8 +29,8 @@ public class PhaseLockingTest {
                 sortedResults.offer(result);
                 contrast.offer(result);
             }
-//            System.out.println(phiI + "\t" + contrast.getAverageContrast());
-            System.out.println(contrast.getAverageContrast());
+            System.out.println(phiI + "\t" + contrast.getAverageContrast());
+//            System.out.println(contrast.getAverageContrast());
         }
     }
 
@@ -73,7 +75,7 @@ public class PhaseLockingTest {
         FourMeasurement fourMeasurement = new FourMeasurement(fewP0, fewP1, fewP2, fewP3);
         double phiCalculated = fourMeasurement.phi();
         double delta = phi - phiCalculated;
-        double contrast = (1 - Math.cos(delta)) / 2;
+        double contrast = 0.5 - Math.cos(delta) / 2 * visibilityOriginal;
         double dB = -10 * Math.log10(contrast);
 //        System.out.println(delta + "\t" + dB);
         return dB;

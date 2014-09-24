@@ -1,5 +1,11 @@
 package D20140516.GroupVelocity;
 
+import com.hwaipy.measure.unit.Units;
+import com.hwaipy.physics.crystaloptics.Axis;
+import com.hwaipy.physics.crystaloptics.Mediums;
+import com.hwaipy.physics.crystaloptics.MonochromaticWave;
+import org.jscience.physics.amount.Amount;
+
 /**
  *
  * @author Hwaipy
@@ -7,7 +13,10 @@ package D20140516.GroupVelocity;
 public class Test {
 
     public static void main(String[] args) {
-        ngAndNWithLamda();
+//        ngAndNWithLamda();
+        System.out.println(Mediums.KTiOPO4.getGroupIndex(MonochromaticWave.byWaveLength(Amount.valueOf(405, Units.NANOMETRE)), Axis.Y));
+        System.out.println(Mediums.KTiOPO4.getGroupIndex(MonochromaticWave.byWaveLength(Amount.valueOf(780, Units.NANOMETRE)), Axis.Z));
+        System.out.println(Mediums.KTiOPO4.getGroupIndex(MonochromaticWave.byWaveLength(Amount.valueOf(842.4, Units.NANOMETRE)), Axis.Z));
     }
 
     public static void diffNgsWithDifferentPumpWhenPPFixed() {
