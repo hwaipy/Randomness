@@ -8,11 +8,15 @@ import java.util.EventListener;
  */
 public interface InstrumentListener extends EventListener {
 
-    public void instrumentOpening(InstrumentEvent event);
+    public default void instrumentOpening(InstrumentEvent event) {
+    }
 
-    public void instrumentOpened(InstrumentEvent event);
+    public default void instrumentOpened(InstrumentEvent event) {
+    }
 
-    public void instrumentClosing(InstrumentEvent event);
+    public default void instrumentClosing(InstrumentEvent event) {
+    }
 
-    public void instrumentClosed(InstrumentEvent event);
+    public default void instrumentClosed(InstrumentEvent event) {
+    }
 }

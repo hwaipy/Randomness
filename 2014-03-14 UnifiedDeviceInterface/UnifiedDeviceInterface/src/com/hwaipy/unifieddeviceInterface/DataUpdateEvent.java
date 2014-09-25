@@ -5,18 +5,17 @@ import java.util.EventObject;
 /**
  *
  * @author Hwaipy
- * @param <T>
  */
-public class DataUpdateEvent<T> extends EventObject {
+public class DataUpdateEvent extends EventObject {
 
-    private final T data;
+    private final Object data;
 
-    public DataUpdateEvent(Object source, T data) {
+    public DataUpdateEvent(Object source, Object data) {
         super(source);
         this.data = data;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 }
