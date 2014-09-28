@@ -4,6 +4,7 @@ import com.hwaipy.unifieddeviceInterface.DataUpdateEvent;
 import com.hwaipy.unifieddeviceInterface.components.FileSelectionComponent;
 import com.hwaipy.unifieddeviceInterface.data.CounterData;
 import com.hwaipy.unifieddeviceInterface.data.FileData;
+import com.hwaipy.unifieddeviceinterface.timeevent.component.TimeEventDataFileComponent;
 import com.hwaipy.unifieddeviceinterface.virtualinstrument.VirtualCounterComponent;
 import com.hwaipy.unifieddeviceinterface.virtualinstrument.VirtualCounterInstrument;
 import com.hwaipy.unifieduserinterface.ComponentPanel;
@@ -47,12 +48,14 @@ public class UDITest {
 //        virtualCounterComponent.start();
 
         mainPanel.getGridPanel().setGridDimension(10, 10);
+
         FileSelectionComponent fileSelectionComponent = new FileSelectionComponent();
-        ComponentPanel testComponentPanel = new FileSelectionComponentPanel(fileSelectionComponent);
+        TimeEventDataFileComponent timeEventDataFileComponent = new TimeEventDataFileComponent();
         fileSelectionComponent.addDataUpdateListener((DataUpdateEvent event) -> {
             System.out.println(((FileData) event.getData()).getFile());
         });
 
+        ComponentPanel testComponentPanel = new FileSelectionComponentPanel(fileSelectionComponent);
         mainPanel.getGridPanel().addComponentPanel(testComponentPanel, new GridConstraint(0, 0, 2, 1));
 
         jFrame.pack();

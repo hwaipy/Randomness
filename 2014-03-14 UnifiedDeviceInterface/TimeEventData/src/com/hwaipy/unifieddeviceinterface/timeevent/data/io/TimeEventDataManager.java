@@ -7,7 +7,7 @@ import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.MappingFileT
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.TimeEventClusterData;
 import java.io.File;
 import java.io.IOException;
-import java.time.format.DateTimeFormatter;
+import java.time.Instant;
 
 /**
  *
@@ -17,7 +17,6 @@ public class TimeEventDataManager {
 
     private static final String MappingFilesRoot = "TimeEventMappingFiles";
     private static final String suffix = "TimeEventMapping";
-    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY.MM.dd HH.mm.ss.SSS");
 
     public static TimeEventClusterData loadTimeEventClusterData(TimeEventDataFileLoader loader) throws IOException {
         final File folder = createMappingFileFolder();
@@ -31,23 +30,21 @@ public class TimeEventDataManager {
             if (timeEvent == null) {
                 break;
             }
-//            long v = timeEvent.getTime() * 16 + timeEvent.getChannel();
-//            raf.writeLong(v);;
             mappingLists[timeEvent.getChannel()].push(serializer.serialize(timeEvent));
         }
         for (MappingFileTimeEventListData list : mappingLists) {
             list.complete();
         }
         DefaultTimeEventClusterData cluster = new DefaultTimeEventClusterData(mappingLists);
-        loader.complete(segment);
-        return segment;
+        loader.complete(cluster);
+        return cluster;
     }
 
-    private static MappingFileTimeEventList[] createMappingLists(File folder, int channelCount) throws IOException {
-        MappingFileTimeEventList[] mappingLists = new MappingFileTimeEventList[channelCount];
+    private static MappingFileTimeEventListData[] createMappingLists(File folder, int channelCount) throws IOException {
+        MappingFileTimeEventListData[] mappingLists = new MappingFileTimeEventListData[channelCount];
         for (int i = 0; i < channelCount; i++) {
             File file = new File(folder, i + "." + suffix);
-            mappingLists[i] = new MappingFileTimeEventList(file);
+            mappingLists[i] = new MappingFileTimeEventListData(file);
         }
         clearOnExit(folder);
         return mappingLists;
@@ -61,16 +58,12 @@ public class TimeEventDataManager {
     }
 
     private static String getUniquePrefix() {
-        DateTime time = new DateTime(System.currentTimeMillis());
-        return time.toString(dateTimeFormatter);
+        return Instant.now().toString();
     }
 
     private static void clearOnExit(final File folder) {
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                clearMappingFiles(folder);
-            }
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            clearMappingFiles(folder);
         }));
     }
 

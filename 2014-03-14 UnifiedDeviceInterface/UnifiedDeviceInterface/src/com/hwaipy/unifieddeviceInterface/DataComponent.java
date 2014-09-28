@@ -36,4 +36,6 @@ public interface DataComponent extends Component {
     public default Collection<DataType> export() {
         return Collections.emptyList();
     }
+
+    public void dataUpdate(Data data);
 }

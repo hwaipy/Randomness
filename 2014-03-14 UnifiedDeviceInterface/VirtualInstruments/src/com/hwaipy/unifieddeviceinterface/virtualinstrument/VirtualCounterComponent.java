@@ -1,6 +1,7 @@
 package com.hwaipy.unifieddeviceinterface.virtualinstrument;
 
 import com.hwaipy.unifieddeviceInterface.ComponentInformation;
+import com.hwaipy.unifieddeviceInterface.Data;
 import com.hwaipy.unifieddeviceInterface.DataUpdateEvent;
 import com.hwaipy.unifieddeviceInterface.components.AbstractDataComponent;
 import com.hwaipy.unifieddeviceInterface.components.CounterComponent;
@@ -51,5 +52,9 @@ public class VirtualCounterComponent extends AbstractDataComponent implements Co
     @Override
     public ComponentInformation getInformation() {
         return new ComponentInformation();
+    }
+
+    @Override
+    public void dataUpdate(Data data) {
     }
 }

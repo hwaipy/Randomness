@@ -1,10 +1,12 @@
 package com.hwaipy.unifieddeviceinterface.timeevent.data.collections;
 
+import com.hwaipy.unifieddeviceInterface.Data;
+
 /**
  *
  * @author Hwaipy
  */
-public interface TimeEventClusterData {
+public interface TimeEventClusterData extends Data {
 
     public int getEventCount();
 
