@@ -1,13 +1,14 @@
 package com.hwaipy.unifieddeviceinterface.timeevent.data.io;
 
 import com.hwaipy.unifieddeviceinterface.timeevent.data.TimeEventData;
-import com.hwaipy.unifieddeviceinterface.timeevent.data.TimeEventDataFileLoader;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.DefaultTimeEventClusterData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.MappingFileTimeEventListData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.TimeEventClusterData;
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -17,8 +18,11 @@ public class TimeEventDataManager {
 
     private static final String MappingFilesRoot = "TimeEventMappingFiles";
     private static final String suffix = "TimeEventMapping";
+    private static final Map<String, TimeEventDataFileLoaderFactory> loaderFactoryMap = new HashMap<>();
 
-    public static TimeEventClusterData loadTimeEventClusterData(TimeEventDataFileLoader loader) throws IOException {
+    public static TimeEventClusterData loadTimeEventClusterData(File timeEventDataFile, String protocol) throws IOException {
+        TimeEventDataFileLoaderFactory loaderFactory = loaderFactoryMap.get(protocol);
+        TimeEventDataFileLoader loader = loaderFactory.newTimeEventDataFileLoader(timeEventDataFile);
         final File folder = createMappingFileFolder();
         TimeEventSerializer serializer = loader.getSerializer();
         MappingFileTimeEventListData[] mappingLists = createMappingLists(folder, loader.getChannelCount());
@@ -38,6 +42,10 @@ public class TimeEventDataManager {
         DefaultTimeEventClusterData cluster = new DefaultTimeEventClusterData(mappingLists);
         loader.complete(cluster);
         return cluster;
+    }
+
+    public static void registerLoaderFactory(String protocol, TimeEventDataFileLoaderFactory factory) {
+        loaderFactoryMap.put(protocol, factory);
     }
 
     private static MappingFileTimeEventListData[] createMappingLists(File folder, int channelCount) throws IOException {

@@ -9,9 +9,9 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.Iterator;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  *
@@ -21,7 +21,7 @@ public class MappingFileTimeEventListData implements TimeEventListData, SetableT
 
     private static final int BUFFER_SIZE = 1024000;
     private static final int UNIT_SIZE = 8;
-    private static final ExecutorService EXECUTOR = Executors.newSingleThreadExecutor();
+    private static final BlockingQueue<Runnable> tasks = new LinkedBlockingQueue<>(20);
     private boolean complete = false;
     private final File file;
     private final FileChannel channel;
@@ -121,7 +121,7 @@ public class MappingFileTimeEventListData implements TimeEventListData, SetableT
         flush(true);
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         try {
-            EXECUTOR.submit((Runnable) () -> {
+            tasks.offer((Runnable) () -> {
                 countDownLatch.countDown();
             });
             countDownLatch.await();
@@ -151,7 +151,7 @@ public class MappingFileTimeEventListData implements TimeEventListData, SetableT
         if (force || !buffer.hasRemaining()) {
             final ByteBuffer writeBuffer = buffer;
             buffer = ByteBuffer.allocate(1024000);
-            EXECUTOR.submit((Runnable) () -> {
+            tasks.offer((Runnable) () -> {
                 try {
                     writeBuffer.limit(writeBuffer.position());
                     writeBuffer.position(0);
@@ -166,5 +166,20 @@ public class MappingFileTimeEventListData implements TimeEventListData, SetableT
                 }
             });
         }
+    }
+
+    static {
+        Thread thread = new Thread(() -> {
+            while (true) {
+                try {
+                    Runnable runnable = tasks.take();
+                    runnable.run();
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        }, "MappingFileTimeEventDataThread");
+        thread.setDaemon(true);
+        thread.start();
     }
 }

@@ -1,7 +1,7 @@
-package com.hwaipy.unifieddeviceinterface.timeevent.data;
+package com.hwaipy.unifieddeviceinterface.timeevent.data.io;
 
+import com.hwaipy.unifieddeviceinterface.timeevent.data.TimeEventData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.TimeEventClusterData;
-import com.hwaipy.unifieddeviceinterface.timeevent.data.io.TimeEventSerializer;
 import java.io.IOException;
 
 /**
@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public interface TimeEventDataFileLoader {
 
+    //TODO 愚蠢 应该可以动态调整
     public int getChannelCount();
 
     public TimeEventData loadNext() throws IOException;
