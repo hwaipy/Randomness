@@ -6,7 +6,7 @@ package com.hwaipy.unifieddeviceinterface.timeevent.data;
  */
 public class TimeEventData {
 
-//    public static final TimeEventData ERROR_EVENT = new TimeEventData(-1, -1);
+    public static final TimeEventData ERROR_EVENT = new TimeEventData(-1, -1);
     private final long time;
     private final int channel;
 

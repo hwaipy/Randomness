@@ -1,6 +1,7 @@
-package com.hwaipy.unifieddeviceinterface.timeevent.data;
+package com.hwaipy.unifieddeviceinterface.timeevent.data.collections;
 
 import com.hwaipy.unifieddeviceInterface.Data;
+import com.hwaipy.unifieddeviceinterface.timeevent.data.TimeEventData;
 
 /**
  *
