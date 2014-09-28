@@ -1,4 +1,4 @@
-package com.hwaipy.unifieduserinterface;
+package com.hwaipy.unifieduserinterface.main;
 
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -7,9 +7,9 @@ import javax.swing.JPanel;
  *
  * @author Hwaipy
  */
-public class HeadbarPanel extends JPanel {
+public class HeadBarPanel extends JPanel {
 
-    public HeadbarPanel() {
+    public HeadBarPanel() {
         setBackground(Color.GREEN);
     }
 }

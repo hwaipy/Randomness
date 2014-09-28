@@ -1,15 +1,13 @@
 package com.hwaipy.unifieddeviceInterface;
 
 import com.hwaipy.utilities.system.WeakReferenceMapUtilities;
-import java.util.Collection;
-import java.util.Collections;
 import javax.swing.event.EventListenerList;
 
 /**
  *
  * @author Hwaipy
  */
-public interface DataComponent extends Component {
+public interface DataInstrument extends Instrument {
 
     public default void addDataUpdateListener(DataUpdateListener listener) {
         synchronized (this) {
@@ -27,13 +25,5 @@ public interface DataComponent extends Component {
         if (eventListenerList != null) {
             eventListenerList.remove(DataUpdateListener.class, listener);
         }
-    }
-
-    public default Collection<DataType> dependent() {
-        return Collections.emptyList();
-    }
-
-    public default Collection<DataType> export() {
-        return Collections.emptyList();
     }
 }

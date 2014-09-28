@@ -8,6 +8,5 @@ import java.util.EventListener;
  */
 public interface DataUpdateListener extends EventListener {
 
-    public default void dataUpdated(DataUpdateEvent event) {
-    }
+    public void dataUpdated(DataUpdateEvent event);
 }

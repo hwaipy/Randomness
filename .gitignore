@@ -40,3 +40,8 @@ hs_err_pid*
 /2014-03-14 UnifiedDeviceInterface/UDITest/build/
 /2014-03-14 UnifiedDeviceInterface/VirtualInstruments/build/
 /2014-03-14 UnifiedDeviceInterface/UnifiedUserInterface/build/
+/2014-03-14 UnifiedDeviceInterface/UnifiedDeviceInterface/dist/
+/2014-03-14 UnifiedDeviceInterface/UnifiedUserInterface/dist/
+/2014-03-14 UnifiedDeviceInterface/VirtualInstruments/dist/
+/2014-03-14 UnifiedDeviceInterface/UDITest/dist/
+/2014-03-14 UnifiedDeviceInterface/TimeEventData/nbproject/private/

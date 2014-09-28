@@ -1,14 +1,16 @@
-package com.hwaipy.unifieddeviceInterface.components;
+package com.hwaipy.unifieddeviceInterface.data;
+
+import com.hwaipy.unifieddeviceInterface.Data;
 
 /**
  *
  * @author Hwaipy
  */
-public class CounterComponentData {
+public class CounterData implements Data {
 
     private final long[] counts;
 
-    public CounterComponentData(long[] counts) {
+    public CounterData(long[] counts) {
         this.counts = counts;
     }
 

@@ -6,6 +6,7 @@ import com.hwaipy.unifieddeviceInterface.DataUpdateListener;
 import com.hwaipy.unifieddeviceInterface.Instrument;
 import com.hwaipy.unifieddeviceInterface.InstrumentInformation;
 import com.hwaipy.unifieddeviceInterface.RunnableInstrument;
+import com.hwaipy.unifieddeviceInterface.data.CounterData;
 import com.hwaipy.utilities.system.WeakReferenceMapUtilities;
 import java.util.Arrays;
 import java.util.Random;
@@ -27,6 +28,7 @@ public class VirtualCounterInstrument implements Instrument, DataInstrument, Run
     private int minimalCount = 1000;
     private int maximalCount = 100000;
     private final int channel;
+    private boolean running = false;
 
     public VirtualCounterInstrument(int channel) {
         this.channel = channel;
@@ -45,34 +47,54 @@ public class VirtualCounterInstrument implements Instrument, DataInstrument, Run
         return information;
     }
 
+    public int getChannelCount() {
+        return channel;
+    }
+
+    public void setIntegrateTime(long integrateTime) {
+        synchronized (this) {
+            this.integrateTime = integrateTime;
+            if (running) {
+                stopInstrument();
+                startInstrument();
+            }
+        }
+    }
+
     @Override
     public void startInstrument() {
-        timer = new Timer("VirtualCounterInstrumentTimer-" + timerIndex, true);
-        timerIndex++;
-        timer.scheduleAtFixedRate(new TimerTask() {
-            private Random random = new Random();
+        synchronized (this) {
+            timer = new Timer("VirtualCounterInstrumentTimer-" + timerIndex, true);
+            timerIndex++;
+            timer.scheduleAtFixedRate(new TimerTask() {
+                private Random random = new Random();
 
-            @Override
-            public void run() {
-                int[] counts = new int[channel];
-                for (int i = 0; i < channel; i++) {
-                    double nd = random.nextDouble();
-                    counts[channel] = (int) (nd * (maximalCount - minimalCount) + minimalCount);
+                @Override
+                public void run() {
+                    long[] counts = new long[channel];
+                    for (int i = 0; i < channel; i++) {
+                        double nd = random.nextDouble();
+                        counts[i] = (long) (nd * (maximalCount - minimalCount) + minimalCount);
+                    }
+                    SwingUtilities.invokeLater(() -> {
+                        fireDataUpdateEvent(counts);
+                    });
                 }
-                SwingUtilities.invokeLater(() -> {
-                    fireDataUpdateEvent(counts);
-                });
-            }
-        }, integrateTime, integrateTime);
+            }, integrateTime, integrateTime);
+            running = true;
+        }
     }
 
     @Override
     public void stopInstrument() {
-        timer.cancel();
+        synchronized (this) {
+            timer.cancel();
+            running = false;
+        }
     }
 
-    private void fireDataUpdateEvent(int[] counts) {
-        DataUpdateEvent dataUpdateEvent = new DataUpdateEvent(this, counts);
+    private void fireDataUpdateEvent(long[] counts) {
+        DataUpdateEvent dataUpdateEvent = new DataUpdateEvent(this, new CounterData(counts));
         EventListenerList eventListenerList = (EventListenerList) WeakReferenceMapUtilities.get(this, EventListenerList.class);
         if (eventListenerList != null) {
             Arrays.stream(eventListenerList.getListeners(DataUpdateListener.class))

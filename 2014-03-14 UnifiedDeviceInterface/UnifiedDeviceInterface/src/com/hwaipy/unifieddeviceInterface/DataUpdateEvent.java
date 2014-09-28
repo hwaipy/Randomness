@@ -8,14 +8,14 @@ import java.util.EventObject;
  */
 public class DataUpdateEvent extends EventObject {
 
-    private final Object data;
+    private final Data data;
 
-    public DataUpdateEvent(Object source, Object data) {
+    public DataUpdateEvent(Object source, Data data) {
         super(source);
         this.data = data;
     }
 
-    public Object getData() {
+    public Data getData() {
         return data;
     }
 }

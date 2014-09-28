@@ -25,7 +25,7 @@ public class GridLayoutManager implements LayoutManager2 {
     }
 
     public void setGridDimension(int newColumn, int newRow) {
-        boolean[][] newStates = new boolean[row][column];
+        boolean[][] newStates = new boolean[newRow][newColumn];
         for (int x = 0; x < Math.max(column, newColumn); x++) {
             for (int y = 0; y < Math.max(row, newRow); y++) {
                 if (x < column && y < row) {
@@ -106,7 +106,7 @@ public class GridLayoutManager implements LayoutManager2 {
 
     @Override
     public Dimension preferredLayoutSize(Container parent) {
-        return new Dimension(800, 600);
+        return new Dimension(0, 0);
     }
 
     @Override
@@ -119,9 +119,7 @@ public class GridLayoutManager implements LayoutManager2 {
         Insets insets = parent.getInsets();
         Dimension containerSize = parent.getSize();
         int xStart = insets.left;
-        int xEnd = containerSize.width - insets.left - insets.right;
         int yStart = insets.top;
-        int yEnd = containerSize.height - insets.top - insets.bottom;
         double w = (containerSize.width - inset) / (double) column - inset;
         double h = (containerSize.height - inset) / (double) row - inset;
         componentMap.entrySet().forEach(entry -> {
