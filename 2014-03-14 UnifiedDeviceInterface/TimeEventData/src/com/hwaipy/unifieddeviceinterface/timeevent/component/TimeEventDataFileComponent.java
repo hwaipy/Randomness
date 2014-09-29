@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,18 +65,6 @@ public class TimeEventDataFileComponent extends AbstractDataComponent implements
         } else {
             throw new IllegalArgumentException("FileData only.");
         }
-    }
-
-    public static void main(String[] args) {
-        ExecutorService e = Executors.newSingleThreadExecutor();
-        e.submit(() -> {
-            try {
-                System.out.println("in");
-                Thread.sleep(100000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(TimeEventDataFileComponent.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
     }
 
     static {

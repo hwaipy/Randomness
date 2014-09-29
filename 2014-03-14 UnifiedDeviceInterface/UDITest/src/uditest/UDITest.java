@@ -4,6 +4,8 @@ import com.hwaipy.unifieddeviceInterface.DataUpdateEvent;
 import com.hwaipy.unifieddeviceInterface.components.FileSelectionComponent;
 import com.hwaipy.unifieddeviceInterface.data.CounterData;
 import com.hwaipy.unifieddeviceInterface.data.FileData;
+import com.hwaipy.unifieddeviceinterface.timeevent.component.RecursionCoincidenceMatcherComponent;
+import com.hwaipy.unifieddeviceinterface.timeevent.component.TimeEventClusterDataCounterComponent;
 import com.hwaipy.unifieddeviceinterface.timeevent.component.TimeEventDataFileComponent;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.io.TimeEventDataManager;
 import com.hwaipy.unifieddeviceinterface.timeevent.pxi.PXITimeEventDataFileLoaderFactory;
@@ -11,6 +13,7 @@ import com.hwaipy.unifieddeviceinterface.virtualinstrument.VirtualCounterCompone
 import com.hwaipy.unifieddeviceinterface.virtualinstrument.VirtualCounterInstrument;
 import com.hwaipy.unifieduserinterface.ComponentPanel;
 import com.hwaipy.unifieduserinterface.componentpanels.FileSelectionComponentPanel;
+import com.hwaipy.unifieduserinterface.componentpanels.SingleChannelCounterComponentPanel;
 import com.hwaipy.unifieduserinterface.layoutmanager.GridConstraint;
 import com.hwaipy.unifieduserinterface.main.MainPanel;
 import java.awt.Dimension;
@@ -54,22 +57,53 @@ public class UDITest {
         TimeEventDataManager.registerLoaderFactory("PXI", new PXITimeEventDataFileLoaderFactory());
 
         //Component定义
-        FileSelectionComponent fileSelectionComponent = new FileSelectionComponent();
-        TimeEventDataFileComponent timeEventDataFileComponent = new TimeEventDataFileComponent();
+        FileSelectionComponent fileSelectionComponent1 = new FileSelectionComponent();
+        TimeEventDataFileComponent timeEventDataFileComponent1 = new TimeEventDataFileComponent();
+        TimeEventClusterDataCounterComponent timeEventClusterDataCounterComponent1 = new TimeEventClusterDataCounterComponent();
+        FileSelectionComponent fileSelectionComponent2 = new FileSelectionComponent();
+        TimeEventDataFileComponent timeEventDataFileComponent2 = new TimeEventDataFileComponent();
+        TimeEventClusterDataCounterComponent timeEventClusterDataCounterComponent2 = new TimeEventClusterDataCounterComponent();
+        RecursionCoincidenceMatcherComponent gpsRecursionCoincidenceMatcherComponent = new RecursionCoincidenceMatcherComponent(0, 0);
 
         //Component连接
-        fileSelectionComponent.addDataUpdateListener((DataUpdateEvent event) -> {
+        fileSelectionComponent1.addDataUpdateListener((DataUpdateEvent event) -> {
             if (event.getData() instanceof FileData) {
-                timeEventDataFileComponent.dataUpdate(event.getData());
+                timeEventDataFileComponent1.dataUpdate(event.getData());
             }
         });
-        timeEventDataFileComponent.addDataUpdateListener((DataUpdateEvent event) -> {
-            System.out.println(event.getData());
+        timeEventDataFileComponent1.addDataUpdateListener((DataUpdateEvent event) -> {
+            timeEventClusterDataCounterComponent1.dataUpdate(event.getData());
+            gpsRecursionCoincidenceMatcherComponent.dataUpdate(event.getData(), 0);
+        });
+        timeEventClusterDataCounterComponent1.addDataUpdateListener((DataUpdateEvent event) -> {
+        });
+        fileSelectionComponent2.addDataUpdateListener((DataUpdateEvent event) -> {
+            if (event.getData() instanceof FileData) {
+                timeEventDataFileComponent2.dataUpdate(event.getData());
+            }
+        });
+        timeEventDataFileComponent2.addDataUpdateListener((DataUpdateEvent event) -> {
+            timeEventClusterDataCounterComponent2.dataUpdate(event.getData());
+            gpsRecursionCoincidenceMatcherComponent.dataUpdate(event.getData(), 1);
+        });
+        timeEventClusterDataCounterComponent2.addDataUpdateListener((DataUpdateEvent event) -> {
         });
 
         //ComponentPanel定义
-        ComponentPanel testComponentPanel = new FileSelectionComponentPanel(fileSelectionComponent);
-        mainPanel.getGridPanel().addComponentPanel(testComponentPanel, new GridConstraint(0, 0, 2, 1));
+        ComponentPanel fileSelectionComponentPanel1 = new FileSelectionComponentPanel(fileSelectionComponent1);
+        mainPanel.getGridPanel().addComponentPanel(fileSelectionComponentPanel1, new GridConstraint(0, 0, 2, 1));
+        for (int i = 0; i < 8; i++) {
+            SingleChannelCounterComponentPanel singleChannelCounterComponentPanel = new SingleChannelCounterComponentPanel(timeEventClusterDataCounterComponent1, i);
+            singleChannelCounterComponentPanel.setTitle("Channel " + i);
+            mainPanel.getGridPanel().addComponentPanel(singleChannelCounterComponentPanel, new GridConstraint(0, i + 1, 2, 1));
+        }
+        ComponentPanel fileSelectionComponentPanel2 = new FileSelectionComponentPanel(fileSelectionComponent2);
+        mainPanel.getGridPanel().addComponentPanel(fileSelectionComponentPanel2, new GridConstraint(2, 0, 2, 1));
+        for (int i = 0; i < 8; i++) {
+            SingleChannelCounterComponentPanel singleChannelCounterComponentPanel = new SingleChannelCounterComponentPanel(timeEventClusterDataCounterComponent2, i);
+            singleChannelCounterComponentPanel.setTitle("Channel " + i);
+            mainPanel.getGridPanel().addComponentPanel(singleChannelCounterComponentPanel, new GridConstraint(2, i + 1, 2, 1));
+        }
 
         jFrame.pack();
         Dimension frameSize = jFrame.getSize();
