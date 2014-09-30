@@ -1,5 +1,6 @@
 package uditest;
 
+import com.hwaipy.unifieddeviceinterface.timeevent.data.TimeEventData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.SetableTimeEventListData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.collections.TimeEventClusterData;
 import com.hwaipy.unifieddeviceinterface.timeevent.data.io.TimeEventDataManager;
@@ -10,6 +11,7 @@ import com.hwaipy.unifieddeviceinterface.timeevent.pxi.PXITimeEventDataFileLoade
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Iterator;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
@@ -302,14 +304,15 @@ public class SingleSyncFrame extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12)
-                            .addComponent(coincidenceScanRangeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13)
                                 .addComponent(jLabel14)
-                                .addComponent(coincidenceSteplengthField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(coincidenceSteplengthField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel12)
+                                .addComponent(coincidenceScanRangeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(19, 19, 19))))
@@ -423,8 +426,24 @@ public class SingleSyncFrame extends javax.swing.JFrame {
                 out.append(clusterData2Description);
             });
 
-            System.out.println("1:\t" + clusterData1.getEventListData(1).get(0).getTime());
-            System.out.println("2:\t" + clusterData2.getEventListData(1).get(0).getTime());
+            System.out.println("1:\t" + clusterData1.getEventListData(1).get(0).getTimeInSecond());
+            System.out.println("2:\t" + clusterData2.getEventListData(1).get(0).getTimeInSecond());
+            System.out.println("GPS1:\t" + clusterData1.getEventListData(0).get(0).getTimeInSecond());
+            System.out.println("GPS2:\t" + clusterData2.getEventListData(0).get(1).getTimeInSecond());
+            System.out.println("SYNC1:\t" + clusterData1.getEventListData(5).get(0).getTimeInSecond());
+            System.out.println("SYNC2:\t" + clusterData2.getEventListData(5).get(1).getTimeInSecond());
+
+            Iterator<TimeEventData> iterator = clusterData2.getEventListData(5).iterator();
+            TimeEventData lastData = iterator.next();
+            while (iterator.hasNext()) {
+                TimeEventData data = iterator.next();
+                long timeDiff = data.getTime() - lastData.getTime();
+                lastData = data;
+                double diff = timeDiff / 100000000.;
+                if (diff > 1.5 || diff < 0.5) {
+                    System.out.println("DIFF: " + diff);
+                }
+            }
 
             //GPS Calibration
             int gpsOffset = getInt(gpsOffsetField);
@@ -436,13 +455,26 @@ public class SingleSyncFrame extends javax.swing.JFrame {
             SwingUtilities.invokeLater((Runnable) () -> {
                 out.append("GPS matched " + gpsMatchCount + System.lineSeparator());
             });
-            for (int i = 0; i < 5; i++) {
+            for (int i = 5; i < 6; i++) {
                 TimeCalibrator.calibrate(gpsRecursionCoincidenceMatcher, (SetableTimeEventListData) clusterData2.getEventListData(i));
             }
             SwingUtilities.invokeLater((Runnable) () -> {
                 out.append("TimeEvents calibrated by GPS events." + System.lineSeparator());
             });
 
+            System.out.println("GPS calied");
+            System.out.println("1:\t" + clusterData1.getEventListData(1).get(0).getTimeInSecond());
+            System.out.println("2:\t" + clusterData2.getEventListData(1).get(0).getTimeInSecond());
+            System.out.println("GPS1:\t" + clusterData1.getEventListData(0).get(0).getTimeInSecond());
+            System.out.println("GPS2:\t" + clusterData2.getEventListData(0).get(1).getTimeInSecond());
+            System.out.println("SYNC1:\t" + clusterData1.getEventListData(5).get(0).getTimeInSecond());
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                double time = clusterData2.getEventListData(5).get(i).getTimeInSecond();
+                if (time > 0) {
+                    System.out.println("SYNC2:\t" + time);
+                    break;
+                }
+            }
             //Sync Calibration
             int syncOffset = getInt(syncOffsetField);
             long syncGate = getLong(syncGateField);
@@ -454,12 +486,32 @@ public class SingleSyncFrame extends javax.swing.JFrame {
             SwingUtilities.invokeLater((Runnable) () -> {
                 out.append("SYNC matched " + syncMatchCount + System.lineSeparator());
             });
-            for (int i = 1; i < 5; i++) {
+            for (int i = 0; i < 5; i++) {
                 TimeCalibrator.calibrate(syncRecursionCoincidenceMatcher, (SetableTimeEventListData) clusterData2.getEventListData(i));
             }
             SwingUtilities.invokeLater((Runnable) () -> {
                 out.append("TimeEvents calibrated by SYNC events." + System.lineSeparator());
             });
+
+            System.out.println("SYNC calid");
+            System.out.println("1:\t" + clusterData1.getEventListData(1).get(0).getTimeInSecond());
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                double time = clusterData2.getEventListData(1).get(i).getTimeInSecond();
+                if (time > 0) {
+                    System.out.println("2:\t" + time);
+                    break;
+                }
+            }
+            System.out.println("GPS1:\t" + clusterData1.getEventListData(0).get(0).getTimeInSecond());
+            System.out.println("GPS2:\t" + clusterData2.getEventListData(0).get(1).getTimeInSecond());
+            System.out.println("SYNC1:\t" + clusterData1.getEventListData(5).get(0).getTimeInSecond());
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                double time = clusterData2.getEventListData(5).get(i).getTimeInSecond();
+                if (time > 0) {
+                    System.out.println("SYNC2:\t" + time);
+                    break;
+                }
+            }
 
             //Coincidence
             int coincidenceGate = getInt(coincidenceGateField);

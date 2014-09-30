@@ -19,16 +19,21 @@ public class TimeCalibrator {
     }
 
     public void calibrate() {
+//        System.out.println("Calibrate begin");
         Iterator<Coincidence> iterator = mapping.iterator();
         boolean isError = false;
         if (!iterator.hasNext()) {
+//            System.out.println("Direct out");
             return;
         }
         Coincidence coincidenceStart = iterator.next();
         long timeStart1 = coincidenceStart.getEvent1().getTime();
         long timeStart2 = coincidenceStart.getEvent2().getTime();
+//        System.out.println("timeStart1 -> " + timeStart1 / 1000000000000.);
+//        System.out.println("timeStart2 -> " + timeStart2 / 1000000000000.);
         int index = 0;
         while (index < list.size() && list.get(index).getTime() < timeStart2) {
+//            System.out.println();
             list.set(TimeEventData.ERROR_EVENT, index);
             index++;
         }
