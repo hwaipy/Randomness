@@ -5,6 +5,7 @@ import com.hwaipy.measure.unit.Units;
 import com.hwaipy.physics.crystaloptics.refractivemodel.RefractiveModel;
 import com.hwaipy.physics.crystaloptics.refractivemodel.SellmeierARefractiveModel;
 import com.hwaipy.physics.crystaloptics.refractivemodel.SellmeierBRefractiveModel;
+import com.hwaipy.physics.crystaloptics.refractivemodel.SellmeierCRefractiveModel;
 import com.hwaipy.physics.crystaloptics.refractivemodel.VacuumRefractiveModel;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,6 +48,15 @@ public class Mediums {
             new SellmeierBRefractiveModel(2.6734, 0.01764, 1.2290, 0.05914, 12.614, 474.60),
             new SellmeierBRefractiveModel(2.9804, 0.02047, 0.5981, 0.0666, 8.9543, 416.08));
 
+    /**
+     * 0.22~1.06µm
+     *
+     * Handbook of Optics, 3rd edition, Vol. 4. McGraw-Hill 2009
+     */
+    public static Medium BBO = newMedium("BBO",
+            new SellmeierCRefractiveModel(2.7405, 0.0184, 0.0179, -0.0155),
+            new SellmeierCRefractiveModel(2.3730, 0.0128, 0.0156, -0.0044));
+
     private static Medium newMedium(String name, RefractiveModel refractiveModelX,
             RefractiveModel refractiveModelY, RefractiveModel refractiveModelZ) {
         Medium medium = new Medium(refractiveModelX, refractiveModelY, refractiveModelZ);
@@ -56,7 +66,9 @@ public class Mediums {
 
     private static Medium newMedium(String name, RefractiveModel refractiveModelO,
             RefractiveModel refractiveModelE) {
-        return new Medium(refractiveModelO, refractiveModelO, refractiveModelE);
+        Medium medium = new Medium(refractiveModelO, refractiveModelO, refractiveModelE);
+        MEDIUMS.put(name, medium);
+        return medium;
     }
 
     public static void main(String[] args) {

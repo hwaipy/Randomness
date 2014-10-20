@@ -5,7 +5,6 @@ import com.hwaipy.measure.unit.Units;
 import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Velocity;
-import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 import org.jscience.physics.amount.Amount;
 import org.jscience.physics.amount.Constants;
@@ -51,12 +50,18 @@ public class MediumsTest {
         assertEquals(19.38, Mediums.KTiOPO4.getAbbeNumberVd(Axis.Z), 0.01);
         assertEquals(19.26, Mediums.KTiOPO4.getAbbeNumberVe(Axis.Z), 0.01);
         testGroupIndex(Mediums.KTiOPO4);
-        //KTiOPO4
+        //LiNbO3
         assertEquals(18.74, Mediums.LiNbO3.getAbbeNumberVd(Axis.Y), 0.01);
         assertEquals(18.64, Mediums.LiNbO3.getAbbeNumberVe(Axis.Y), 0.01);
         assertEquals(20.53, Mediums.LiNbO3.getAbbeNumberVd(Axis.Z), 0.01);
         assertEquals(20.40, Mediums.LiNbO3.getAbbeNumberVe(Axis.Z), 0.01);
         testGroupIndex(Mediums.LiNbO3);
+        //BBO
+        assertEquals(52.59, Mediums.BBO.getAbbeNumberVd(Axis.Y), 0.01);
+        assertEquals(52.39, Mediums.BBO.getAbbeNumberVe(Axis.Y), 0.01);
+        assertEquals(61.32, Mediums.BBO.getAbbeNumberVd(Axis.Z), 0.01);
+        assertEquals(60.91, Mediums.BBO.getAbbeNumberVe(Axis.Z), 0.01);
+        testGroupIndex(Mediums.BBO);
     }
 
     private void testGroupIndex(Medium medium) {

@@ -1,7 +1,6 @@
 package com.hwaipy.physics.crystaloptics;
 
 import com.hwaipy.measure.quantity.WaveNumber;
-import javafx.scene.transform.MatrixType;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
 import org.jscience.physics.amount.Amount;
