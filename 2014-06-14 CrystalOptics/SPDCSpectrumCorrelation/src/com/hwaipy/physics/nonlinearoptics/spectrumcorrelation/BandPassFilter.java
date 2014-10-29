@@ -24,7 +24,7 @@ public class BandPassFilter implements Filter {
         }
         double overflow = delta - halfWidth;
         if (overflow < edge) {
-            return Math.sqrt(1 - overflow / edge);
+            return (1 - overflow / edge);
         }
         return 0;
     }

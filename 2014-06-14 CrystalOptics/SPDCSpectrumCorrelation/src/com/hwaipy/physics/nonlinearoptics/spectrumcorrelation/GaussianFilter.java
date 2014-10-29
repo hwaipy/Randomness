@@ -9,6 +9,11 @@ public class GaussianFilter implements Filter {
     private final double center;
     private final double sigma;
 
+    /**
+     *
+     * @param center
+     * @param sigma 强度
+     */
     public GaussianFilter(double center, double sigma) {
         this.center = center;
         this.sigma = sigma;
@@ -16,7 +21,7 @@ public class GaussianFilter implements Filter {
 
     @Override
     public double transmittance(double lamda) {
-        double result = Math.exp(-Math.pow((center - lamda) / sigma, 2));
+        double result = Math.exp(-Math.pow((center - lamda) / sigma, 2) / 2);
         return result;
     }
 }
