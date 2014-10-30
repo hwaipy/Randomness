@@ -21,6 +21,15 @@ public class TimerAnimator {
         running = false;
     }
 
+    public boolean isRunning() {
+        return running;
+    }
+
+    public double getTime(long time) {
+        long t = time - startTime;
+        return t / 1000000000.;
+    }
+
     public String updateTime(long time) {
         if (!running) {
             return "Standby";
