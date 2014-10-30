@@ -1,4 +1,4 @@
-package D20141029.Prompt;
+package prompt;
 
 import java.awt.Color;
 import java.awt.Graphics;

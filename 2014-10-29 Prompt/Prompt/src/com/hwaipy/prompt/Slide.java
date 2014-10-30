@@ -11,17 +11,21 @@ import java.util.Collections;
 public class Slide {
 
     private final String name;
-    private final ArrayList<Sentence> sentenceList = new ArrayList<>();
+    private final ArrayList<Paragraph> paragraphList = new ArrayList<>();
 
     public Slide(String name) {
         this.name = name;
     }
 
-    public void addSentence(Sentence sentence) {
-        sentenceList.add(sentence);
+    public String getName() {
+        return name;
     }
 
-    public Collection<Sentence> getSentences() {
-        return Collections.unmodifiableCollection(sentenceList);
+    public void addParagraph(Paragraph sentence) {
+        paragraphList.add(sentence);
+    }
+
+    public Collection<Paragraph> getParagraphs() {
+        return Collections.unmodifiableCollection(paragraphList);
     }
 }

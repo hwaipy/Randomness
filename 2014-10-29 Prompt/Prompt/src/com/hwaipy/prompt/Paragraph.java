@@ -4,11 +4,11 @@ package com.hwaipy.prompt;
  *
  * @author Hwaipy
  */
-public class Sentence {
+public class Paragraph {
 
     private final String content;
 
-    public Sentence(String content) {
+    public Paragraph(String content) {
         this.content = content;
     }
 
