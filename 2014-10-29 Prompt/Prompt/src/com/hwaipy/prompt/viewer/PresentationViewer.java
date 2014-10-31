@@ -3,12 +3,12 @@ package com.hwaipy.prompt.viewer;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 import java.awt.RadialGradientPaint;
 import java.awt.Toolkit;
+import java.awt.color.ColorSpace;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -91,7 +91,7 @@ public class PresentationViewer extends JPanel {
         Graphics2D g2d = contentFilterImage.createGraphics();
         LinearGradientPaint linearGradientPaint = new LinearGradientPaint(0f, 0f, 0f, screenSize.height,
                 new float[]{whiteRegion, centerTopF - fastDecayRegion, centerTopF,
-                    centerBottomF, centerBottomF + fastDecayRegion, 1 - whiteRegion},
+                    centerBottomF, centerBottomF + fastDecayRegion + 0.2f, 1 - whiteRegion + 0.1f},
                 new Color[]{
                     new Color(255, 255, 255, 255),
                     new Color(255, 255, 255, 200),
@@ -224,13 +224,6 @@ public class PresentationViewer extends JPanel {
         //Draw timeline
         if (timerAnimator.isRunning()) {
             int timeLine = getTimeLine(timerAnimator.getTime(time));
-//            LinearGradientPaint paint = new LinearGradientPaint(0, 0, width, 0,
-//                    new float[]{0f, 0.3f, 0.7f, 1f},
-//                    new Color[]{
-//                        new Color(0, 150, 0, 150),
-//                        new Color(0, 150, 0, 0),
-//                        new Color(0, 150, 0, 0),
-//                        new Color(0, 150, 0, 150)});
             int timeLineY = timeLine - viewOffset;
             int delta = timeLineY - screenSize.height / 2;
             if (delta < 0) {
@@ -247,24 +240,22 @@ public class PresentationViewer extends JPanel {
             if (red > 255) {
                 red = 255;
             }
-            if (green < 0) {
-                green = 0;
-            }
-            if (green > 255) {
-                green = 255;
-            }
             if (timeLineY < screenSize.height * 0.2) {
                 timeLineY = (int) (screenSize.height * 0.2);
             }
             if (timeLineY > screenSize.height * 0.8) {
                 timeLineY = (int) (screenSize.height * 0.8);
             }
+            Color timeLineColor = Color.getHSBColor((float) (0.322 * (1 - red / 256.)), 0.86f, 0.79f);
+//            Color timeLineColor = new Color(ColorSpace.getInstance(ColorSpace.TYPE_HSV),
+//                    new float[]{116f, 0.66f, 0.69f}, 255);
+            Color timeLineTrans = new Color(timeLineColor.getRed(), timeLineColor.getGreen(), timeLineColor.getBlue(), 0);
             RadialGradientPaint paint = new RadialGradientPaint(-220f, timeLineY, 250f,
                     new float[]{0f, 0.9f, 1f},
                     new Color[]{
-                        new Color(red, green, 0, 255),
-                        new Color(red, green, 0, 255),
-                        new Color(red, green, 0, 0)});
+                        timeLineColor,
+                        timeLineColor,
+                        timeLineTrans});
             Graphics2D g2d = (Graphics2D) g;
             g2d.setPaint(paint);
 //            g2d.fillRect(0, timeLine - viewOffset, screenSize.width, timeLineHeight);
