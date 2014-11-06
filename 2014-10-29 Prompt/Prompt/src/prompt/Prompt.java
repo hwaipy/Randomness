@@ -14,6 +14,6 @@ public class Prompt {
      */
     public static void main(String[] args) throws IOException {
         PromptTest.main(args);
+//        ResFrame.main(args);
     }
-
 }

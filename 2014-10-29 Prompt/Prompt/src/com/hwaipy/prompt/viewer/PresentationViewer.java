@@ -8,7 +8,6 @@ import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 import java.awt.RadialGradientPaint;
 import java.awt.Toolkit;
-import java.awt.color.ColorSpace;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ import javax.swing.Timer;
  */
 public class PresentationViewer extends JPanel {
 
-    private static final int TOTAL_TIME = 4 * 60;
+    private static final int TOTAL_TIME = 40 * 60;
     private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private static final Font SENTENCE_FONT = new Font("Helvetica", Font.PLAIN, 50);
     private static final Font TIMER_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 100);
@@ -40,6 +39,8 @@ public class PresentationViewer extends JPanel {
     private int width;
     private final ScrollAnimator lineViewAnimator;
     private final TimerAnimator timerAnimator;
+    private String timerString = "Standby";
+    private long time = 0;
 
     public PresentationViewer(PresentationViewerContent viewerContent) {
         contentFilterImage = new BufferedImage(screenSize.width, screenSize.height, BufferedImage.TYPE_INT_ARGB);
@@ -48,7 +49,9 @@ public class PresentationViewer extends JPanel {
         lineViewAnimator = new ScrollAnimator(viewPosition, ACCELERATION, System.nanoTime() / 1000000000.);
         timerAnimator = new TimerAnimator();
         Timer animationTimer = new Timer((int) (1000 / ANIMATION_REFRESH), (ActionEvent e) -> {
-            repaint();
+            if (prepareView()) {
+                repaint();
+            }
         });
         animationTimer.setRepeats(true);
         animationTimer.setCoalesce(true);
@@ -191,76 +194,103 @@ public class PresentationViewer extends JPanel {
         double position = (time - startTime) / (endTime - startTime) * (endPosition - startPosition) + startPosition;
         return (int) position;
     }
+    private final BufferedImage canvas = new BufferedImage(screenSize.width, screenSize.height, BufferedImage.TYPE_INT_ARGB);
+    private boolean viewNeedChange = true;
+    private boolean timeLineNeedChange = true;
 
     @Override
-    protected void paintComponent(Graphics g) {
-        long time = System.nanoTime();
-        //Draw background.
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, getWidth(), getHeight());
-        //Draw lines.
-        viewPosition = (int) lineViewAnimator.updatePosition(time / 1000000000.);
-        int viewOffset = viewPosition - getHeight() / 2 + lineImageEntries.get(0).image.getHeight() + LINE_GAP;
-        lineImageEntries.stream().forEach((lineImageEntry) -> {
-            if (((lineImageEntry.top - viewOffset) > getHeight()) || ((lineImageEntry.bottom - viewOffset) < 0)) {
-            } else {
-                BufferedImage image = lineImageEntry.image;
-                g.drawImage(image, (int) (getWidth() * INSET), lineImageEntry.top - viewOffset, this);
+    protected void paintComponent(Graphics gO) {
+        if (viewNeedChange || timeLineNeedChange) {
+            Graphics2D g = canvas.createGraphics();
+            int viewOffset = viewPosition - getHeight() / 2 + lineImageEntries.get(0).image.getHeight() + LINE_GAP;
+            if (viewNeedChange) {
+                //Draw background.
+                g.setColor(Color.WHITE);
+                g.fillRect(0, 0, getWidth(), getHeight());
+//        //Draw lines.
+                lineImageEntries.stream().forEach((lineImageEntry) -> {
+                    if (((lineImageEntry.top - viewOffset) > getHeight()) || ((lineImageEntry.bottom - viewOffset) < 0)) {
+                    } else {
+                        BufferedImage image = lineImageEntry.image;
+                        g.drawImage(image, (int) (getWidth() * INSET), lineImageEntry.top - viewOffset, this);
+                    }
+                });
+                lineGappingImageEntries.stream().forEach((lineGappingImageEntry) -> {
+                    if (((lineGappingImageEntry.top - viewOffset) > getHeight()) || ((lineGappingImageEntry.bottom - viewOffset) < 0)) {
+                    } else {
+                        BufferedImage image = lineGappingImageEntry.image;
+                        g.drawImage(image, (int) (getWidth() * INSET), lineGappingImageEntry.top - viewOffset, this);
+                    }
+                });
+                //Draw filter.
+                g.drawImage(contentFilterImage, 0, 0, this);
+                //Draw timer
+                BufferedImage timerImage = TimerDrawer.draw(TIMER_FONT, TIMER_COLOR, timerString);
+                g.drawImage(timerImage, 0, 0, this);
             }
-        });
-        lineGappingImageEntries.stream().forEach((lineGappingImageEntry) -> {
-            if (((lineGappingImageEntry.top - viewOffset) > getHeight()) || ((lineGappingImageEntry.bottom - viewOffset) < 0)) {
-            } else {
-                BufferedImage image = lineGappingImageEntry.image;
-                g.drawImage(image, (int) (getWidth() * INSET), lineGappingImageEntry.top - viewOffset, this);
-            }
-        });
-        //Draw filter.
-        g.drawImage(contentFilterImage, 0, 0, this);
-        //Draw timer
-        String timeString = timerAnimator.updateTime(time);
-        BufferedImage timerImage = TimerDrawer.draw(TIMER_FONT, TIMER_COLOR, timeString);
-        g.drawImage(timerImage, 0, 0, this);
-        //Draw timeline
-        if (timerAnimator.isRunning()) {
-            int timeLine = getTimeLine(timerAnimator.getTime(time));
-            int timeLineY = timeLine - viewOffset;
-            int delta = timeLineY - screenSize.height / 2;
-            if (delta < 0) {
-                delta = -delta;
-            }
-            double deltaD = delta / (double) screenSize.height - 0.3;
-            double redD = deltaD;
-            double greenD = 1 - deltaD;
-            int red = (int) (redD * 256);
-            int green = (int) (greenD * 256);
-            if (red < 0) {
-                red = 0;
-            }
-            if (red > 255) {
-                red = 255;
-            }
-            if (timeLineY < screenSize.height * 0.2) {
-                timeLineY = (int) (screenSize.height * 0.2);
-            }
-            if (timeLineY > screenSize.height * 0.8) {
-                timeLineY = (int) (screenSize.height * 0.8);
-            }
-            Color timeLineColor = Color.getHSBColor((float) (0.322 * (1 - red / 256.)), 0.86f, 0.79f);
+            if (timeLineNeedChange) {
+                //Draw timeline
+                if (timerAnimator.isRunning()) {
+                    int timeLine = getTimeLine(timerAnimator.getTime(time));
+                    int timeLineY = timeLine - viewOffset;
+                    int delta = timeLineY - screenSize.height / 2;
+                    if (delta < 0) {
+                        delta = -delta;
+                    }
+                    double deltaD = delta / (double) screenSize.height - 0.3;
+                    double redD = deltaD;
+                    double greenD = 1 - deltaD;
+                    int red = (int) (redD * 256);
+                    int green = (int) (greenD * 256);
+                    if (red < 0) {
+                        red = 0;
+                    }
+                    if (red > 255) {
+                        red = 255;
+                    }
+                    if (timeLineY < screenSize.height * 0.2) {
+                        timeLineY = (int) (screenSize.height * 0.2);
+                    }
+                    if (timeLineY > screenSize.height * 0.8) {
+                        timeLineY = (int) (screenSize.height * 0.8);
+                    }
+                    Color timeLineColor = Color.getHSBColor((float) (0.322 * (1 - red / 256.)), 0.86f, 0.79f);
 //            Color timeLineColor = new Color(ColorSpace.getInstance(ColorSpace.TYPE_HSV),
 //                    new float[]{116f, 0.66f, 0.69f}, 255);
-            Color timeLineTrans = new Color(timeLineColor.getRed(), timeLineColor.getGreen(), timeLineColor.getBlue(), 0);
-            RadialGradientPaint paint = new RadialGradientPaint(-220f, timeLineY, 250f,
-                    new float[]{0f, 0.9f, 1f},
-                    new Color[]{
-                        timeLineColor,
-                        timeLineColor,
-                        timeLineTrans});
-            Graphics2D g2d = (Graphics2D) g;
-            g2d.setPaint(paint);
+                    Color timeLineTrans = new Color(timeLineColor.getRed(), timeLineColor.getGreen(), timeLineColor.getBlue(), 0);
+                    RadialGradientPaint paint = new RadialGradientPaint(-220f, timeLineY, 245f,
+                            new float[]{0f, 0.9f, 1f},
+                            new Color[]{
+                                timeLineColor,
+                                timeLineColor,
+                                timeLineTrans});
+                    Graphics2D g2d = (Graphics2D) g;
+                    g2d.setPaint(paint);
 //            g2d.fillRect(0, timeLine - viewOffset, screenSize.width, timeLineHeight);
-            g2d.fillRect(0, timeLineY - 250, 200, 500);
+                    g2d.fillRect(0, timeLineY - 250, 25, 500);
+                }
+            }
+            g.dispose();
+            viewNeedChange = false;
         }
+        gO.drawImage(canvas, 0, 0, this);
+    }
+
+    private boolean prepareView() {
+        boolean needRepaint = false;
+        time = System.nanoTime();
+        int newViewPosition = (int) lineViewAnimator.updatePosition(time / 1000000000.);
+        if (newViewPosition != viewPosition) {
+            viewPosition = newViewPosition;
+            needRepaint = true;
+        }
+        String newTimerString = timerAnimator.updateTime(time);
+        if (!newTimerString.equals(timerString)) {
+            timerString = newTimerString;
+            needRepaint = true;
+        }
+        viewNeedChange = viewNeedChange || needRepaint;
+        return needRepaint;
     }
 
     private class LineImageEntry {

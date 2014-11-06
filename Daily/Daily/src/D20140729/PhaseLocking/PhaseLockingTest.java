@@ -8,10 +8,10 @@ import java.util.Random;
  */
 public class PhaseLockingTest {
 
-    private static final double visibilityOriginal = 0.9;
+    private static final double visibilityOriginal = 1;
 
     public static void main(String[] args) {
-        statisticsIndexed();
+        statisticsFlu();
 //        statistics();
 //        System.out.println(fewPhotonsTest());
 //        for (int i = 0; i < 1000; i++) {
@@ -55,6 +55,61 @@ public class PhaseLockingTest {
             System.out.println(i + "\t" + sum);
         }
         System.out.println(sortedResults.get(100));
+    }
+
+    public static final void statisticsFlu() {
+        for (int phiI = 100; phiI < 101; phiI++) {
+            Contrast contrast = new Contrast();
+            double phi = phiI / 180. * Math.PI;
+            for (int i = 0; i < 1; i++) {
+                double result = fluTest(phi);
+                contrast.offer(result);
+            }
+            System.out.println(phiI + "\t" + contrast.getAverageContrast());
+//            System.out.println(contrast.getAverageContrast());
+        }
+    }
+
+    private static final double fluTest(double phi) {
+        double fluDelta = 0.0;
+        double fluOffset = 0.0;
+        double fluPI2 = 0.8;
+        double deltaPhi = Math.PI * fluPI2;
+        double p0 = (1 - Math.cos(phi)) / 2;
+        double p1 = (1 - Math.cos(phi + deltaPhi)) / 2;
+        double p2 = (1 - Math.cos(phi + deltaPhi / 2)) / 2;
+        double p3 = (1 - Math.cos(phi - deltaPhi / 2)) / 2;
+        System.out.println(p0);
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+        double fluP0 = flu(p0, fluDelta, fluOffset);
+        double fluP1 = flu(p1, fluDelta, fluOffset);
+        double fluP2 = flu(p2, fluDelta, fluOffset);
+        double fluP3 = flu(p3, fluDelta, fluOffset);
+        System.out.println(fluP0);
+        System.out.println(fluP1);
+        System.out.println(fluP2);
+        System.out.println(fluP3);
+        FourMeasurement fourMeasurement = new FourMeasurement(fluP0, fluP1, fluP2, fluP3);
+        double phiCalculated = fourMeasurement.phi();
+        System.out.println(phiCalculated / Math.PI * 180);
+        double delta = phi - phiCalculated;
+        double contrast = 0.5 - Math.cos(delta) / 2 * visibilityOriginal;
+        double dB = -10 * Math.log10(contrast);
+        return dB;
+    }
+    private static final Random r = new Random();
+
+    private static double flu(double original, double flu, double offset) {
+        double result = original + original * flu * (r.nextDouble() * 2 - 1) + offset;
+        if (result < 0) {
+            return 0;
+        }
+        if (result > 1) {
+            return 1;
+        }
+        return result;
     }
 
     public static final double fewPhotonsTest() {

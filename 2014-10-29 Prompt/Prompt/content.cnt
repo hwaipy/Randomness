@@ -1,88 +1,163 @@
 @Slide 1
-Ladies and gentleman, welcome to attend QCMC conference. I am very happy to be invited here to give a talk on long-distance quantum communication. In my talk, I will introduce the progress of my group in this field.
+Ladies and gentleman. It’s my pleasure to give a talk today. 
+My talk is about long-distance quantum communication. This photo is taken by one of my PhD student. My students wrote QKD on a salt lake of Qinghai province. We did our outdoor experiment there. I like this photo very much and make it as the background.
+现在翻页
 
 @Slide 2
-Our chief scientist is professor Jian-wei Pan. For long-distance quantum communication, we have both quantum communication satellite and quantum networks between Beijing and shanghai. I am the vice-chief scientist of quantum communication satellite and chief scientist of its science part. Professor Yu-ao Chen is the chief scientist of quantum networks between Beijing and shanghai. In our big group, we also have professor Zeng-bing Chen, professor Qiang Zhang, Dr. Ji-gang Ren, Dr. Juan Yin, Dr. Yuan Cao and others. Besides our big group, we also collaborate with several institutes of Chinese academy of sciences, such as professor Jian-yu Wang in SITP, professor Yong-mei Wang in IOE. For quantum networks between Beijing and shanghai, we also collaborate with China Cable TV Network company, Anhui quantum communication company. Under the collaboration, we did a lot of works on long-distance quantum communication.
+This is our group. Our leader is Professor Jian-wei Pan. We have two main projects on long-distance quantum communication. One is the quantum science satellite. The other is National Quantum Communication Backbone between Beijing and Shanghai. I will call it NQCB for short. Professor Pan is the chief scientist of these two projects. I am the chief engineer of quantum science satellite, and Professor Yu-ao Chen is the chief engineer of NQCB. In our huge group, we have many professors and doctors. We are a huge group. We all belong to the University of Science and Technology of China.
+And we also belong to the CAS Excellence Center of quantum information and quantum physics. We also collaborate with other institutes and companies. We did a series of work on long-distance quantum communication. So in this talk, I will introduce: first, what we have done? second, what we are doing? and third, what we are going to do?
+现在翻页
 
 @Slide 3
-OK, Let’s start. Quantum communication was born by professor Bennett and Professor Brassard with their famous BB84 protocol. Later professor Ekert also gave a protocol based on quantum entanglement. Their theoretical work can overcome the security weakness of classical communication with quantum key distribution, which is the central problem of classical communication. Beside this applicable quantum communication, the other six famous scientists proposed quantum teleportation in 1993, and it was realized by experiment in 1997. Quantum teleportation can send a quantum state without sending the particle which carries the state.
+OK, Let’s start. You know quantum key distribution and quantum teleportation are two kinds of quantum communication. QKD can produce safe keys for classical communication. While teleportation sends pure quantum state. 
+现在翻页
 
 @Slide 4
-These theoretical works start a new age, which we called quantum communication age.
+So their theoretical papers lead to an explosion of quantum communication study. A lot of QKD, entanglement distribution, and teleportation works appeared, both in fiber and in free-space, pursuing longer and longer distance. Why long-distance quantum communication attracts so much attention? I think there are two reasons. First, it is useful.
+现在翻页
 
 @Slide 5
-Quantum communication not only attracts the attention from scientists, but also attracts the attention from public. There are two reasons. One is the public communication security. For example, Snowden told us we are being tapped, even the German premier Merker’s phone was being tapped. Does anyone dare to say your phone is safe? In fact, the cost of acquiring secret information is much lower than the cost of information protection. Then it will lead to the information security problem of all countries. The other is the recent privacy leakage of Apple Company’s server, which makes the public worry about information security more. These facts give us a challenge for both the nation and individuals. That is as we are enjoying the convenience of information age, how to solve the security problem of information?
+Mr. Snowden told us that we are being tapped. You see this powerful lady. Even her phone was being tapped. Every country is in danger. For individuals, recently a lot of private photos leak from Apple. So it is not only a problem for nations, but also problem for everyone. In fact, the cost of stealing information is much lower than the cost of protecting information. All information is in risk. How to solve the problem?
+现在翻页
 
 @Slide 6
-Let’s go back to the basic problem of information security. During a communication, how to protect the information from being steal? The basic idea is to encrypt the information. In classical information area, the security of encryption algorithm is guaranteed by the complexness of the algorithm. It can’t guarantee the absolute safe of information. However, quantum cryptography provides a very useful solution. With one-time-one-key quantum key distribution, we can realize an absolute safe communication. If we combine the quantum cryptography and classical communication together, we can obtain a more safe and efficient communication network.
+QKD gave us a solution. In the basic P to P communication, with one-time pad QKD, we can get unconditional safety of our communications. If we combine the long-distance QKD and classical communication together, we can get a safe internet.
+现在翻页
 
 @Slide 7
-Besides these useful prospects, another motivation of us is to test the central concept of quantum mechanics, which is the entanglement. Is the world local and realistic, or non-local as quantum mechanics say? Einstein’s EPR paper in 1930s point out the non-local entanglement is the biggest difference between classical and quantum mechanics. So to experimentally test whether the word is quantum non-local, or classically local and realistic, is a very interesting and important direction.
+Besides the useful reason, the other reason is that long-distance quantum communication is interesting. The idea of using long-distance quantum communication to test the foundation of quantum mechanics is very early. Is the world local as Einstein say? or non-local as quantum mechanics say? It is very interesting and important to test the Bell inequality with longer and longer distance.
+现在翻页
 
 @Slide 8
-Due to the two motivations, we have done a series of long-distance quantum communication experiments, including entanglement distribution, quantum teleportation, fiber quantum cryptography, free-space quantum cryptography. Generally, the communication distance has been increasing a lot from 1990s. Now no matter for fiber or free-space, for teleportation or key distribution, we all step over the one-hundred kilometer distance.
+So with both useful and interesting motivations, we have done a series of experiments on long-distance quantum communication. Let me introduce our useful works first.
+现在翻页
 
 @Slide 9
-Pursuing longer and longer distance is always our main goal of quantum communication. For applications, we need a global quantum communication network, make it as communication tool for everyone, then we need longer communication distance. For testing the non-locality and entanglement of quantum mechanics, we need to distribute the entanglement as far as we can. Entanglement usually appears at one point. To separate them far away, we are very interested in whether we can observe new phenomena as the distance increasing. So our group always makes longer distance quantum communication as our main goal.
+The time around 2005. The decoy-state QKD theory was present. With decoy-state QKD, we can use weak-coherent source to get security distance over 100 kilometers. It is close to the expensive single-photon source case. It makes the commercial use of QKD possible. 
+Then we realize 107 kilometer decoy-state QKD with fiber in 2007, when I was a postdoc. Later, we increased safe QKD distance to 200 km. Other groups also did some decoy-state experiments and publish them on PRL. Our encoding frequency was about 8.1 Hz. In my opinion, decoy-state QKD opens the door to the commercial use of quantum communication in China.
 
 @Slide 10
-Now I will introduce the work my group has done on long-distance quantum communication. As I said, after the theory of quantum cryptography, many experiments had been done. However, I think the time around 2006 and 2007 is the crucial time of quantum cryptography being applicable and industrial. The reason is the cost. Before 2006, weak coherent light sources have the risk of being PNS attack, which makes the safe communication distance is only around ten kilometers, too short for application. While the single photon source and entanglement source is very expensive, which makes the quantum communication not applicable. Just at that time, several professors, Huang, Luo, Wang presented a decoy-state quantum key distribution theory. Professor Luo will also give us a talk later. With the help of the decoy-state theory, we can achieve more than one-hundred kilometer safe communication with common optics devices. This distance is close to the single photon case. Then we realize 107 kilometer quantum key distribution with fiber in 2007, when I was a postdoc there. There were also other experimental papers published on PRL at same time. On the 107 kilometer communication channel, including all the fluctuation, our encoding frequency is about 8.1 Hz. This work opens the door to the industrial application of quantum key distribution in China.
+Since we have seen the commercial use, we made our first application with outdoor fibers. We combined the digital telephone and QKD together, encrypted the voice data by one-time pad, and made a three-node quantum telephone. This work was done in Hefei, and published on OE in 2009. One more step, we build a five-node network, with P to P communication, without any relay between two points. Our work proved the commercial use of quantum communication.
+现在翻页
 
 @Slide 11
-Since we have already seen the commercial prospect, especially the network, we made the first application. We combined the digital telephone and quantum communication network together, encrypted the voice data with one-word-one-key, and made the three-node quantum telephone network. This work was published on OE in 2009. This work was done in Hefei. Here is just the place of our on-going conference. This node is our USTC, the other two nodes are in the residence community. Our work verifies the application of quantum communication. One step more, can we make the network of it? Then we make a five-node network, with P to P communication between each two nodes.
+With the success of network application, we build two much bigger networks. One is between Xinhua news agency and its financial information exchange.
+现在翻页
 
 @Slide 12
-With the success of application and first network, we tried two much bigger networks. One is a network between Xinhua news agency and its financial information exchange. The other is a network with forty-six nodes supported in Hefei, which includes important customers such as Hefei governments, China telecom, and our USTC.
+The other is a city network with forty-six nodes in Hefei. There are important customers such as governments, banks, communication companies, and universities.
+现在翻页
 
 @Slide 13
-Then we made a big size quantum communication network in Shandong province. It is different to the Hefei’s network that it is a ring-shape network. It has three central nodes on the circle, and radiate out many sub-nodes, finally covers about seventy kilometer square, including these unites.
+We did some test with our customers. On these network, we can do telephone, fax, secret email, and so on. Our test running’s error is less than 3 percent, while our formal running’s error is less than 1 percent. It means our inter-city fiber quantum communication is strong enough to use.
+Here are different generations of our technique. This is the platform we used in 2007, occupied almost half of my lab. In past seven years, our device size decreased by 100 times, but the encoding rate increased by 1000 times.
+现在翻页
 
 @Slide 14
-We have done some test for real customers. On these network, we can do telephone, fax, secret email, and so on. The results show that our test running has a call completing rate 98.31%, and our formal running has a call completing rate 99.68%. It means that our inter-city fiber quantum communication technique is mature and become practical. Here I would like to show some photos of different generations of our technique. The first photo is the device we used in 2007, and this is the devices we used in the three-node network in 2009. Now our device can be compacted into a box, provide a “plug and play” service. Just plug the quantum key and use it. Our inter-city quantum network has been already mature. The next challenge is how to develop the network from inter-city to wide area.
+With these success and new device, we want to try more, expand our inter-city network to wide area. This is our on-going project, NQCB. This line briefly overlaps the Beijing-Shanghai high-speed railway. It covers rich provinces like Jiangsu, Shandong, Anhui, and connects two biggest cities in China, Beijing and Shanghai. These areas cover one-third GDP and one-fourth population of China. Fortunately, there are many cities and towns along this line. The distance between neighborhood towns is smaller than 100 kilometers. So we can set every node in the towns. The total number of is 31. It acts like a quantum communication highway. It connects all the cities and towns nearby.
+现在翻页
 
 @Slide 15
-To expand the inter-city network to wide area, we have made new attempts. This is our on-going project, named quantum networks between Beijing and Shanghai. It’s goal is to connect Beijing and shanghai with quantum communication. This line briefly overlaps with the Beijing-shanghai high-speed railway. It covers rich provinces like Jiangsu, Shandong, Anhui, and two biggest cities in China, Beijing and Shanghai. These areas cover forty percent GDP and one-fourth population of China, roughly 0.3 billion people. Fortunately, there are many cities and country towns along this line, with neighbor distance smaller than 100 kilometers. So we will set every node in the country towns, total number of nodes is 31. We can have many applications between large cities and country towns around this network. It acts like a quantum cryptography highway which connects all the cities and countries nearby. It connects all the customers, including banks, governments, and other important units.
+We know fiber quantum communication has its limits. Due to the decoherence and attenuation, the encoding rate will reduce rapidly with the length of the fiber. I remember Prof. Gisin, who just wins QCMC award this year, wrote on his RMP paper that, even use 10GHz perfect single photon source, if the fiber is 1000 kilometers long, the time of getting one photon is 300 years!. 
+Is there any better way? Yes, it is free-space quantum communication with satellites. 
+现在翻页
 
 @Slide 16
-We know fiber quantum communication has its limits. For example, repeaters are necessary. Every repeater has security risk. Is there any way of quantum communication besides fiber? The answer is free-space quantum communication based on satellites. A satellite can cover the whole earth.
+There are many difficulties of quantum communication based on satellites. A satellite is moving fast, and also has rotation and vibration, and we need continues beam collimation, divergence angle control, and good stability. Besides, the environment of space is also complex, like vacuum and radiation. We need to overcome all these difficulties.
+现在翻页
 
 @Slide 17
-There are many difficulties of free-space quantum communication based on satellites. First, a satellite is moving fast, rotating, and vibrating. Besides, we need continues beam collimation, divergence angle control, and stability of devices in the space.
+To control beam divergence, we expand the beam size with telescope. Then the beam divergence is close to the diffraction limit. For beam collimation, we make a tracking system with feedback. It is a two-order tracking system, including coarse-tracking and fine-tracking.
+现在翻页
 
 @Slide 18
-In this work, we use many methods to simulate the features of satellite platform. For example, we use trucks to simulate moving platform, use balloon to simulate floating platform, use 97 kilometer 50dB loss channel to simulate the channel between ground and satellite. This paper published in 2013 shows our overall ground simulation and verification of the difficulties of satellite platform.
+In this work, we use many methods to simulate the satellite platform. For example, we use trucks to simulate the moving platform, use balloon to simulate the floating platform, use 97 kilometer ground high loss channel to simulate the channel between ground and satellite. This paper was published in 2013. It shows our overall ground simulations and verifications of satellite platform.
+现在翻页
 
 @Slide 19
-We also supported by the quantum science satellite project, and prepare to do the quantum key distribution between satellite and ground. With a satellite, we can do the QKD between two ground stations thousands kilometers far away to each other. We can even do the global QKD.
+To prove the feasibility of satellite to ground QKD. We did another work. We used retro-reflectors of a satellite to simulate a single-photon source from satellite to ground. We found it is feasible. The signal-to-noise ratio is good enough for QKD.
+现在翻页
 
 @Slide 20
-Now the payload is under research. We have done a lot of experiments on the prototype, such as heat recycling, mechanics, vacuum, electromagnetic radiation. Now the prototype phase is finished, and we begin to develop the formal payload.
+Now the satellite is under construction. To overcome the difficulties of space environment, we did a lot of test on the pre-flight model, such as temperature, mechanics, vacuum, radiations. Now the pre-flight model is almost done. We begin to develop the flight model.
+现在翻页
 
 @Slide 21
-These are our present devices. We have made a joint test with ground simulator. Here is a video of our test.
-<Video>60
-When we have this satellite, we have the long-distance ability. After we combine the fiber network and satellite together, we can use fiber repeaters on the ground and satellite repeaters in the space, to realize the world-wide area QKD.
+Like in fibers, we also use space-bound satellite-to-ground decoy-state source in satellite, in order to increase the safe distance of our communication. This work was published in OE.
+现在翻页
 
 @Slide 22
-Can we do more things on this platform? Of course we can. In 2005, we did a more interesting work of quantum communication, which is entanglement distribution, over 13 kilometers. This experiment was done in Hefei, Dashu mountain. These places are villages at that time. But now, they are all parts of the city. We separate the entangle photons and send them over 13 kilometers, then measure them again, and realized entanglement distribution. At that time, Zeilinger’s group and a Singapore group ware also interested in it. With our engineering technique, we attract more attention when we plan to do the quantum satellite.
+After the pre-flight model, our most important task is to make a joint test between the satellite devices and ground devices. I would like to show you a video of our experiment.
+现在翻页
 
 @Slide 23
-In 2013, we began to do some more difficult experiment. We did a 12 hours continues detection, from dusk to morning, with strong back ground light in several hours. We found that if the Earth’s speed in any inertial reference frame was less than 10−3 times of the speed of light, the lower bound speed of quantum collapse is four orders of magnitude of the speed of light. This work was published in PRL in 2013.
+这里放视屏
+<Video>140
 
 @Slide 24
-Under this technique, we also did a 102 kilometer entanglement distribution. It is not only an upgrade version of our 13 kilometers entanglement distribution, but also provides ground test of our quantum satellite project. Why we tested it with that way? We estimate that due to the vacuum condition in space, the loss of 1000 kilometers between satellite and ground is close to the loss of 100 kilometers on the ground, which is between 70 and 80 dB. According to our outdoor experimental results, the loss is just around that value. The total loss is between 66 and 85 dB. In that condition we successfully realize the QKD over 100 kilometers, and provide a good test of QKD between satellite and ground.
+Now we have a satellite, and we can do the satellite to ground QKD. Can we do more interesting things? Of course. Actually, we already did some pioneer work. In 2005, when I was a PhD student, we did a more interesting work, which is the entanglement distribution over 13 kilometers. This experiment was done in Dashu Mountain, Hefei. These places, including here, are villages at that moment. But now, they all became parts of the city. So it’s hard to do an experiment again here due to the city light. 
+In the experiment, we separate the entangle photons and send them over 13 kilometers, then measure them, and realized entanglement distribution. 5 years later, we also realize a 16 km quantum teleportation in Beijing, near the great wall. At same time, there are also many other groups’ works on entanglement
+现在翻页
 
 @Slide 25
-We also did a 97 kilometer quantum teleportation. The loss is about 45 dB. Because the teleportation source is complex, we can only put it on the ground, and only make a small aperture telescope on the satellite. Then the loss is about 45dB. Our 97 kilometer experimental results match this value. We got fidelity of six states here, and channel loss is between 35 and 53dB. This work was published on Nature in 2012.
+After that, we began to develop new technique and do more difficult experiments. We improve the stability of our devices, and compress the dark count. We did a 12-hour continuous detection, from dusk to morning. 12 hours can run over all references. We proved that the quantum collapse speed is much larger than the speed of light. This work was published on PRL.
+现在翻页
 
 @Slide 26
-Based on these two good works, we increase two goals for quantum science satellite: the thousand-kilometer entanglement distribution and teleportation.
+With this technique, we also did a 102 kilometer entanglement distribution. It is not only an upgrade our 13 kilometers one, but also a ground test of our quantum satellite. Why we do it that way? We estimate that, due to the vacuum condition in space, the attenuation of 1000 kilometers between satellite and ground is close to the attenuation of 100 kilometers between two ground sites, which is 70 to 80 dB. According to our outdoor experimental results, the attenuation is just around that value. The total attenuation is between 66 and 85 dB. In that condition, we successfully realize the entanglement distribution over 100 kilometers, and provide a good test of entanglement distribution between satellite and ground.
+现在翻页
 
 @Slide 27
-We send our satellite to 600 kilometer high orbit. We set three stations on the ground, make it two groups. Urumqi, Delingha and Lijiang observations have a 1200 kilometer distance between each two stations. Urumqi and Delingha both have good weather, with 80% probability to acquire data, while Lijiang’s whether a little worse, with 70% probability to acquire data. The total loss we estimate is about 80dB, which means we can detect an entanglement in every 20 seconds. In low orbit case, this time becomes 200 seconds. So if we are lucky enough, we can acquire enough data in seven or eight months to detect whether entanglement still exists over 1200 kilometer.
+We also did a 97 kilometer quantum teleportation. Because the teleportation source is complex, we can only put it on the ground. The receiver on the satellite can not be too big either. So channel attenuation will be about 45 to 50 dB. Our 97 kilometer results match this value. We got fidelity of six states here. The channel loss is between 35 and 53dB. This work was published on Nature in 2012.
+现在翻页
 
 @Slide 28
-For teleportation, we need to send photons from ground to satellite, where the influence from atmosphere is very large. A thin beam will expands by atmosphere fluctuation. We need a place with very good weather, very good seeing in astronomy. In the last, we choose Ali in Tibet province. Its height is about 5000 meters. This place has the best seeing in China, with about 1 arc second. According to our calculation, this satellite-to-ground loss is about 50 dB.
+You see the place we have our experiment is very beautiful. Left top photo is the central island of Qinghai lake. On top right, there is a lama temple around our station. A young lama of this temple is very interesting in our experiment. The last photo is our receiving terminal.
+现在翻页
 
 @Slide 29
-Let’s look at our devices. This is our first transmitting terminal. We need two transmitting terminals, one is this, the other will be moving with satellite. This is our entanglement source under developing. It is a spot control system, and the whole setup has already finished its prototype phase. We plan to lunch the satellite to the space in 2016, and begin the experiment. This is our present work.
+Based on these works, we add two interesting goals for our quantum science satellite: First one is the 1000 kilometer entanglement distribution. We plan to launch our satellite to 600 kilometer high orbit. We set three stations on the ground, Urumqi, Delingha and Lijiang. They have a 1200 kilometer distance between each other. The total attenuation we estimate is about 80dB, which means when the satellite run over all the stations, we can detect several entanglements in every minute. So if we are lucky enough, we can acquire enough data in several months to detect whether entanglement still exists over 1200 kilometer.
+现在翻页
+
+@Slide 30
+The other goal is to do quantum teleportation. We need to send photons from ground to satellite, where the influence from air is large. The laser beam will expands by air fluctuations. We need a place with very good weather, means very good seeing in astronomy. Finally, we choose Ali of Tibet province. Its height is about 5000 meters. This place has the best seeing in China, about 1 arc second. According to our calculation, the teleportation attenuation is about 50 dB.
+现在翻页
+
+@Slide 31
+After finishing these goals, we want to do a real global QKD. Just two weeks ago, The Austria vice-premier, Dr. Mitterlehner(米特莱纳) and Prof. Zeilinger visited our USTC and our group together. They took their own ground devices and did a joint test with our devices. We plan to do the QKD between Beijing and Vienna with our satellite.
+现在翻页
+
+@Slide 32
+Let’s look at the payload on our satellite. The left two are our telescopes on satellite. The top right is our entangle source in the satellite. The last photo is our control system. The pre-flight model work is finished, and now we begin to produce our flight model. We plan to lunch the satellite to the space in 2016.
+现在翻页
+
+@Slide 33
+After we have our quantum science satellite and NQCB between Beijing and Shanghai, what can we do next? First, we will still try much wider and useful QKD. Measurement device independent QKD is a good choice. It removes all the risk from detection loopholes. Professor Luo will give us an interesting talk about MDI-QKD later. We have already focused on MDI-QKD. We realized 200 km MDI-QKD in fiber recently. Our goal is to combine the satellite and ground network together with MDI-QKD technique.  
+现在翻页
+
+@Slide 34
+Besides, we still pursuing even much longer and wider quantum communication. One satellite can only cover a narrow region on earth in one circle. So it requires many days to cover the whole earth. We need more satellites to form a quantum constellation. What is the challenge of it? I think the biggest challenge is the noise from the sun light. Let’s we look at our earth in the space, we know “night” means the shadow area of earth. The sun is much bigger than the earth. If we raise a satellite’s orbit, its time in the shadow will decrease. For a quantum constellation, most of the satellites will be in the sun light.
+现在翻页
+
+@Slide 35
+We have two points to solve the problem. One is to change the communication wavelength to 1550 nanometer. At 1550, the energy of sun light is one-order’s smaller than visible wavelength. Besides, the Rayleigh scattering rate is inverse proportional to lambda to 4. So 1550 can reduce the Rayleigh scattering by the order of two. 1550 is also widely used in our fiber communication today.
+现在翻页
+
+@Slide 36
+The other point is to aim more precisely, and use single-mode fiber to collect signals. Then the vision area reduces a lot, which means the noise also reduces a lot. Here we have developed a new technique, up-conversion detector. It has much lower dark count, and is more suitable for 1550 wavelength. It is also compact, suitable for outdoor experiment. This is our transmitting terminal. This is the receiving terminal. They all have big lens and single-mode fiber coupling. We also used the up-conversion detector here. Now our encoding rate is about 100 bps, close to our first 100 kilometer fiber. So we still have a lot of space to increase it.
+现在翻页
+
+@Slide 37
+After we overcome the influence from sunlight, we can imagine even longer quantum communication. For example, we can put the entanglement source at the Lagrange point between earth and moon. Because the traveling time of light between earth and moon is about one second, longer than human’s reaction. We can do the Bell test with human’s freewill.
+现在翻页
+
+@Slide 38
+In the end, Iet me give a summary of my talk.
+What we have done? We have done inter-city fiber quantum network, and its commercial running. We have done over 100 kilometer quantum communication in both fiber and free space.
+What we are doing? We are doing quantum science satellite for QKD, entanglement distribution, and quantum teleportation. We are also doing the long NQCB between Beijing and Shanghai.
+What we are going to do? There is a famous speech called “I have a dream”. Here, we have a dream, a quantum dream. We want to build a global quantum network, with both satellites and fibers, connect everyone in the world together. We can do something more useful and interesting. 
+现在翻页
+
+@Slide 37
+That all. Thank you for your attention.
+结束咯

@@ -4,6 +4,7 @@ import com.hwaipy.prompt.Presentation;
 import com.hwaipy.prompt.viewer.PresentationViewer;
 import com.hwaipy.prompt.viewer.PresentationViewerContent;
 import java.awt.AWTEvent;
+import java.awt.Dimension;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
@@ -46,8 +47,11 @@ public class PromptTest {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gd = ge.getDefaultScreenDevice();
         gd.setFullScreenWindow(mainFrame);
-        mainFrame.setContentPane(viewer);
 //        JFrame没有双缓冲
+//        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//        mainFrame.setSize(screenSize);
+//        mainFrame.setVisible(true);
+        mainFrame.setContentPane(viewer);
 
         //Register keys
         Toolkit.getDefaultToolkit().addAWTEventListener((AWTEvent event) -> {
@@ -106,10 +110,19 @@ public class PromptTest {
                         String message = new String(recvByte);
                         if (message.equals(broadCastMessage)) {
                             InetAddress address = receive.getAddress();
+                            boolean exist = false;
+                            //Check socket existing
+                            for (Socket s : socketMap.keySet()) {
+                                if (s.getInetAddress().equals(address)) {
+                                    exist = true;
+                                }
+                            }
                             //Open Socket
-                            Socket socket = new Socket(address, 20483);
-                            OutputStream out = socket.getOutputStream();
-                            socketMap.put(socket, out);
+                            if (!exist) {
+                                Socket socket = new Socket(address, 20483);
+                                OutputStream out = socket.getOutputStream();
+                                socketMap.put(socket, out);
+                            }
                         }
                     } catch (IOException ex) {
                         Logger.getLogger(PromptTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -188,6 +201,7 @@ public class PromptTest {
     private static int indexOfView = 0;
 
     private static void sendCommand(String cmd) {
+//        System.out.println(socketMap.size());
         for (Map.Entry<Socket, OutputStream> entry : socketMap.entrySet()) {
             OutputStream output = entry.getValue();
             try {
