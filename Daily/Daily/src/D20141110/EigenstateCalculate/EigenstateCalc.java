@@ -16,7 +16,7 @@ public class EigenstateCalc {
         Function potentialFunction = new ParabolicFunction(1);
         double xStart = -3;
         double xEnd = 3;
-        int dimension = 400;
+        int dimension = 7;
         double m = 1 / 4.;
 
         double dx = (xEnd - xStart) / (dimension - 1);
@@ -43,7 +43,7 @@ public class EigenstateCalc {
         D = D.times(Float64.valueOf(1 / dx / dx));
 
         //Calc M
-        Float64Matrix M = V.minus(D.times(Float64.valueOf(2)));
+        Float64Matrix M = V.minus(D.times(Float64.valueOf(1. / 2 / m)));
         double[][] Mvalue = new double[dimension][dimension];
         for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; j++) {
@@ -63,13 +63,13 @@ public class EigenstateCalc {
         double[][] VL = new double[LDVL][N];
         int LDVR = N;
         double[][] VR = new double[LDVR][N];
-        int LWORK = 100 * N;
+        int LWORK = 1000 * N;
         double[] WORK = new double[LWORK];
         intW INFO = new intW(-1);
         long startTime = System.nanoTime();
         DGEEV.DGEEV(JOBVL, JOBVR, N, A, WR, WI, VL, VR, WORK, LWORK, INFO);
-        long endTime = System.nanoTime();
-        System.out.println((endTime - startTime) / 1000000000.);
+//        long endTime = System.nanoTime();
+//        System.out.println((endTime - startTime) / 1000000000.);
         System.out.println(Arrays.toString(WR));
     }
 }
