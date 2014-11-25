@@ -13,18 +13,20 @@ import org.jscience.physics.amount.Amount;
 public class Test {
 
     public static void main(String[] args) {
-        MonochromaticWave signal = MonochromaticWave.byWaveLength(Amount.valueOf(1500, Units.NANOMETRE));
-        MonochromaticWave idler = MonochromaticWave.byWaveLength(Amount.valueOf(1500, Units.NANOMETRE));
+        MonochromaticWave signal = MonochromaticWave.byWaveLength(Amount.valueOf(810, Units.NANOMETRE));
+        MonochromaticWave idler = MonochromaticWave.byWaveLength(Amount.valueOf(810, Units.NANOMETRE));
         Medium medium = Mediums.KTiOPO4;
         double length = 15e-3;
-        double polingPeriod = 45.577e-6;
+        double polingPeriod = 10.025e-6;
         int orderQPM = 1;
-        double waistPump = 100e-6;
-        double waistSignal = waistPump * 0.2665;
+        double waistPump = 25e-6;
+        double waistSignal = waistPump * 1;
         double waistIdler = waistSignal;
-        GaussianAmplitudeFunction pumpEnvelope = new GaussianAmplitudeFunction(750e-9, 1e-9);
+        GaussianAmplitudeFunction pumpEnvelope = new GaussianAmplitudeFunction(405e-9, 1e-9);
         SPDCState SPDCState = new SPDCState(signal, idler, medium, length, polingPeriod, orderQPM,
                 waistPump, waistSignal, waistIdler, pumpEnvelope);
-        System.out.println(SPDCState.value());
+//        SPDCState.value();
+        SPDCProbability spdcProbability = new SPDCProbability(signal, idler, medium, length, waistPump, waistSignal, waistIdler);
+        System.out.println(spdcProbability.value() * 0.238e16 / 1e6 + "M");
     }
 }
