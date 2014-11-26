@@ -19,12 +19,12 @@ public class Test {
         double length = 15e-3;
         double polingPeriod = 10.025e-6;
         int orderQPM = 1;
-        double waistPump = 25e-6;
+        double waistPump = 50e-6;
         double waistSignal = waistPump * 1;
         double waistIdler = waistSignal;
-        GaussianAmplitudeFunction pumpEnvelope = new GaussianAmplitudeFunction(405e-9, 1e-9);
-        SPDCState SPDCState = new SPDCState(signal, idler, medium, length, polingPeriod, orderQPM,
-                waistPump, waistSignal, waistIdler, pumpEnvelope);
+//        GaussianAmplitudeFunction pumpEnvelope = new GaussianAmplitudeFunction(405e-9, 1e-9);
+//        SPDCState SPDCState = new SPDCState(signal, idler, medium, length, polingPeriod, orderQPM,
+//                waistPump, waistSignal, waistIdler, pumpEnvelope);
 //        SPDCState.value();
         SPDCProbability spdcProbability = new SPDCProbability(signal, idler, medium, length, waistPump, waistSignal, waistIdler);
         System.out.println(spdcProbability.value() * 0.238e16 / 1e6 + "M");

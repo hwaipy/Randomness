@@ -8,9 +8,9 @@
         </group>
         <group name="2014-08-29 FigureRenderer"/>
         <group name="Daily">
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141123/Ryan_PRA_81_053805/Constants.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141123/Ryan_PRA_81_053805/Test.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141123/Ryan_PRA_81_053805/SPDCState.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141123/Ryan_PRA_81_053805/Test.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141123/Ryan_PRA_81_053805/SPDCProbability.java</file>
         </group>
     </open-files>
 </project-private>
