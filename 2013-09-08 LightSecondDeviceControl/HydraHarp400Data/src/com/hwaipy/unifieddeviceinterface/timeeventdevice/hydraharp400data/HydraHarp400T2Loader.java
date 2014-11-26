@@ -70,7 +70,7 @@ public class HydraHarp400T2Loader implements TimeEventLoader {
                     long fullTime = carry * TIME_UNIT + time;
                     if (fullTime < lastTime) {
                         imOrder++;
-                        System.out.println(imOrder + "\t" + (lastTime - fullTime));
+//                        System.out.println("A" + imOrder + "\t" + (lastTime - fullTime));
                     }
                     lastTime = fullTime;
                     return new TimeEvent(fullTime, CHANNEL_SYNC);
@@ -78,7 +78,7 @@ public class HydraHarp400T2Loader implements TimeEventLoader {
                     long fullTime = carry * TIME_UNIT + time;
                     if (fullTime < lastTime) {
                         imOrder++;
-                        System.out.println(imOrder + "\t" + (lastTime - fullTime));
+//                        System.out.println("B" + imOrder + "\t" + (lastTime - fullTime));
                     }
                     lastTime = fullTime;
                     channel = channel == 1 ? 1 : (channel == 2 ? 2 : (channel == 4 ? 3 : 4));
@@ -93,7 +93,7 @@ public class HydraHarp400T2Loader implements TimeEventLoader {
                 long fullTime = carry * TIME_UNIT + time;
                 if (fullTime < lastTime) {
                     imOrder++;
-                    System.out.println(imOrder + "\t" + (lastTime - fullTime));
+//                    System.out.println("C" + imOrder + "\t" + (lastTime - fullTime));
                 }
                 lastTime = fullTime;
                 return new TimeEvent(fullTime, channel);

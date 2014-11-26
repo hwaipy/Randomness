@@ -1,5 +1,6 @@
-package lightseconddataanalyzer.g2;
+package lightseconddataanalyzer.fourfold;
 
+import lightseconddataanalyzer.g2.*;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import java.util.ArrayList;
 import java.util.List;

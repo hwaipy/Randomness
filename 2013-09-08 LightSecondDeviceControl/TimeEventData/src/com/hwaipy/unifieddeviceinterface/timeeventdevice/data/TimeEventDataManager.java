@@ -26,7 +26,6 @@ public class TimeEventDataManager {
         final File folder = createMappingFileFolder();
         TimeEventSerializer serializer = loader.getSerializer();
         MappingFileTimeEventList[] mappingLists = createMappingLists(folder, loader.getChannelCount());
-//        RandomAccessFile raf = new RandomAccessFile("oo", "rw");
         while (true) {
             TimeEvent timeEvent = loader.loadNext();
             if (timeEvent == TimeEvent.ERROR_EVENT) {
@@ -35,8 +34,6 @@ public class TimeEventDataManager {
             if (timeEvent == null) {
                 break;
             }
-//            long v = timeEvent.getTime() * 16 + timeEvent.getChannel();
-//            raf.writeLong(v);;
             mappingLists[timeEvent.getChannel()].push(serializer.serialize(timeEvent));
         }
         for (MappingFileTimeEventList list : mappingLists) {
