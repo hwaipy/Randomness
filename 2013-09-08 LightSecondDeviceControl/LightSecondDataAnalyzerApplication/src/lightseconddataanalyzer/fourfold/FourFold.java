@@ -2,13 +2,12 @@ package lightseconddataanalyzer.fourfold;
 
 import com.hwaipy.unifieddeviceinterface.DeviceException;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventDataManager;
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.CoincidenceMatcher;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.hydraharp400data.HydraHarp400T2Loader;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  *
@@ -38,31 +37,24 @@ public class FourFold {
                 .append(signalListT1.size()).append("\t")
                 .append(signalListT2.size()).append("\t");
 
-        CoincidenceScaner scaner11 = new CoincidenceScaner(signalListT1, signalListI1);
-        CoincidenceScaner scaner12 = new CoincidenceScaner(signalListT1, signalListI2);
-        CoincidenceScaner scaner21 = new CoincidenceScaner(signalListT2, signalListI1);
-        CoincidenceScaner scaner22 = new CoincidenceScaner(signalListT2, signalListI2);
-        int[] stat11 = scaner11.scan();
-        int[] stat12 = scaner12.scan();
-        int[] stat21 = scaner21.scan();
-        int[] stat22 = scaner22.scan();
-        for (int i = 0; i < stat11.length; i++) {
-            sb.append(i).append("\t")
-                    .append(stat11[i]).append("\t")
-                    .append(stat12[i]).append("\t")
-                    .append(stat21[i]).append("\t")
-                    .append(stat22[i]).append(System.lineSeparator());
-        }
-        System.out.println(sb.toString());
+        CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, 2500, 10500);
+        CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, 2500, 10500);
+        CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, 2500, 10500);
+        CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, 2500, 10500);
 
-        String newFileName = file.getAbsolutePath() + ".ana";
-        PrintWriter printWriter = new PrintWriter(newFileName);
-        printWriter.println(sb.toString());
-        printWriter.close();
+        System.out.println(cm11.find());
+        System.out.println(cm12.find());
+        System.out.println(cm21.find());
+        System.out.println(cm22.find());
+
+//        String newFileName = file.getAbsolutePath() + ".ana";
+//        PrintWriter printWriter = new PrintWriter(newFileName);
+//        printWriter.println(sb.toString());
+//        printWriter.close();
     }
 
     public static void main(String[] args) throws Exception {
-        File file = new File("/Users/Hwaipy/Desktop/1416918446735.ph400");
+        File file = new File("/Users/Hwaipy/Desktop/t.ph400");
         calc(file);
     }
 

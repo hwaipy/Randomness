@@ -1,9 +1,6 @@
 package lightseconddataanalyzer.fourfold;
 
-import lightseconddataanalyzer.g2.*;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -11,32 +8,13 @@ import java.util.List;
  */
 public class CoincidenceScaner {
 
-    private static final int SCAN_RANGE = 1000000;
+    private static final int SCAN_RANGE = 11000;
     private final TimeEventList list1;
     private final TimeEventList list2;
 
     public CoincidenceScaner(TimeEventList list1, TimeEventList list2) {
         this.list1 = list1;
         this.list2 = list2;
-    }
-
-    public List<Integer> scanOfPeaks() {
-        int[] stat = scan();
-
-        //period=125,start at 34,gate=30 for range of 100000ps
-        //period=125,start at 35,gate=30 for range of 1000000ps
-        ArrayList<Integer> peaks = new ArrayList<>();
-        for (int iCenter = 35; iCenter < 20000; iCenter += 125) {
-            int iStart = iCenter - 14;
-            int iEnd = iCenter + 14;
-            int sum = 0;
-            for (int i = iStart; i <= iEnd; i++) {
-                sum += stat[i];
-            }
-            peaks.add(sum);
-            System.out.println(iCenter + "\t" + sum);
-        }
-        return peaks;
     }
 
     public int[] scan() {

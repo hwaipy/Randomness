@@ -5,6 +5,7 @@
         <group name="LightSecondDeviceControl"/>
         <group name="Daily"/>
         <group name="2013-09-08 LightSecondDeviceControl">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/HydraHarp400Data/src/com/hwaipy/unifieddeviceinterface/timeeventdevice/hydraharp400data/MappingReader.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/HydraHarp400Data/src/com/hwaipy/unifieddeviceinterface/timeeventdevice/hydraharp400data/HydraHarp400T2Loader.java</file>
         </group>
     </open-files>
