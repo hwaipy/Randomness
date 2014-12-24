@@ -5,5 +5,6 @@
         <group name="PolarizationControlSimulation"/>
         <group/>
         <group name="2013-08-28 PolarizationControlSimulation"/>
+        <group name="Randomness"/>
     </open-files>
 </project-private>

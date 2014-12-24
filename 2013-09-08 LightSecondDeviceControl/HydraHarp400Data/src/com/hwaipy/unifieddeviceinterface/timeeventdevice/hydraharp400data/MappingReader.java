@@ -17,8 +17,16 @@ class MappingReader {
     public MappingReader(FileChannel channel) throws IOException {
         this.channel = channel;
         channel.position(0);
-//        buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size());
-        buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, 1024 * 1024 * 128);
+        buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size());
+//        buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, 1024 * 1024 * 128);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+    }
+
+    public MappingReader(FileChannel channel, long start, long size) throws IOException {
+        this.channel = channel;
+        channel.position(0);
+        buffer = channel.map(FileChannel.MapMode.READ_ONLY, start, size);
+//        buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, 1024 * 1024 * 128);
         buffer.order(ByteOrder.LITTLE_ENDIAN);
     }
 

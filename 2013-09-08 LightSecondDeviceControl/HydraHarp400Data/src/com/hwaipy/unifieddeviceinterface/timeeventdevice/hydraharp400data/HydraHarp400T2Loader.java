@@ -46,6 +46,20 @@ public class HydraHarp400T2Loader implements TimeEventLoader {
         }
     }
 
+    public HydraHarp400T2Loader(File file, long start, long size) throws IOException {
+        this.file = file;
+        if (file != null && file.exists() && file.isFile() && file.length() > 0) {
+            available = true;
+        }
+        if (available) {
+            raf = new RandomAccessFile(file, "rw");
+            fileChannel = raf.getChannel();
+            reader = new MappingReader(fileChannel, start, size);
+//            readHead();
+//            reader.skip(800);
+        }
+    }
+
     @Override
     public int getChannelCount() {
         return CHANNEL_COUNT;
