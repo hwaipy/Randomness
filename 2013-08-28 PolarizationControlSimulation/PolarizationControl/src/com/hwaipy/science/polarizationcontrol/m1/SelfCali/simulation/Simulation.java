@@ -10,14 +10,16 @@ import java.util.Random;
 public class Simulation {
 
     private final Random random;
-    private final PolarizationControl m1PC;
+    private final PolarizationControl m6PC;
+    private final PolarizationControl m24PC;
     private double fiberTransformTheta1;
     private double fiberTransformTheta2;
     private double fiberTransformTheta3;
 
     public Simulation() {
         this.random = new Random();
-        m1PC = new PolarizationControl(new M6MeasurementProcess());
+        m6PC = new PolarizationControl(new M6MeasurementProcess());
+        m24PC = new PolarizationControl(new M6MeasurementProcess());
     }
 
     public void generateRandomFiberTransform() {
@@ -26,9 +28,15 @@ public class Simulation {
         fiberTransformTheta3 = (random.nextDouble() - 0.5) * Math.PI;
     }
 
-    public double singleM1() {
+    public double singleM6() {
         FiberTransform ft = FiberTransform.createReverse(fiberTransformTheta1 + Math.PI / 2, fiberTransformTheta2 + Math.PI / 2, fiberTransformTheta3 + Math.PI / 2);
-        double control = m1PC.control(ft);
+        double control = m6PC.control(ft);
+        return dB(control);
+    }
+
+    public double singleM24() {
+        FiberTransform ft = FiberTransform.createReverse(fiberTransformTheta1 + Math.PI / 2, fiberTransformTheta2 + Math.PI / 2, fiberTransformTheta3 + Math.PI / 2);
+        double control = m24PC.control(ft);
         return dB(control);
     }
 
@@ -40,6 +48,7 @@ public class Simulation {
     public static void main(String[] args) {
         Simulation simulation = new Simulation();
         simulation.generateRandomFiberTransform();
-        System.out.println(simulation.singleM1());
+        System.out.println(simulation.singleM6());
+        System.out.println(simulation.singleM24());
     }
 }
