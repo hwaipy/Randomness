@@ -9,15 +9,15 @@
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/synctest/SyncTest2.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/synctest/Calibrator.java</file>
         </group>
-        <group name="2013-09-08 LightSecondDeviceControl">
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/NewJFrame.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/FourFold.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/CoincidenceScaner.java</file>
-        </group>
         <group name="Randomness">
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/FourFold.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/NewJFrame.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/CoincidenceScaner.java</file>
+        </group>
+        <group name="2013-09-08 LightSecondDeviceControl">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/g2/zeno/Df.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/g2/zeno/FileSplitter.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/g2/zeno/DfCoherence.java</file>
         </group>
     </open-files>
 </project-private>
