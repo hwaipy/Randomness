@@ -4,6 +4,7 @@ import com.hwaipy.science.polarizationcontrol.m1.*;
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -61,8 +62,9 @@ public class M1Simulation {
 //        System.out.println("mHV = " + mHV);
 //        System.out.println("mHD = " + mHD);
 //        System.out.println("mHA = " + mHA);
-        System.out.println("mHL = " + mHL);
-        System.out.println("mHR = " + mHR);
+//        System.out.println("mHL = " + mHL);
+//        System.out.println("mHR = " + mHR);
+//        System.out.println(Arrays.toString(new double[]{mHH, mHV, mHD, mHA, mHL, mHR, mDH, mDV, mDD, mDA, mDL, mDR}));
 
         M1Process m1Process = null;
         double cH = 0;

@@ -20,6 +20,7 @@ public class FiberTransform extends SinglePartyOperator {
         QuarterWavePlate qwp1 = QuarterWavePlate.create(random.nextDouble() * Math.PI);
         Matrix<Complex> transform = hwp.getMatrix().times(qwp2.getMatrix()).times(qwp1.getMatrix());
         return new FiberTransform(transform);
+//        return new FiberTransform(I.getMatrix());
     }
 
     public static FiberTransform createReverse(double qwp1, double qwp2, double hwp) {

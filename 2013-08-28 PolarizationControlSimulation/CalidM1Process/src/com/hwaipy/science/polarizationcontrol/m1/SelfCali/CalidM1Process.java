@@ -1,4 +1,4 @@
-package com.hwaipy.science.polarizationcontrol.m1;
+package com.hwaipy.science.polarizationcontrol.m1.SelfCali;
 
 import com.hwaipy.science.polarizationcontrol.device.FiberTransform;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
@@ -29,7 +29,15 @@ public class CalidM1Process {
 
     public static void main(String[] args) {
 //        singlePhoit();
-        traversal();
+//        traversal();
+        changeInput();
+    }
+
+    public static void changeInput() {
+        CalidM1Process calidM1Process = new CalidM1Process();
+        DecimalFormat format = new DecimalFormat("0.0000");
+        double[] power = calidM1Process.readPower(Polarization.H);
+        System.out.println(Arrays.toString(power));
     }
 
     public static void singlePhoit() {
@@ -39,7 +47,7 @@ public class CalidM1Process {
         for (double power : powers) {
             System.out.print(format.format(power) + ", ");
         }
-        System.out.println();
+        System.out.println("~");
 
         calidM1Process.wavePlates[0].setTheta(+Math.PI / 4);
         calidM1Process.wavePlates[1].setTheta(+Math.PI / 4);
@@ -48,7 +56,7 @@ public class CalidM1Process {
         for (double power : powers) {
             System.out.print(format.format(power) + ", ");
         }
-        System.out.println();
+        System.out.println("~");
     }
 
     public static void traversal() {
@@ -109,6 +117,12 @@ public class CalidM1Process {
 
     private double[] readPower(Polarization polarization) {
         Polarization measurementH = polarization.transform(ft)
+                .transform(wavePlates[0]).transform(wavePlates[1]).transform(wavePlates[2]);
+        return new double[]{measurementH.getH(), measurementH.getV(), measurementH.getD(), measurementH.getA()};
+    }
+
+    private double[] readPowerWithoutFiber(Polarization polarization) {
+        Polarization measurementH = polarization
                 .transform(wavePlates[0]).transform(wavePlates[1]).transform(wavePlates[2]);
         return new double[]{measurementH.getH(), measurementH.getV(), measurementH.getD(), measurementH.getA()};
     }

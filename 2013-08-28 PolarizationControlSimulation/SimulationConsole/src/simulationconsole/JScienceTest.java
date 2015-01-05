@@ -2,7 +2,6 @@ package simulationconsole;
 
 import org.jscience.mathematics.number.Complex;
 import org.jscience.mathematics.vector.Matrix;
-import simulationconsole.entanglement.HalfWavePlate;
 import simulationconsole.entanglement.QuarterWavePlate;
 import simulationconsole.entanglement.WavePlate;
 

@@ -13,12 +13,12 @@ import com.hwaipy.science.polarizationcontrol.m1.M1ProcessException;
  */
 public class PolarizationControl {
 
-    private final PolarizationControlMeasurementProcess measurementProcess;
+    private final AbstractMeasurementProcess measurementProcess;
     private final WavePlate qwp1 = new WavePlate(Math.PI / 2, 0);
     private final WavePlate qwp2 = new WavePlate(Math.PI / 2, 0);
     private final WavePlate hwp = new WavePlate(Math.PI, 0);
 
-    public PolarizationControl(PolarizationControlMeasurementProcess measurementProcess) {
+    public PolarizationControl(AbstractMeasurementProcess measurementProcess) {
         this.measurementProcess = measurementProcess;
     }
 
@@ -48,6 +48,10 @@ public class PolarizationControl {
             cD = measurement(resultD, 2) / measurement(resultD, 3);
         }
         return Math.min(cH, cD);
+    }
+
+    public void generateNewMeasurement() {
+        measurementProcess.generateNewMeasurement();
     }
 
     private double measurement(Polarization state, int thetaIndex) {

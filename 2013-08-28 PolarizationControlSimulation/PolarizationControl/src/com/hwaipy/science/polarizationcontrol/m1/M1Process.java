@@ -81,11 +81,17 @@ public class M1Process {
         double[] sd = new double[]{(IDH - IDV) / (IDH + IDV), (IDD - IDA) / (IDD + IDA), (IDR - IDL) / (IDR + IDL)};
         normalizeParaSH = normalize(sh);
         normalizeParaSR = normalize(sd);
+//        System.out.println(Arrays.toString(sh));
+//        System.out.println(Arrays.toString(sd));
+
         double[] sr = new double[]{sh[1] * sd[2] - sh[2] * sd[1], sh[2] * sd[0] - sh[0] * sd[2], sh[0] * sd[1] - sh[1] * sd[0]};
+//        System.out.println(Arrays.toString(sr));
+
         double m = Math.sqrt(Math.pow(sr[0], 2) + Math.pow(sr[1], 2) + Math.pow(sr[2], 2));
         Matrix SH = new Matrix(new double[][]{{1, sh[0], sh[1], sh[2]}}).transpose();
         Matrix SR = new Matrix(new double[][]{{1, sr[0] / m, sr[1] / m, sr[2] / m}}).transpose();
         double theta1 = 0.5 * Math.atan(SR.get(2, 0) / SR.get(1, 0));
+
         QuarterWavePlate qwp1 = new QuarterWavePlate(theta1);
         Matrix SR1 = qwp1.getMatrix().times(SR);
         Matrix SH1 = qwp1.getMatrix().times(SH);
@@ -103,6 +109,9 @@ public class M1Process {
 //        System.out.println(SH1.get(3, 0));
         double a2 = 0.5 * Math.atan(SH1.get(2, 0) / SH1.get(1, 0));
         double a3 = 0.5 * Math.asin(SH1.get(3, 0));
+//        System.out.println("a2=arctan " + SH1.get(2, 0) + "/" + SH1.get(1, 0));
+//        System.out.println("a2=" + a2);
+//        System.out.println("a3=" + a3);
         results = new double[3];
         results[0] = theta1;
 

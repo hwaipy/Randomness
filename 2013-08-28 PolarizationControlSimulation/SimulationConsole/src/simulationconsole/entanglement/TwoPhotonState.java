@@ -13,8 +13,12 @@ public class TwoPhotonState {
     private final Matrix<Complex> densityMatrix;
 
     public TwoPhotonState() {
+
         ComplexMatrix psy = ComplexMatrix.valueOf(new Complex[][]{{Complex.ZERO, Complex.ONE, Complex.valueOf(-1, 0), Complex.ZERO}});
         densityMatrix = psy.transpose().times(psy).times(Complex.valueOf(0.5, 0));
+//        ComplexMatrix psy = ComplexMatrix.valueOf(new Complex[][]{{Complex.ZERO, Complex.valueOf(Math.sqrt(1. / 3), 0), Complex.valueOf(-Math.sqrt(2. / 3), 0), Complex.ZERO}});
+//        densityMatrix = psy.transpose().times(psy);
+        throw new UnsupportedOperationException();
     }
 
     public TwoPhotonState(double noise) {
@@ -29,9 +33,10 @@ public class TwoPhotonState {
         ComplexMatrix noisedRouPsy = rouPsy.times(Complex.valueOf(1 - noise, 0));
         ComplexMatrix noisedI = I.times(Complex.valueOf(noise, 0));
         densityMatrix = noisedRouPsy.plus(noisedI);
+        throw new UnsupportedOperationException();
     }
 
-    private TwoPhotonState(Matrix<Complex> m) {
+    public TwoPhotonState(Matrix<Complex> m) {
         densityMatrix = m;
     }
 
@@ -56,7 +61,7 @@ public class TwoPhotonState {
     public double measurement(TwoPartiesOperator o) {
         Matrix<Complex> measurement = o.getMatrix();
         Matrix<Complex> measurementDag = dag(measurement);
-        Matrix<Complex> result = measurement.times(densityMatrix).times(measurementDag);
+        Matrix<Complex> result = measurementDag.times(densityMatrix).times(measurement);
         int maxR = 0;
         int maxC = 0;
         double max = -1;

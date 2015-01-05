@@ -7,6 +7,7 @@ import com.hwaipy.unifieddeviceinterface.timeeventdevice.hydraharp400data.HydraH
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -17,10 +18,11 @@ import java.io.PrintWriter;
 public class FourFold {
 
     private static final int CHANNEL_I1 = 8;
-    private static final int CHANNEL_I2 = 0;
-    private static final int CHANNEL_T1 = 2;
+    private static final int CHANNEL_I2 = 2;
+    private static final int CHANNEL_T1 = 0;
     private static final int CHANNEL_T2 = 3;
-    private static final long SINGLE_LENGTH = 128 * 1024 * 1024;
+    private static final long SINGLE_LENGTH = 1000 * 1024 * 1024;
+    private static final int HALF_GATE = 1500;
 
     public static void calc(File file) throws IOException, DeviceException {
         long length = file.length();
@@ -39,18 +41,17 @@ public class FourFold {
             TimeEventList signalListT1 = segment.getEventList(CHANNEL_T1);
             TimeEventList signalListT2 = segment.getEventList(CHANNEL_T2);
 
-            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, 2500, 10500);
-            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, 2500, 10500);
-            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, 2500, 10500);
-            CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, 2500, 10500);
+            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, HALF_GATE, 3400);
+            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, HALF_GATE, -4200);
+            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, HALF_GATE, 10200);
+            CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, HALF_GATE, 2500);
             int coincidence11 = cm11.find();
             int coincidence12 = cm12.find();
             int coincidence21 = cm21.find();
             int coincidence22 = cm22.find();
-
             CoincidenceEventList coincidenceEventList1 = new CoincidenceEventList(cm11, 1);
             CoincidenceEventList coincidenceEventList2 = new CoincidenceEventList(cm22, 1);
-            CoincidenceMatcher cm4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, 2500, 0);
+            CoincidenceMatcher cm4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, HALF_GATE, 3400 - 10200);
             int coincidence4 = cm4.find();
 
             long startTime = signalListT1.get(0).getTime();
@@ -61,9 +62,16 @@ public class FourFold {
             double efficiency12 = coincidence12 / 1. / signalListI2.size();
             double efficiency21 = coincidence21 / 1. / signalListI1.size();
             double efficiency22 = coincidence22 / 1. / signalListI2.size();
-            double expectC4 = 1. * coincidence11 * coincidence22 / 76000000 / timeInSecond;
-            CoincidenceMatcher shiftedCM4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, 2500, 13158);
-            int shiftedCoincidence4 = shiftedCM4.find();
+            double expectC4 = 1. * coincidence11 * coincidence22 / 76000000. / timeInSecond;
+
+            //12500
+            CoincidenceMatcher shiftedCM4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, HALF_GATE, 0);
+            int[] shiftedCoincidence4 = new int[21];
+            for (int i = -10; i < 11; i++) {
+                long delay = 3400 - 10200 + i * 12500;
+                shiftedCM4.setDelay(delay);
+                shiftedCoincidence4[i + 10] = shiftedCM4.find();
+            }
 
             sb.append(timeInSecond).append("\t")
                     .append(signalListI1.size()).append("\t")
@@ -79,20 +87,43 @@ public class FourFold {
                     .append(efficiency21).append("\t")
                     .append(efficiency22).append("\t")
                     .append(coincidence4).append("\t")
-                    .append(expectC4).append("\t")
-                    .append(shiftedCoincidence4).append("\t")
-                    .append(System.lineSeparator());
+                    .append(expectC4).append("\t");
+            for (int shiftedC4 : shiftedCoincidence4) {
+                sb.append(shiftedC4).append("\t");
+            }
+            sb.append(System.lineSeparator());
         }
         String newFileName = file.getAbsolutePath() + ".ana";
         try (PrintWriter printWriter = new PrintWriter(newFileName)) {
             printWriter.println(sb.toString());
         }
-        System.out.println(sb.toString());
+        System.out.print(sb.toString());
+    }
+
+    private static void scanDelay(TimeEventList list1, TimeEventList list2) {
+        CoincidenceMatcher cm = new CoincidenceMatcher(list1, list2, 1000, 0);
+        for (int delay = -100000; delay < 100000; delay += 100) {
+            cm.setDelay(delay);
+            System.out.println(delay + "\t" + cm.find());
+        }
     }
 
     public static void main(String[] args) throws Exception {
-        File file = new File("/Users/Hwaipy/Desktop/t.ph400");
-        calc(file);
+        process();
     }
 
+    private static void process() throws Exception {
+        File dir = new File("/Users/Hwaipy/Desktop/ff/");
+        File[] files = dir.listFiles(new FilenameFilter() {
+
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".ph400");
+            }
+        });
+        for (File file : files) {
+            System.out.print(file.getName().split("\\.")[0] + "\t");
+            calc(file);
+        }
+    }
 }

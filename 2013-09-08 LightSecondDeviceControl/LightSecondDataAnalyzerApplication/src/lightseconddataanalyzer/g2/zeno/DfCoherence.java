@@ -32,7 +32,7 @@ public class DfCoherence {
         System.out.println("D0: " + signalList.size() / 60 + "\t" + signalList.size());
         System.out.println("Df: " + signalListF.size() / 60 + "\t" + signalListF.size());
 
-        CoincidenceMatcher cmT0 = new CoincidenceMatcher(signalList, signalListF, 1000, 0);
+        CoincidenceMatcher cmT0 = new CoincidenceMatcher(signalList, signalListF, 5*233, 0);
         int coincidence = cmT0.find();
         System.out.println("符合T&0:\t" + coincidence / 60 + "\t" + coincidence
                 + "\t" + coincidence / (double) signalList.size());

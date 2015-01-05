@@ -58,5 +58,4 @@ public class SkippedIteratable<T> implements Iterable<T> {
             }
         }
     }
-
 }

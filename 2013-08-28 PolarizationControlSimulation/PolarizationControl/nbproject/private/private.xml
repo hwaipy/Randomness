@@ -10,13 +10,6 @@
             <file>file:/C:/Workshop/Dropbox/Code/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/device/HalfWavePlate.java</file>
         </group>
         <group name="Randomness"/>
-        <group name="2013-08-28 PolarizationControlSimulation">
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/M1ErrorSimulation.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/SelfCali/simulation/Simulation.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/SelfCali/simulation/PolarizationControl.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/SelfCali/simulation/M1Simulation.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/SelfCali/simulation/M6MeasurementProcess.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/SelfCali/simulation/M24MeasurementProcess.java</file>
-        </group>
+        <group name="2013-08-28 PolarizationControlSimulation"/>
     </open-files>
 </project-private>

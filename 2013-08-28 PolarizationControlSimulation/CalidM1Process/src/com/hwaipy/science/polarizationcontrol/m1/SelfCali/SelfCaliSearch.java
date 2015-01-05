@@ -15,29 +15,13 @@ import java.util.Set;
 public class SelfCaliSearch {
 
     public static void main(String[] args) throws Exception {
-        loadNoteList();
-        File file = new File("keyOrders.txt");
-        RandomAccessFile raf = new RandomAccessFile(file, "r");
-        LinkedList<String[]> keyOrders = new LinkedList<>();
-        while (true) {
-            String line = raf.readLine();
-            if (line == null) {
-                break;
-            }
-            String[] items = line.split("\t");
-            if (items.length != 6) {
-                throw new RuntimeException();
-            }
-            keyOrders.add(items);
-        }
-        String[] keyOrder = new String[]{"HVDA", "DALR", "LRAD", "ADVH", "RLHV", "VHRL"};
-        double distance = searchRoute(keyOrder);
-        System.out.println(distance);
+//        overSearch();
+        singleSearch();
     }
 
-    public static void main2(String[] args) throws Exception {
+    public static void overSearch() throws Exception {
         loadNoteList();
-        File file = new File("keyOrders.txt");
+        File file = new File("keyOrdersAll.txt");
         RandomAccessFile raf = new RandomAccessFile(file, "r");
         LinkedList<String[]> keyOrders = new LinkedList<>();
         while (true) {
@@ -53,10 +37,73 @@ public class SelfCaliSearch {
         }
         double shortestDistance = Double.MAX_VALUE;
         String[] bestOrder = null;
+        for (Note start : noteList) {
+//            System.out.println(start);
+            for (String[] keyOrder : keyOrders) {
+                if (keyOrder[0].equals(start.key)) {
+                    double distance = searchRoute(start, keyOrder, false);
+                    if (distance < 181) {
+                        System.out.println(Arrays.toString(keyOrder) + start);
+                    }
+                    if (distance < shortestDistance) {
+                        shortestDistance = distance;
+                        bestOrder = keyOrder;
+                    }
+                }
+            }
+        }
+        System.out.println(Arrays.toString(bestOrder));
+    }
+
+    public static void singleSearch() throws Exception {
+        loadNoteList();
+        File file = new File("keyOrders.txt");
+        RandomAccessFile raf = new RandomAccessFile(file, "r");
+        LinkedList<String[]> keyOrders = new LinkedList<>();
+        while (true) {
+            String line = raf.readLine();
+            if (line == null) {
+                break;
+            }
+            String[] items = line.split("\t");
+            if (items.length != 6) {
+                throw new RuntimeException();
+            }
+            keyOrders.add(items);
+        }
+        String[] keyOrder = new String[]{"LRVH", "HVLR", "ADHV", "RLAD", "DARL", "VHDA"};
+        double distance = searchRoute(new Note(45, 0, 0, "LRVH"), keyOrder, true);
+        System.out.println(distance);
+    }
+
+    public static void main22(String[] args) throws Exception {
+        loadNoteList();
+        File file = new File("keyOrdersAll.txt");
+        RandomAccessFile raf = new RandomAccessFile(file, "r");
+        LinkedList<String[]> keyOrders = new LinkedList<>();
+        while (true) {
+            String line = raf.readLine();
+            if (line == null) {
+                break;
+            }
+            String[] items = line.split("\t");
+            if (items.length != 6) {
+                throw new RuntimeException();
+            }
+            keyOrders.add(items);
+        }
+        double shortestDistance = Double.MAX_VALUE;
+        String[] bestOrder = null;
+        int lineIndex = 0;
+        System.out.println(keyOrders.size());
         for (String[] keyOrder : keyOrders) {
-            double distance = searchRoute(keyOrder);
-            if (distance <= 203) {
-                System.out.println(Arrays.toString(keyOrder) + "\t" + distance);
+            lineIndex++;
+            if (lineIndex % 1000 == 0) {
+                System.out.println(lineIndex / (double) keyOrders.size());
+            }
+            double distance = searchRoute(keyOrder, false);
+            if (distance < 180.1) {
+                System.out.println(Arrays.toString(keyOrder) + distance);
             }
             if (distance < shortestDistance) {
                 shortestDistance = distance;
@@ -66,21 +113,43 @@ public class SelfCaliSearch {
         System.out.println(Arrays.toString(bestOrder));
     }
 
-    private static double searchRoute(String[] keyOrder) {
+    private static double searchRoute(String[] keyOrder, boolean printTrace) {
         Note note = new Note(0, 0, 0, keyOrder[0]);
-        System.out.println(note);
+        if (printTrace) {
+            System.out.println(note);
+        }
         double distance = 0;
         for (int i = 1; i < keyOrder.length; i++) {
             String keyNext = keyOrder[i];
             Note noteNext = nearest(note, keyNext);
             distance += note.distance(noteNext);
             note = noteNext;
-            System.out.println(note);
+            if (printTrace) {
+                System.out.println(note);
+            }
         }
         return distance;
     }
 
-    public static void main1(String[] args) throws Exception {
+    private static double searchRoute(Note start, String[] keyOrder, boolean printTrace) {
+        double distance = 0;
+        Note note = start;
+        if (printTrace) {
+            System.out.println(note);
+        }
+        for (int i = 1; i < keyOrder.length; i++) {
+            String keyNext = keyOrder[i];
+            Note noteNext = nearest(note, keyNext);
+            distance += note.distance(noteNext);
+            note = noteNext;
+            if (printTrace) {
+                System.out.println(note);
+            }
+        }
+        return distance;
+    }
+
+    public static void main11(String[] args) throws Exception {
         loadNoteList();
 //        Note noteStart = new Note(0, 0, 0, "HVDA");
 //        Note note = noteStart;
@@ -107,7 +176,8 @@ public class SelfCaliSearch {
                         for (int i5 = 0; i5 < keys.length; i5++) {
                             for (int i6 = 0; i6 < keys.length; i6++) {
                                 String[] keyOrder = new String[]{keys[i1], keys[i2], keys[i3], keys[i4], keys[i5], keys[i6]};
-                                if (valid(keyOrder) && keyOrder[0].equals("HVDA")) {
+//                                if (valid(keyOrder) && keyOrder[0].equals("VHRL")) {
+                                if (valid(keyOrder)) {
                                     keyOrderList.add(keyOrder);
                                 }
                             }

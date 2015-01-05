@@ -1,6 +1,5 @@
 package com.hwaipy.science.polarizationcontrol.m1.SelfCali.simulation;
 
-import com.hwaipy.science.polarizationcontrol.device.HalfWavePlate;
 import com.hwaipy.science.polarizationcontrol.device.Polarization;
 import com.hwaipy.science.polarizationcontrol.device.WavePlate;
 
@@ -8,11 +7,15 @@ import com.hwaipy.science.polarizationcontrol.device.WavePlate;
  *
  * @author Hwaipy
  */
-public class M6MeasurementProcess implements PolarizationControlMeasurementProcess {
+public class M6MeasurementProcess extends AbstractMeasurementProcess {
 
     private final WavePlate qwp1 = new WavePlate(Math.PI / 2, 0);
     private final WavePlate qwp2 = new WavePlate(Math.PI / 2, 0);
     private final WavePlate hwp = new WavePlate(Math.PI, 0);
+
+    public M6MeasurementProcess(MeasurementFactory measurementFactory) {
+        super(measurementFactory);
+    }
 
     @Override
     public double[] measurement(Polarization p) {
@@ -33,14 +36,5 @@ public class M6MeasurementProcess implements PolarizationControlMeasurementProce
             result[i + 4] = measurement(m2, i);
         }
         return result;
-    }
-
-    private double measurement(Polarization state, int thetaIndex) {
-        double[] thetas = {0, 90, 45, -45};
-        double polTheta = thetas[thetaIndex];
-        HalfWavePlate rotate = new HalfWavePlate(polTheta / 2 / 180 * Math.PI);
-        Polarization finalState = state.transform(rotate);
-        double m = finalState.getH();
-        return m;
     }
 }
