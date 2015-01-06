@@ -17,9 +17,9 @@ import java.io.PrintWriter;
  */
 public class FourFold {
 
-    private static final int CHANNEL_I1 = 8;
+    private static final int CHANNEL_I1 = 0;
     private static final int CHANNEL_I2 = 2;
-    private static final int CHANNEL_T1 = 0;
+    private static final int CHANNEL_T1 = 8;
     private static final int CHANNEL_T2 = 3;
     private static final long SINGLE_LENGTH = 1000 * 1024 * 1024;
     private static final int HALF_GATE = 1500;
@@ -41,9 +41,9 @@ public class FourFold {
             TimeEventList signalListT1 = segment.getEventList(CHANNEL_T1);
             TimeEventList signalListT2 = segment.getEventList(CHANNEL_T2);
 
-            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, HALF_GATE, 3400);
-            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, HALF_GATE, -4200);
-            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, HALF_GATE, 10200);
+            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, HALF_GATE, 7600);
+            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, HALF_GATE, -2300);
+            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, HALF_GATE, 12400);
             CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, HALF_GATE, 2500);
             int coincidence11 = cm11.find();
             int coincidence12 = cm12.find();
@@ -51,7 +51,7 @@ public class FourFold {
             int coincidence22 = cm22.find();
             CoincidenceEventList coincidenceEventList1 = new CoincidenceEventList(cm11, 1);
             CoincidenceEventList coincidenceEventList2 = new CoincidenceEventList(cm22, 1);
-            CoincidenceMatcher cm4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, HALF_GATE, 3400 - 10200);
+            CoincidenceMatcher cm4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, HALF_GATE, 7600 - 12400);
             int coincidence4 = cm4.find();
 
             long startTime = signalListT1.get(0).getTime();
@@ -68,7 +68,7 @@ public class FourFold {
             CoincidenceMatcher shiftedCM4 = new CoincidenceMatcher(coincidenceEventList1, coincidenceEventList2, HALF_GATE, 0);
             int[] shiftedCoincidence4 = new int[21];
             for (int i = -10; i < 11; i++) {
-                long delay = 3400 - 10200 + i * 12500;
+                long delay = 7600 - 12400 + i * 12500;
                 shiftedCM4.setDelay(delay);
                 shiftedCoincidence4[i + 10] = shiftedCM4.find();
             }
@@ -92,6 +92,7 @@ public class FourFold {
                 sb.append(shiftedC4).append("\t");
             }
             sb.append(System.lineSeparator());
+            break;
         }
         String newFileName = file.getAbsolutePath() + ".ana";
         try (PrintWriter printWriter = new PrintWriter(newFileName)) {
@@ -102,7 +103,7 @@ public class FourFold {
 
     private static void scanDelay(TimeEventList list1, TimeEventList list2) {
         CoincidenceMatcher cm = new CoincidenceMatcher(list1, list2, 1000, 0);
-        for (int delay = -100000; delay < 100000; delay += 100) {
+        for (int delay = 100000; delay < 200000; delay += 100) {
             cm.setDelay(delay);
             System.out.println(delay + "\t" + cm.find());
         }
