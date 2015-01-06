@@ -56,7 +56,7 @@ public class HydraHarp400T2Loader implements TimeEventLoader {
             fileChannel = raf.getChannel();
             reader = new MappingReader(fileChannel, start, size);
 //            readHead();
-//            reader.skip(800);
+            reader.skip(800);
         }
     }
 
