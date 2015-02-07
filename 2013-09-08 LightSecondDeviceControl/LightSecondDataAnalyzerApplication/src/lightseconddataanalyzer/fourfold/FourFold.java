@@ -21,7 +21,7 @@ public class FourFold {
     private static final int CHANNEL_I2 = 0;
     private static final int CHANNEL_T1 = 2;
     private static final int CHANNEL_T2 = 3;
-    private static final long SINGLE_LENGTH = 1000 * 1024 * 1024;
+    private static final long SINGLE_LENGTH = 100 * 1024 * 1024;
     private static final int HALF_GATE = 1500;
 
     public static void calc(File file) throws IOException, DeviceException {
@@ -41,10 +41,12 @@ public class FourFold {
             TimeEventList signalListT1 = segment.getEventList(CHANNEL_T1);
             TimeEventList signalListT2 = segment.getEventList(CHANNEL_T2);
 
-            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, HALF_GATE, -100500);
-            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, HALF_GATE, 900);
-            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, HALF_GATE, -101200);
-            CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, HALF_GATE, 200);
+            scanDelay(signalListT2, signalListI2);
+
+            CoincidenceMatcher cm11 = new CoincidenceMatcher(signalListT1, signalListI1, HALF_GATE, -89800);
+            CoincidenceMatcher cm12 = new CoincidenceMatcher(signalListT1, signalListI2, HALF_GATE, 7600);
+            CoincidenceMatcher cm21 = new CoincidenceMatcher(signalListT2, signalListI1, HALF_GATE, 0);
+            CoincidenceMatcher cm22 = new CoincidenceMatcher(signalListT2, signalListI2, HALF_GATE, 897);
             int coincidence11 = cm11.find();
             int coincidence12 = cm12.find();
             int coincidence21 = cm21.find();
@@ -106,8 +108,8 @@ public class FourFold {
     }
 
     private static void scanDelay(TimeEventList list1, TimeEventList list2) {
-        CoincidenceMatcher cm = new CoincidenceMatcher(list1, list2, 1000, 0);
-        for (int delay = -102000; delay < -98000; delay += 100) {
+        CoincidenceMatcher cm = new CoincidenceMatcher(list1, list2, 50, 0);
+        for (int delay = -200000; delay < 200000; delay += 100) {
             cm.setDelay(delay);
             System.out.println(delay + "\t" + cm.find());
         }
