@@ -1,12 +1,14 @@
 package com.hwaipy.rrdps;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Hwaipy
  */
 public class EncodingRandom {
 
-    private final int[] random;
+    private  int[] random;
 
     public EncodingRandom(int[] random) {
         this.random = random;
@@ -24,4 +26,11 @@ public class EncodingRandom {
             return -1;
         }
     }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(random); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

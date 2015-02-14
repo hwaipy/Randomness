@@ -60,7 +60,7 @@ public class Calibrator {
     }
 
     public Collection<Coincidence> calibrateByLineFitting(int s) {
-        System.out.println("Calibrating by LineFitting.");
+//        System.out.println("Calibrating by LineFitting.");
         int size = 2 * s;
         int startIndex = s - 1;
         int endIndex = s;
