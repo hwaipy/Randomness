@@ -1,5 +1,6 @@
 package com.hwaipy.rrdps;
 
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,13 +12,17 @@ import java.util.Collection;
 public class Decoder {
 
     private final Collection<Tagger.Entry> tags;
-    private final TimeEventList aliceQRNG;
-    private final TimeEventList bobQRNG;
+    private final ArrayList<TimeEvent> aliceQRNG = new ArrayList<>();
+    private final ArrayList<TimeEvent> bobQRNG = new ArrayList<>();
 
     public Decoder(Collection<Tagger.Entry> tags, TimeEventList aliceQRNG, TimeEventList bobQRNG) {
         this.tags = tags;
-        this.aliceQRNG = aliceQRNG;
-        this.bobQRNG = bobQRNG;
+        for (TimeEvent event : aliceQRNG) {
+            this.aliceQRNG.add(event);
+        }
+        for (TimeEvent event : bobQRNG) {
+            this.bobQRNG.add(event);
+        }
     }
 
     public ArrayList<Entry> decode() {
@@ -28,10 +33,8 @@ public class Decoder {
             int decode = tag.getCode();
             long apdtime = tag.getApdTime();
             if (roundIndex >= aliceQRNG.size() || roundIndex >= bobQRNG.size()) {
-//                System.out.println("roundIndex " + roundIndex);
                 break;
             }
-//            System.out.println((aliceQRNG.get(roundIndex).getTime()-bobQRNG.get(roundIndex).getTime()));
             EncodingRandom encodingRandom = ((ExtandedTimeEvent<EncodingRandom>) aliceQRNG.get(roundIndex)).getProperty();
             DecodingRandom decodingRandom = ((ExtandedTimeEvent<DecodingRandom>) bobQRNG.get(roundIndex)).getProperty();
             int delay = decodingRandom.getDelay();

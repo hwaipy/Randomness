@@ -30,17 +30,18 @@ public class CorrelationTest {
 
     public static void main(String[] args) throws IOException {
         CorrelationFunction functionPump = new PumpFunction(390, 1.6);
-//        functionPump.filterPump(gaussian390_02);
+        functionPump.filterPump(gaussian390_02);
+        functionPump.filterPump(fpEtalon390_0015);
 //        functionPump.filterPump(fpEtalon390_0015);
         plot(functionPump, "pump");
-        CorrelationFunction functionPhaseMatch = new QuasiPhaseMatchFunction(Mediums.KTiOPO4, 1, 7.9482);
+        CorrelationFunction functionPhaseMatch = new QuasiPhaseMatchFunction(Mediums.KTiOPO4, 30, 7.9482);
         plot(functionPhaseMatch, "phaseMatch");
         CorrelationFunction functionJoin = new JointFunction(functionPhaseMatch, functionPump);
         plot(functionJoin, "join");
-        functionJoin.filterSignal(bandPass780_1);
+//        functionJoin.filterSignal(bandPass780_1);
+        functionJoin.filterSignal(bandPass780_3);
         functionJoin.filterIdle(bandPass780_3);
-//        functionJoin.filterSignal(fpEtalon780_0030);
-//        functionJoin.filterSignal(fpEtalon780_0030);
+        functionJoin.filterSignal(fpEtalon780_0030);
 //        functionJoin.filterIdle(fpEtalon780_0030);
         plot(functionJoin, "filtered");
         purity(functionJoin);
