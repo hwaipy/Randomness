@@ -39,8 +39,8 @@ public class PhotoNamer {
                         System.out.println("Offset " + offset + " for " + newFile.getName());
                     }
                     break;
-                } else {
-                    continue;
+                }
+                else {
                 }
             }
         }
