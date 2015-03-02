@@ -9,9 +9,10 @@
         <group name="2014-08-29 FigureRenderer"/>
         <group name="Randomness"/>
         <group name="Daily">
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141212/PCCouplingDataAnalysis/DA.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141219/AFG3000ArbGen/AFG.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141219/AFG3000ArbGen/antiAFG.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20141212/PCCouplingDataAnalysis/DA.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20150302/PhotoNamer/PhotoNamer.java</file>
         </group>
     </open-files>
 </project-private>
