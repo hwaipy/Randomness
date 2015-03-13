@@ -9,5 +9,11 @@
         <group name="2014-08-29 FigureRenderer"/>
         <group name="Randomness"/>
         <group name="Daily"/>
+        <group name="XChart Parent">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20150312/BirthdayParadox/BirthdayParadox.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140729/OAMDrawer/Test.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140729/OAMDrawer/Intensity.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/Daily/Daily/src/D20140729/OAMDrawer/LGModeFunction.java</file>
+        </group>
     </open-files>
 </project-private>

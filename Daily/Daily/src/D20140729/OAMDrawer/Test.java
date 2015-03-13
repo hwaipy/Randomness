@@ -13,7 +13,7 @@ public class Test {
         FunctionDrawer drawer = new FunctionDrawer();
         LGModeFunction gaussian = new LGModeFunction(0, 0, 1, 1);
         Function tiltedGaussian = new XTilt(gaussian, 0.1);
-        LGModeFunction oam = new LGModeFunction(0, 2, 1, 1);
+        LGModeFunction oam = new LGModeFunction(0, 0, 1, 1);
         drawer.draw(new Intensity(oam), 1000, 1000, -3, 3, -3, 3, new File("re_or.png"));
 
         Sum sum = new Sum(tiltedGaussian, oam);

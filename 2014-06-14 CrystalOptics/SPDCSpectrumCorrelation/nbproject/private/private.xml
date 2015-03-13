@@ -5,8 +5,14 @@
         <group name="Daily"/>
         <group name="Randomness"/>
         <group name="2014-06-14 CrystalOptics">
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/CorrelationTest.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/PurityCalculator.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/CorrelationCompare.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/CorrelationTest.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/CorrelationPloter.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/QuasiPhaseMatchFunction.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/JointFunction.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/PumpFunction.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/GaussianFilter.java</file>
         </group>
     </open-files>
 </project-private>
