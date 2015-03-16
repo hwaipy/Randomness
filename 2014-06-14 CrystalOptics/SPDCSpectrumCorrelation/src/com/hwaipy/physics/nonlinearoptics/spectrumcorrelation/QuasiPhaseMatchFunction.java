@@ -66,4 +66,9 @@ public class QuasiPhaseMatchFunction extends CorrelationFunction {
     return Math.sin(r) / r;
   }
 
+//  public static void main(String[] args) {
+//    MonochromaticWave pump1 = MonochromaticWave.byWaveLength(Amount.valueOf(780, Units.NANOMETRE));
+//    MonochromaticWave pump2 = MonochromaticWave.byWaveLength(Amount.valueOf(780.1, Units.NANOMETRE));
+//    System.out.println(pump2.getAngularFrequency().doubleValue(Units.TERAHERTZ) - pump1.getAngularFrequency().doubleValue(Units.TERAHERTZ));
+//  }
 }
