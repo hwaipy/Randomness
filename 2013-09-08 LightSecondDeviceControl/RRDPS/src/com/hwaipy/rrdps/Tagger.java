@@ -28,7 +28,7 @@ public class Tagger {
         TimeEvent syncEvent = syncIterator.next();
         long syncTime = syncEvent.getTime();
         int roundIndex = 0;
-//        System.out.println(apdList.size());
+        System.out.println(apdList.size());
         TimeEvent event = apdIterator.next();
         while (true) {
             if ((syncEvent == null) && syncIterator.hasNext()) {
@@ -43,17 +43,17 @@ public class Tagger {
                 break;
             }
             long time = event.getTime();
-            if (time < syncTime - 1000) {
+            if (time < syncTime -1000) {
                 event = null;
             } else if (time > syncTime + 256000) {
                 syncEvent = null;
             } else {
                 DecodingRandom random = ((ExtandedTimeEvent<DecodingRandom>) syncEvent).getProperty();
                 long[] tagResult = doTag(event.getTime(), syncTime, random.getDelay1());
-                int pulseIndex = (int) tagResult[0];
+                int pulseIndex = (int)tagResult[0];
                 long apdTime = tagResult[1];
                 if (pulseIndex >= 0) {
-                    result.add(new Entry(roundIndex, pulseIndex, event.getChannel() - 2, apdTime));
+                    result.add(new Entry(roundIndex, pulseIndex, event.getChannel() - 2,apdTime));
                 }
                 event = null;
             }
@@ -61,21 +61,21 @@ public class Tagger {
         return result;
     }
 
-    private long[] doTag(long apdTime, long syncTime, int delayPulse) {
+    private long [] doTag(long apdTime, long syncTime, int delayPulse) {
         long time = apdTime - delayPulse * 2000;
         int deltaTime = (int) (time - syncTime);
-        long tagResult[] = {-1, 0};
+        long tagResult[]={-1,0};
 //        int pulseIndex = -1;
         int index = deltaTime / 2000;
         if ((deltaTime <= index * 2000 + gate / 2) && (deltaTime >= index * 2000 - gate / 2)) {
             tagResult[0] = index;
-            tagResult[1] = apdTime;
+            tagResult[1]=apdTime;
         } else if ((deltaTime >= (index + 1) * 2000 - gate / 2) && (deltaTime <= (index + 1) * 2000 + gate / 2)) {
             tagResult[0] = index + 1;
-            tagResult[1] = apdTime;
+            tagResult[1]=apdTime;
         }
-        if (tagResult[0] > 127) {
-            tagResult[0] = -1;
+        if (tagResult[0]> 127) {
+            tagResult[0]= -1;
         }
         return tagResult;
     }
@@ -91,7 +91,7 @@ public class Tagger {
             this.roundIndex = roundIndex;
             this.pulseIndex = pulseIndex;
             this.code = code;
-            this.apdTime = apdTime;
+            this.apdTime=apdTime;
         }
 
         public int getRoundIndex() {

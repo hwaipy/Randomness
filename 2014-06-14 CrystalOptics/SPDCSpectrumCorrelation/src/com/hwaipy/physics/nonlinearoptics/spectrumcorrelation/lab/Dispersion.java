@@ -53,18 +53,20 @@ public class Dispersion {
 //    plot(functionPhaseMatch, "phaseMatch");
 //    plot(functionJoin, "filtered");
 //    System.out.println(_HOM(functionJoin));
-    for (int i = -50; i <= 50; i++) {
+//    for (int i = -0; i >= -500; i--) {
 //    System.out.println(HOM_traditional(functionJoin, 2e-12 * 5));
 //    double delta = 10 * Math.pow(0.96, i);
-      double delta = 0.045;
-      System.out.print(i + "\t" + (1.5 / 50 * i) + "\t");
-      minOmigaS = 1550 - delta;
-      maxOmigaS = 1550 + delta;
-      minOmigaI = 1550 - delta;
-      maxOmigaI = 1550 + delta;
+    double delta = 2;
+//      System.out.print(i + "\t" + (1.5 / 500 * i) + "\t");
+    minOmigaS = 1550 - delta;
+    maxOmigaS = 1550 + delta;
+    minOmigaI = 1550 - delta;
+    maxOmigaI = 1550 + delta;
+    plot(functionJoin, "filtered");
 //      System.out.println(_HOM(functionJoin));
-      System.out.println(HOM_dispertion(functionJoin, 1.5 / 50 * i));
-    }
+//    System.out.println(HOM_dispertion(functionJoin, 40e-12));
+    System.out.println(HOM_traditional(functionJoin, 5e-12));
+//    }
   }
 
   private static void plot(CorrelationFunction function, String name) throws IOException {

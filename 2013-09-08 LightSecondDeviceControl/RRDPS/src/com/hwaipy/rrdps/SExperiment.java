@@ -24,14 +24,13 @@ import java.util.Map;
  *
  * @author Hwaipy
  */
-public class Experiment {
+public class SExperiment {
 
   private static final boolean DEBUG = false;
   private static final int CHANNEL_APD1 = 2;
   private static final int CHANNEL_APD2 = 3;
   private static final Map<String, String[]> FILENAME_MAP = new HashMap<>();
 
-  private final String id;
   private String index;
   private final File path;
   private TimeEventList aliceRandomList;
@@ -41,34 +40,20 @@ public class Experiment {
   private TimeEventList apdList;
   private byte mask = (byte) 0xff;
   private ArrayList<DecodingRandom> BobQRNGList;
-  private File FineTimeCalibrateFile = new File("FineTimeCalibrateFile-13.txt");
+//    private File FineTimeCalibrateFile = new File("G:\\DPS数据处理\\DPS实验数据\\FineTimeCalibrateFile-13.txt");
+  private File FineTimeCalibrateFile = null;
+  private final String[] fileNames;
 
-  public Experiment(String id, File path) {
-    this.id = id;
+  public SExperiment(File path, String[] fileNames) {
     this.path = path;
-  }
-
-  public Experiment(String id, String index, File path) {
-    this.id = id;
-    this.index = index;
-    this.path = path;
+    this.fileNames = fileNames;
   }
 
   public void loadData() throws IOException, DeviceException {
-    String[] fileNames = FILENAME_MAP.get(id);
-    if (fileNames == null) {
-      //          new String[]{"20150321151723-s-251_时间测量数据.dat", "20150321151723-s-251_随机数.dat", "20150321151723-R-APD2-251_时间测量数据.dat", "20150321151723-R-APD2-251_接收端随机数.dat", "20150321150519-R-固定-单路-APD2-1_稳相结果.csv", "20150321150519-固定-单路-APD2-1_稳相数据.csv"});
-
-      fileNames = new String[]{id + "-s-" + index + "_时间测量数据.dat", id + "-s-" + index + "_发射端随机数.dat", id + "-R-APD2-" + index + "_时间测量数据.dat", id + "-R-APD2-" + index + "_接收端随机数.dat", id + "-R-固定-单路-APD2-1_稳相结果.csv", id + "-固定-单路-APD2-1_稳相数据.csv"};
-      System.out.println(Arrays.toString(fileNames));
-    }
-//        System.out.println(Arrays.toString(fileNames));
     File AliceTDCFile = new File(path, fileNames[0]);
     File AliceQRNGFile = new File(path, fileNames[1]);
     File BobTDCFile = new File(path, fileNames[2]);
     File BobQRNGFile = new File(path, fileNames[3]);
-    File plrFile = new File(path, fileNames[4]);
-    File pldFile = new File(path, fileNames[5]);
     TimeEventSegment aliceSegment = loadTDCFile(AliceTDCFile);
     System.out.println("Load alice TDC");
     TimeEventSegment bobSegment = loadTDCFile(BobTDCFile);

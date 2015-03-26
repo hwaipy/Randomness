@@ -11,19 +11,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
  * @author Hwaipy
  */
-public class PhaseLocker {
-    
-       public ArrayList<PhaseLockingResult> loadPhaseLockerFile(File plrFile, File pldFile) throws FileNotFoundException, IOException {
-//        File path = new File("G:\\DPS数据处理\\DPS实验数据\\2015-2-11\\一次一稳");
-//        File plrFile = new File(path, "20150212024655-PC-APD1-6_稳相结果.csv");
-//        File pldFile = new File(path, "20150212024655-PC-APD1-6_稳相数据.csv");
-            ArrayList<PhaseLockingResult> phaseLockingResultlist=new ArrayList<>();;
+public class Test {
+
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        File path = new File("G:\\DPS数据处理\\DPS实验数据\\2015-2-11\\一次一稳");
+        File plrFile = new File(path, "20150212024655-PC-APD1-6_稳相结果.csv");
+        File pldFile = new File(path, "20150212024655-PC-APD1-6_稳相数据.csv");
         BufferedReader plrReader = new BufferedReader(new InputStreamReader(new FileInputStream(plrFile), "GB2312"));
         BufferedReader pldReader = new BufferedReader(new InputStreamReader(new FileInputStream(pldFile), "GB2312"));
         while (true) {
@@ -33,12 +32,10 @@ public class PhaseLocker {
                 break;
             }
             PhaseLockingResult phaseLockingResult = parse(plrs, plds);
-            phaseLockingResultlist.add(phaseLockingResult);
         }
-        return phaseLockingResultlist;
     }
 
-    private String[] readLines(BufferedReader reader, int count) throws IOException {
+    private static String[] readLines(BufferedReader reader, int count) throws IOException {
         String[] results = new String[count];
         for (int i = 0; i < count; i++) {
             String line = reader.readLine();
@@ -50,7 +47,7 @@ public class PhaseLocker {
         return results;
     }
 
-    private  PhaseLockingResult parse(String[] plrs, String[] plds) {
+    private static PhaseLockingResult parse(String[] plrs, String[] plds) {
         String[] split1 = plrs[2].split(" *, *");
         int plResult = Integer.parseInt(split1[6]);
 
