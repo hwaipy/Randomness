@@ -1,0 +1,738 @@
+Round: 	725	 APDTime	412502226812	 PulseIndex: 	57	 Encode: 	0	 Decode: 	0
+Round: 	1163	 APDTime	456302340179	 PulseIndex: 	119	 Encode: 	1	 Decode: 	1
+Round: 	1659	 APDTime	505902331456	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	1742	 APDTime	514202206116	 PulseIndex: 	42	 Encode: 	0	 Decode: 	0
+Round: 	2611	 APDTime	601102356365	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	3595	 APDTime	699502329445	 PulseIndex: 	98	 Encode: 	0	 Decode: 	0
+Round: 	3664	 APDTime	706402274130	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	3726	 APDTime	712602226603	 PulseIndex: 	54	 Encode: 	1	 Decode: 	1
+Round: 	3735	 APDTime	713502280586	 PulseIndex: 	80	 Encode: 	1	 Decode: 	1
+Round: 	4224	 APDTime	762402283955	 PulseIndex: 	68	 Encode: 	0	 Decode: 	0
+Round: 	4382	 APDTime	778202299222	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	4532	 APDTime	793202356205	 PulseIndex: 	103	 Encode: 	1	 Decode: 	1
+Round: 	4586	 APDTime	798602256436	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	4832	 APDTime	823202316578	 PulseIndex: 	96	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	4896	 APDTime	829602290846	 PulseIndex: 	76	 Encode: 	0	 Decode: 	0
+Round: 	5035	 APDTime	843502301881	 PulseIndex: 	84	 Encode: 	0	 Decode: 	0
+Round: 	5055	 APDTime	845502356113	 PulseIndex: 	106	 Encode: 	1	 Decode: 	1
+Round: 	5390	 APDTime	879002194394	 PulseIndex: 	18	 Encode: 	0	 Decode: 	0
+Round: 	5589	 APDTime	898902309596	 PulseIndex: 	82	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	6280	 APDTime	968002324771	 PulseIndex: 	94	 Encode: 	1	 Decode: 	1
+Round: 	8194	 APDTime	1499402430792	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	8670	 APDTime	1547002382349	 PulseIndex: 	90	 Encode: 	1	 Decode: 	1
+Round: 	9196	 APDTime	1599602410394	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	9786	 APDTime	1658602270559	 PulseIndex: 	33	 Encode: 	1	 Decode: 	1
+Round: 	9909	 APDTime	1670902351079	 PulseIndex: 	68	 Encode: 	0	 Decode: 	0
+Round: 	11472	 APDTime	1827202402567	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	12671	 APDTime	1947102389080	 PulseIndex: 	86	 Encode: 	1	 Decode: 	1
+Round: 	12899	 APDTime	1969902416919	 PulseIndex: 	96	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	13325	 APDTime	2352502458359	 PulseIndex: 	106	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	13440	 APDTime	2364002459249	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	13942	 APDTime	2414202427201	 PulseIndex: 	87	 Encode: 	0	 Decode: 	0
+Round: 	14245	 APDTime	2444502406734	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	14496	 APDTime	2469602435099	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	14840	 APDTime	2504002437251	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	16590	 APDTime	2679002461997	 PulseIndex: 	98	 Encode: 	1	 Decode: 	1
+Round: 	16914	 APDTime	2711402446360	 PulseIndex: 	83	 Encode: 	1	 Decode: 	1
+Round: 	16946	 APDTime	2714602316533	 PulseIndex: 	22	 Encode: 	0	 Decode: 	0
+Round: 	17234	 APDTime	2743402418567	 PulseIndex: 	66	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	17278	 APDTime	2747802387226	 PulseIndex: 	51	 Encode: 	1	 Decode: 	1
+Round: 	18461	 APDTime	2866102463282	 PulseIndex: 	84	 Encode: 	0	 Decode: 	0
+Round: 	18975	 APDTime	2917502459321	 PulseIndex: 	87	 Encode: 	0	 Decode: 	0
+Round: 	19639	 APDTime	2983902338256	 PulseIndex: 	17	 Encode: 	1	 Decode: 	1
+Round: 	19984	 APDTime	3358402435305	 PulseIndex: 	56	 Encode: 	0	 Decode: 	0
+Round: 	20421	 APDTime	3402102574336	 PulseIndex: 	111	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	23232	 APDTime	3683202574474	 PulseIndex: 	106	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	23687	 APDTime	3728702469783	 PulseIndex: 	48	 Encode: 	0	 Decode: 	0
+Round: 	23703	 APDTime	3730302504213	 PulseIndex: 	67	 Encode: 	1	 Decode: 	1
+Round: 	23852	 APDTime	3745202571246	 PulseIndex: 	111	 Encode: 	1	 Decode: 	1
+Round: 	24141	 APDTime	3774102493227	 PulseIndex: 	65	 Encode: 	0	 Decode: 	0
+Round: 	24308	 APDTime	3790802396363	 PulseIndex: 	21	 Encode: 	0	 Decode: 	0
+Round: 	25019	 APDTime	3861902573466	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	25116	 APDTime	3871602432349	 PulseIndex: 	29	 Encode: 	1	 Decode: 	1
+Round: 	25945	 APDTime	3954502560145	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	28063	 APDTime	4506302536061	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	28176	 APDTime	4517602652999	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	29863	 APDTime	4686302449199	 PulseIndex: 	7	 Encode: 	1	 Decode: 	1
+Round: 	29940	 APDTime	4694002615571	 PulseIndex: 	83	 Encode: 	0	 Decode: 	0
+Round: 	30081	 APDTime	4708102654719	 PulseIndex: 	116	 Encode: 	0	 Decode: 	0
+Round: 	30131	 APDTime	4713102464884	 PulseIndex: 	21	 Encode: 	0	 Decode: 	0
+Round: 	30412	 APDTime	4741202654857	 PulseIndex: 	113	 Encode: 	0	 Decode: 	0
+Round: 	30483	 APDTime	4748302501076	 PulseIndex: 	25	 Encode: 	1	 Decode: 	1
+Round: 	31237	 APDTime	4823702574840	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	31604	 APDTime	4860402587477	 PulseIndex: 	78	 Encode: 	1	 Decode: 	1
+Round: 	33155	 APDTime	5355502694829	 PulseIndex: 	104	 Encode: 	0	 Decode: 	0
+Round: 	33470	 APDTime	5387002725367	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	34552	 APDTime	5495202669234	 PulseIndex: 	90	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	34594	 APDTime	5499402661610	 PulseIndex: 	89	 Encode: 	0	 Decode: 	0
+Round: 	34613	 APDTime	5501302627499	 PulseIndex: 	59	 Encode: 	0	 Decode: 	0
+Round: 	34949	 APDTime	5534902680106	 PulseIndex: 	87	 Encode: 	1	 Decode: 	1
+Round: 	35034	 APDTime	5543402652613	 PulseIndex: 	75	 Encode: 	0	 Decode: 	0
+Round: 	35049	 APDTime	5544902670559	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	35145	 APDTime	5554502515617	 PulseIndex: 	0	 Encode: 	0	 Decode: 	0
+Round: 	37350	 APDTime	5775002677358	 PulseIndex: 	77	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	37472	 APDTime	5787202644280	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	38543	 APDTime	5894302747848	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	39687	 APDTime	6348702732303	 PulseIndex: 	92	 Encode: 	1	 Decode: 	1
+Round: 	39996	 APDTime	6379602706433	 PulseIndex: 	69	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	40124	 APDTime	6392402765182	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	40508	 APDTime	6430802690250	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	40976	 APDTime	6477602775713	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	40981	 APDTime	6478102639632	 PulseIndex: 	29	 Encode: 	0	 Decode: 	0
+Round: 	41035	 APDTime	6483502725850	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	42114	 APDTime	6591402745971	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	42302	 APDTime	6610202813305	 PulseIndex: 	121	 Encode: 	0	 Decode: 	0
+Round: 	43528	 APDTime	6732802735969	 PulseIndex: 	72	 Encode: 	0	 Decode: 	0
+Round: 	43553	 APDTime	6735302744002	 PulseIndex: 	71	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	43654	 APDTime	6745402797047	 PulseIndex: 	111	 Encode: 	1	 Decode: 	1
+Round: 	43969	 APDTime	6776902647485	 PulseIndex: 	28	 Encode: 	0	 Decode: 	0
+Round: 	44471	 APDTime	6827102718613	 PulseIndex: 	59	 Encode: 	1	 Decode: 	1
+Round: 	45135	 APDTime	6893502721566	 PulseIndex: 	59	 Encode: 	1	 Decode: 	1
+Round: 	46028	 APDTime	6982802838096	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	46331	 APDTime	7353102780498	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	46938	 APDTime	7413802770971	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	47707	 APDTime	7490702668384	 PulseIndex: 	10	 Encode: 	1	 Decode: 	1
+Round: 	48296	 APDTime	7549602772622	 PulseIndex: 	60	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	48393	 APDTime	7559302843318	 PulseIndex: 	97	 Encode: 	0	 Decode: 	0
+Round: 	48657	 APDTime	7585702727384	 PulseIndex: 	43	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	49658	 APDTime	7685802836427	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	50358	 APDTime	7755802871340	 PulseIndex: 	97	 Encode: 	0	 Decode: 	0
+Round: 	50629	 APDTime	7782902877109	 PulseIndex: 	108	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	51329	 APDTime	7852902874359	 PulseIndex: 	93	 Encode: 	1	 Decode: 	1
+Round: 	51419	 APDTime	7861902844987	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	52082	 APDTime	7928202789907	 PulseIndex: 	54	 Encode: 	0	 Decode: 	0
+Round: 	52131	 APDTime	7933102916232	 PulseIndex: 	123	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	54665	 APDTime	8526502794643	 PulseIndex: 	29	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	55294	 APDTime	8589402897370	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	55896	 APDTime	8649602969826	 PulseIndex: 	125	 Encode: 	1	 Decode: 	1
+Round: 	58009	 APDTime	8860902874909	 PulseIndex: 	64	 Encode: 	1	 Decode: 	1
+Round: 	58456	 APDTime	8905602844140	 PulseIndex: 	39	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	59682	 APDTime	9368202851008	 PulseIndex: 	37	 Encode: 	1	 Decode: 	1
+Round: 	59979	 APDTime	9397902841304	 PulseIndex: 	31	 Encode: 	0	 Decode: 	0
+Round: 	60602	 APDTime	9460202981688	 PulseIndex: 	98	 Encode: 	0	 Decode: 	0
+Round: 	60755	 APDTime	9475502978755	 PulseIndex: 	95	 Encode: 	1	 Decode: 	1
+Round: 	61101	 APDTime	9510102931276	 PulseIndex: 	68	 Encode: 	0	 Decode: 	0
+Round: 	61936	 APDTime	9593602873260	 PulseIndex: 	41	 Encode: 	1	 Decode: 	1
+Round: 	62101	 APDTime	9610102958062	 PulseIndex: 	78	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	62423	 APDTime	9642302942468	 PulseIndex: 	63	 Encode: 	1	 Decode: 	1
+Round: 	62883	 APDTime	9688303028094	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	64315	 APDTime	9831502952384	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	64543	 APDTime	9854302937867	 PulseIndex: 	58	 Encode: 	1	 Decode: 	1
+Round: 	65070	 APDTime	9907003067746	 PulseIndex: 	123	 Encode: 	0	 Decode: 	0
+Round: 	65123	 APDTime	9912302898126	 PulseIndex: 	32	 Encode: 	0	 Decode: 	0
+Round: 	65938	 APDTime	9993802977728	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	66185	 APDTime	10358503069692	 PulseIndex: 	108	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	66975	 APDTime	10437502961493	 PulseIndex: 	39	 Encode: 	1	 Decode: 	1
+Round: 	67134	 APDTime	10453403028827	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	68284	 APDTime	10568403055289	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	69214	 APDTime	10661402991670	 PulseIndex: 	48	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	69292	 APDTime	10669203046157	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	69304	 APDTime	10670403006322	 PulseIndex: 	52	 Encode: 	0	 Decode: 	0
+Round: 	69374	 APDTime	10677402966624	 PulseIndex: 	32	 Encode: 	0	 Decode: 	0
+Round: 	69467	 APDTime	10686703089011	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	70059	 APDTime	10745903095330	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	70071	 APDTime	10747102915571	 PulseIndex: 	11	 Encode: 	0	 Decode: 	0
+Round: 	70435	 APDTime	10783503133975	 PulseIndex: 	122	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	70583	 APDTime	10798302993227	 PulseIndex: 	49	 Encode: 	0	 Decode: 	0
+Round: 	71667	 APDTime	10906703126763	 PulseIndex: 	105	 Encode: 	1	 Decode: 	1
+Round: 	71892	 APDTime	10929203024660	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	73499	 APDTime	11429903166281	 PulseIndex: 	112	 Encode: 	0	 Decode: 	0
+Round: 	73905	 APDTime	11470503151217	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	74007	 APDTime	11480703180014	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	75466	 APDTime	11626603078457	 PulseIndex: 	65	 Encode: 	1	 Decode: 	1
+Round: 	75698	 APDTime	11649803183978	 PulseIndex: 	110	 Encode: 	0	 Decode: 	0
+Round: 	75907	 APDTime	11670703121226	 PulseIndex: 	86	 Encode: 	0	 Decode: 	0
+Round: 	76503	 APDTime	11730303117860	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	76622	 APDTime	11742203206276	 PulseIndex: 	118	 Encode: 	0	 Decode: 	0
+Round: 	76664	 APDTime	11746403206848	 PulseIndex: 	112	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	78466	 APDTime	11926603131642	 PulseIndex: 	70	 Encode: 	0	 Decode: 	0
+Round: 	78538	 APDTime	11933803066392	 PulseIndex: 	50	 Encode: 	1	 Decode: 	1
+Round: 	78611	 APDTime	11941103066716	 PulseIndex: 	49	 Encode: 	0	 Decode: 	0
+Round: 	80483	 APDTime	12468303224222	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	81854	 APDTime	12605403123810	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	82290	 APDTime	12649003163096	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	82374	 APDTime	12657403263442	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	82944	 APDTime	12714403249680	 PulseIndex: 	112	 Encode: 	1	 Decode: 	1
+Round: 	83107	 APDTime	12730703264950	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	83965	 APDTime	12816503168891	 PulseIndex: 	63	 Encode: 	0	 Decode: 	0
+Round: 	84197	 APDTime	12839703236473	 PulseIndex: 	91	 Encode: 	0	 Decode: 	0
+Round: 	85411	 APDTime	12961103224980	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	85558	 APDTime	12975803234433	 PulseIndex: 	87	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	85569	 APDTime	12976903246292	 PulseIndex: 	92	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	85768	 APDTime	12996803237546	 PulseIndex: 	91	 Encode: 	1	 Decode: 	1
+Round: 	86400	 APDTime	13400003198352	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	87158	 APDTime	13475803249751	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	88143	 APDTime	13574303346978	 PulseIndex: 	123	 Encode: 	1	 Decode: 	1
+Round: 	88339	 APDTime	13593903346111	 PulseIndex: 	121	 Encode: 	0	 Decode: 	0
+Round: 	88559	 APDTime	13615903235989	 PulseIndex: 	67	 Encode: 	1	 Decode: 	1
+Round: 	88773	 APDTime	13637303175504	 PulseIndex: 	33	 Encode: 	1	 Decode: 	1
+Round: 	89115	 APDTime	13671503347828	 PulseIndex: 	118	 Encode: 	0	 Decode: 	0
+Round: 	89204	 APDTime	13680403160603	 PulseIndex: 	16	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	89345	 APDTime	13694503313141	 PulseIndex: 	95	 Encode: 	1	 Decode: 	1
+Round: 	89371	 APDTime	13697103329719	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	90465	 APDTime	13806503151443	 PulseIndex: 	15	 Encode: 	1	 Decode: 	1
+Round: 	90717	 APDTime	13831703287435	 PulseIndex: 	83	 Encode: 	0	 Decode: 	0
+Round: 	91701	 APDTime	13930103296520	 PulseIndex: 	77	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	92339	 APDTime	13993903259112	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	92865	 APDTime	14386503366990	 PulseIndex: 	100	 Encode: 	0	 Decode: 	0
+Round: 	92901	 APDTime	14390103363187	 PulseIndex: 	98	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	93793	 APDTime	14479303389609	 PulseIndex: 	111	 Encode: 	0	 Decode: 	0
+Round: 	95031	 APDTime	14603103398309	 PulseIndex: 	110	 Encode: 	0	 Decode: 	0
+Round: 	96583	 APDTime	14758303283448	 PulseIndex: 	38	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	96870	 APDTime	14787003303849	 PulseIndex: 	47	 Encode: 	0	 Decode: 	0
+Round: 	97434	 APDTime	14843403381620	 PulseIndex: 	89	 Encode: 	0	 Decode: 	0
+Round: 	98123	 APDTime	14912303400458	 PulseIndex: 	91	 Encode: 	1	 Decode: 	1
+Round: 	98641	 APDTime	14964103364194	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	99938	 APDTime	15433803425988	 PulseIndex: 	92	 Encode: 	0	 Decode: 	0
+Round: 	100159	 APDTime	15455903329625	 PulseIndex: 	41	 Encode: 	1	 Decode: 	1
+Round: 	100503	 APDTime	15490303293979	 PulseIndex: 	27	 Encode: 	1	 Decode: 	1
+Round: 	100604	 APDTime	15500403438488	 PulseIndex: 	87	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	101142	 APDTime	15554203468773	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	101323	 APDTime	15572303382143	 PulseIndex: 	70	 Encode: 	1	 Decode: 	1
+Round: 	101488	 APDTime	15588803479033	 PulseIndex: 	117	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	102307	 APDTime	15670703476900	 PulseIndex: 	109	 Encode: 	1	 Decode: 	1
+Round: 	102696	 APDTime	15709603479559	 PulseIndex: 	101	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	102903	 APDTime	15730303423146	 PulseIndex: 	81	 Encode: 	1	 Decode: 	1
+Round: 	104302	 APDTime	15870203303274	 PulseIndex: 	11	 Encode: 	1	 Decode: 	1
+Round: 	104863	 APDTime	15926303377567	 PulseIndex: 	50	 Encode: 	0	 Decode: 	0
+Round: 	104979	 APDTime	15937903392128	 PulseIndex: 	54	 Encode: 	0	 Decode: 	0
+Round: 	105820	 APDTime	16362003466761	 PulseIndex: 	80	 Encode: 	0	 Decode: 	0
+Round: 	106847	 APDTime	16464703551740	 PulseIndex: 	118	 Encode: 	1	 Decode: 	1
+Round: 	107587	 APDTime	16538703533245	 PulseIndex: 	106	 Encode: 	0	 Decode: 	0
+Round: 	107726	 APDTime	16552603494277	 PulseIndex: 	81	 Encode: 	1	 Decode: 	1
+Round: 	108763	 APDTime	16656303499817	 PulseIndex: 	75	 Encode: 	1	 Decode: 	1
+Round: 	109110	 APDTime	16691003435875	 PulseIndex: 	47	 Encode: 	1	 Decode: 	1
+Round: 	109205	 APDTime	16700503554857	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	109612	 APDTime	16741203559845	 PulseIndex: 	106	 Encode: 	1	 Decode: 	1
+Round: 	109768	 APDTime	16756803487000	 PulseIndex: 	72	 Encode: 	0	 Decode: 	0
+Round: 	109995	 APDTime	16779503580609	 PulseIndex: 	119	 Encode: 	1	 Decode: 	1
+Round: 	110085	 APDTime	16788503551053	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	110387	 APDTime	16818703585237	 PulseIndex: 	119	 Encode: 	0	 Decode: 	0
+Round: 	110575	 APDTime	16837503494417	 PulseIndex: 	69	 Encode: 	0	 Decode: 	0
+Round: 	111193	 APDTime	16899303477224	 PulseIndex: 	56	 Encode: 	0	 Decode: 	0
+Round: 	111252	 APDTime	16905203499451	 PulseIndex: 	65	 Encode: 	1	 Decode: 	1
+Round: 	112031	 APDTime	16983103410944	 PulseIndex: 	24	 Encode: 	1	 Decode: 	1
+Round: 	112288	 APDTime	17348803435511	 PulseIndex: 	19	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	113150	 APDTime	17435003415545	 PulseIndex: 	6	 Encode: 	1	 Decode: 	1
+Round: 	113261	 APDTime	17446103456342	 PulseIndex: 	35	 Encode: 	1	 Decode: 	1
+Round: 	114397	 APDTime	17559703512592	 PulseIndex: 	57	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	114702	 APDTime	17590203600736	 PulseIndex: 	100	 Encode: 	0	 Decode: 	0
+Round: 	114782	 APDTime	17598203489126	 PulseIndex: 	42	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	115181	 APDTime	17638103650370	 PulseIndex: 	120	 Encode: 	0	 Decode: 	0
+Round: 	115635	 APDTime	17683503647505	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	115813	 APDTime	17701303650687	 PulseIndex: 	115	 Encode: 	1	 Decode: 	1
+Round: 	116440	 APDTime	17764003637294	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	116444	 APDTime	17764403491392	 PulseIndex: 	31	 Encode: 	1	 Decode: 	1
+Round: 	116591	 APDTime	17779103580449	 PulseIndex: 	81	 Encode: 	1	 Decode: 	1
+Round: 	117691	 APDTime	17889103596246	 PulseIndex: 	80	 Encode: 	1	 Decode: 	1
+Round: 	117831	 APDTime	17903103645058	 PulseIndex: 	99	 Encode: 	0	 Decode: 	0
+Round: 	118586	 APDTime	17978603626629	 PulseIndex: 	91	 Encode: 	0	 Decode: 	0
+Round: 	118954	 APDTime	18355403605724	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	119311	 APDTime	18391103582418	 PulseIndex: 	58	 Encode: 	1	 Decode: 	1
+Round: 	119413	 APDTime	18401303592906	 PulseIndex: 	54	 Encode: 	0	 Decode: 	0
+Round: 	119698	 APDTime	18429803644990	 PulseIndex: 	90	 Encode: 	0	 Decode: 	0
+Round: 	121339	 APDTime	18593903688991	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	122588	 APDTime	18718803707650	 PulseIndex: 	112	 Encode: 	0	 Decode: 	0
+Round: 	122626	 APDTime	18722603656342	 PulseIndex: 	79	 Encode: 	1	 Decode: 	1
+Round: 	123349	 APDTime	18794903645562	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	124844	 APDTime	18944403676374	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	124862	 APDTime	18946203690182	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	125010	 APDTime	18961003559295	 PulseIndex: 	24	 Encode: 	1	 Decode: 	1
+Round: 	125041	 APDTime	18964103593796	 PulseIndex: 	39	 Encode: 	1	 Decode: 	1
+Round: 	125356	 APDTime	18995603599955	 PulseIndex: 	36	 Encode: 	1	 Decode: 	1
+Round: 	125573	 APDTime	19357303663671	 PulseIndex: 	58	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	126169	 APDTime	19416903688233	 PulseIndex: 	74	 Encode: 	1	 Decode: 	1
+Round: 	126713	 APDTime	19471303696177	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	126731	 APDTime	19473103700367	 PulseIndex: 	80	 Encode: 	1	 Decode: 	1
+Round: 	127670	 APDTime	19567003643086	 PulseIndex: 	37	 Encode: 	1	 Decode: 	1
+Round: 	128285	 APDTime	19628503711427	 PulseIndex: 	69	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	128582	 APDTime	19658203783746	 PulseIndex: 	111	 Encode: 	1	 Decode: 	1
+Round: 	128586	 APDTime	19658603709619	 PulseIndex: 	67	 Encode: 	0	 Decode: 	0
+Round: 	128778	 APDTime	19677803759341	 PulseIndex: 	103	 Encode: 	1	 Decode: 	1
+Round: 	128798	 APDTime	19679803793338	 PulseIndex: 	120	 Encode: 	1	 Decode: 	1
+Round: 	129451	 APDTime	19745103740362	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	129745	 APDTime	19774503676217	 PulseIndex: 	47	 Encode: 	0	 Decode: 	0
+Round: 	129998	 APDTime	19799803689816	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	130131	 APDTime	19813103638897	 PulseIndex: 	38	 Encode: 	1	 Decode: 	1
+Round: 	131407	 APDTime	19940703782235	 PulseIndex: 	105	 Encode: 	1	 Decode: 	1
+Round: 	131827	 APDTime	19982703761356	 PulseIndex: 	82	 Encode: 	1	 Decode: 	1
+Round: 	131922	 APDTime	19992203813737	 PulseIndex: 	108	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	132315	 APDTime	20371503805154	 PulseIndex: 	92	 Encode: 	0	 Decode: 	0
+Round: 	132880	 APDTime	20428003851351	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	133801	 APDTime	20520103773950	 PulseIndex: 	69	 Encode: 	0	 Decode: 	0
+Round: 	133994	 APDTime	20539403747436	 PulseIndex: 	51	 Encode: 	1	 Decode: 	1
+Round: 	134030	 APDTime	20543003689609	 PulseIndex: 	30	 Encode: 	0	 Decode: 	0
+Round: 	134619	 APDTime	20601903795513	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	134703	 APDTime	20610303810669	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	135667	 APDTime	20706703855495	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	135858	 APDTime	20725803762615	 PulseIndex: 	56	 Encode: 	1	 Decode: 	1
+Round: 	137850	 APDTime	20925003787180	 PulseIndex: 	59	 Encode: 	1	 Decode: 	1
+Round: 	137956	 APDTime	20935603860008	 PulseIndex: 	93	 Encode: 	0	 Decode: 	0
+Round: 	138877	 APDTime	21367703793066	 PulseIndex: 	47	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	138926	 APDTime	21372603841349	 PulseIndex: 	68	 Encode: 	0	 Decode: 	0
+Round: 	139130	 APDTime	21393003844506	 PulseIndex: 	69	 Encode: 	1	 Decode: 	1
+Round: 	139143	 APDTime	21394303904808	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	139474	 APDTime	21427403937045	 PulseIndex: 	121	 Encode: 	0	 Decode: 	0
+Round: 	139533	 APDTime	21433303907349	 PulseIndex: 	102	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	139762	 APDTime	21456203813279	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	139855	 APDTime	21465503745653	 PulseIndex: 	17	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	140203	 APDTime	21500303904373	 PulseIndex: 	91	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	140257	 APDTime	21505703874820	 PulseIndex: 	76	 Encode: 	0	 Decode: 	0
+Round: 	141489	 APDTime	21628903741601	 PulseIndex: 	5	 Encode: 	0	 Decode: 	0
+Round: 	141499	 APDTime	21629903933677	 PulseIndex: 	109	 Encode: 	1	 Decode: 	1
+Round: 	141653	 APDTime	21645303808657	 PulseIndex: 	44	 Encode: 	0	 Decode: 	0
+Round: 	141664	 APDTime	21646403948901	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	142025	 APDTime	21682503939037	 PulseIndex: 	108	 Encode: 	0	 Decode: 	0
+Round: 	142341	 APDTime	21714103957970	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	142626	 APDTime	21742603929742	 PulseIndex: 	100	 Encode: 	0	 Decode: 	0
+Round: 	143402	 APDTime	21820203901262	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	144267	 APDTime	21906703957741	 PulseIndex: 	103	 Encode: 	0	 Decode: 	0
+Round: 	144954	 APDTime	21975403948856	 PulseIndex: 	105	 Encode: 	1	 Decode: 	1
+Round: 	145028	 APDTime	21982803901237	 PulseIndex: 	81	 Encode: 	1	 Decode: 	1
+Round: 	145132	 APDTime	21993203783794	 PulseIndex: 	14	 Encode: 	0	 Decode: 	0
+Round: 	145751	 APDTime	22395103936885	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	147348	 APDTime	22554804006688	 PulseIndex: 	102	 Encode: 	0	 Decode: 	0
+Round: 	148113	 APDTime	22631303924474	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	148147	 APDTime	22634704014263	 PulseIndex: 	104	 Encode: 	1	 Decode: 	1
+Round: 	149211	 APDTime	22741103912183	 PulseIndex: 	63	 Encode: 	0	 Decode: 	0
+Round: 	149221	 APDTime	22742103968295	 PulseIndex: 	90	 Encode: 	0	 Decode: 	0
+Round: 	150145	 APDTime	22834503989129	 PulseIndex: 	91	 Encode: 	0	 Decode: 	0
+Round: 	151321	 APDTime	22952104033608	 PulseIndex: 	103	 Encode: 	1	 Decode: 	1
+Round: 	153253	 APDTime	23485304100141	 PulseIndex: 	116	 Encode: 	0	 Decode: 	0
+Round: 	155176	 APDTime	23677604090113	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	156666	 APDTime	23826604013302	 PulseIndex: 	64	 Encode: 	1	 Decode: 	1
+Round: 	156927	 APDTime	23852703949477	 PulseIndex: 	28	 Encode: 	0	 Decode: 	0
+Round: 	157036	 APDTime	23863604122024	 PulseIndex: 	113	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	157317	 APDTime	23891703926079	 PulseIndex: 	15	 Encode: 	0	 Decode: 	0
+Round: 	157550	 APDTime	23915004099568	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	157931	 APDTime	23953103944623	 PulseIndex: 	32	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	158372	 APDTime	23997204077770	 PulseIndex: 	88	 Encode: 	1	 Decode: 	1
+Round: 	158834	 APDTime	24383404083837	 PulseIndex: 	73	 Encode: 	1	 Decode: 	1
+Round: 	158963	 APDTime	24396304130727	 PulseIndex: 	106	 Encode: 	0	 Decode: 	0
+Round: 	159925	 APDTime	24492504153755	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	160718	 APDTime	24571804147505	 PulseIndex: 	102	 Encode: 	1	 Decode: 	1
+Round: 	161618	 APDTime	24661804168021	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	163324	 APDTime	24832404152770	 PulseIndex: 	97	 Encode: 	1	 Decode: 	1
+Round: 	163591	 APDTime	24859104076400	 PulseIndex: 	49	 Encode: 	0	 Decode: 	0
+Round: 	164325	 APDTime	24932504123881	 PulseIndex: 	74	 Encode: 	0	 Decode: 	0
+Round: 	164359	 APDTime	24935904140044	 PulseIndex: 	90	 Encode: 	0	 Decode: 	0
+Round: 	164697	 APDTime	24969704112912	 PulseIndex: 	72	 Encode: 	1	 Decode: 	1
+Round: 	164755	 APDTime	24975504101076	 PulseIndex: 	62	 Encode: 	1	 Decode: 	1
+Round: 	165398	 APDTime	25379804088465	 PulseIndex: 	47	 Encode: 	0	 Decode: 	0
+Round: 	165423	 APDTime	25382304030818	 PulseIndex: 	10	 Encode: 	0	 Decode: 	0
+Round: 	165463	 APDTime	25386304201240	 PulseIndex: 	97	 Encode: 	0	 Decode: 	0
+Round: 	166182	 APDTime	25458204110623	 PulseIndex: 	48	 Encode: 	1	 Decode: 	1
+Round: 	166867	 APDTime	25526704255681	 PulseIndex: 	118	 Encode: 	0	 Decode: 	0
+Round: 	167803	 APDTime	25620304152728	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	168485	 APDTime	25688504125367	 PulseIndex: 	49	 Encode: 	1	 Decode: 	1
+Round: 	168888	 APDTime	25728804140250	 PulseIndex: 	48	 Encode: 	0	 Decode: 	0
+Round: 	170235	 APDTime	25863504266392	 PulseIndex: 	119	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	171810	 APDTime	26361004294692	 PulseIndex: 	101	 Encode: 	0	 Decode: 	0
+Round: 	174289	 APDTime	26608904175026	 PulseIndex: 	45	 Encode: 	0	 Decode: 	0
+Round: 	175376	 APDTime	26717604344895	 PulseIndex: 	125	 Encode: 	1	 Decode: 	1
+Round: 	175814	 APDTime	26761404332303	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	176167	 APDTime	26796704141029	 PulseIndex: 	12	 Encode: 	0	 Decode: 	0
+Round: 	177445	 APDTime	26924504252542	 PulseIndex: 	69	 Encode: 	1	 Decode: 	1
+Round: 	178340	 APDTime	27354004229739	 PulseIndex: 	41	 Encode: 	1	 Decode: 	1
+Round: 	178572	 APDTime	27377204369552	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	178595	 APDTime	27379504393456	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	178738	 APDTime	27393804288576	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	179658	 APDTime	27485804373240	 PulseIndex: 	110	 Encode: 	0	 Decode: 	0
+Round: 	179853	 APDTime	27505304276900	 PulseIndex: 	59	 Encode: 	1	 Decode: 	1
+Round: 	180047	 APDTime	27524704406319	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	180225	 APDTime	27542504369803	 PulseIndex: 	101	 Encode: 	1	 Decode: 	1
+Round: 	181226	 APDTime	27642604230933	 PulseIndex: 	20	 Encode: 	0	 Decode: 	0
+Round: 	181608	 APDTime	27680804347894	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	182164	 APDTime	27736404324176	 PulseIndex: 	73	 Encode: 	1	 Decode: 	1
+Round: 	182264	 APDTime	27746404392674	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	182308	 APDTime	27750804415090	 PulseIndex: 	107	 Encode: 	0	 Decode: 	0
+Round: 	183388	 APDTime	27858804428984	 PulseIndex: 	123	 Encode: 	1	 Decode: 	1
+Round: 	185347	 APDTime	28394704300229	 PulseIndex: 	28	 Encode: 	1	 Decode: 	1
+Round: 	185850	 APDTime	28445004377954	 PulseIndex: 	62	 Encode: 	1	 Decode: 	1
+Round: 	186390	 APDTime	28499004459982	 PulseIndex: 	109	 Encode: 	1	 Decode: 	1
+Round: 	186864	 APDTime	28546404427564	 PulseIndex: 	91	 Encode: 	1	 Decode: 	1
+Round: 	187533	 APDTime	28613304312317	 PulseIndex: 	33	 Encode: 	1	 Decode: 	1
+Round: 	187991	 APDTime	28659104341327	 PulseIndex: 	36	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	188961	 APDTime	28756104488579	 PulseIndex: 	119	 Encode: 	0	 Decode: 	0
+Round: 	189223	 APDTime	28782304500779	 PulseIndex: 	120	 Encode: 	1	 Decode: 	1
+Round: 	189293	 APDTime	28789304353091	 PulseIndex: 	42	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	189555	 APDTime	28815504380933	 PulseIndex: 	55	 Encode: 	0	 Decode: 	0
+Round: 	190767	 APDTime	28936704510394	 PulseIndex: 	113	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	191610	 APDTime	29361004357670	 PulseIndex: 	19	 Encode: 	1	 Decode: 	1
+Round: 	191908	 APDTime	29390804461951	 PulseIndex: 	71	 Encode: 	1	 Decode: 	1
+Round: 	193050	 APDTime	29505004556253	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	193163	 APDTime	29516304512709	 PulseIndex: 	99	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	194081	 APDTime	29608104401766	 PulseIndex: 	32	 Encode: 	0	 Decode: 	0
+Round: 	194952	 APDTime	29695204499980	 PulseIndex: 	75	 Encode: 	0	 Decode: 	0
+Round: 	195182	 APDTime	29718204437984	 PulseIndex: 	50	 Encode: 	0	 Decode: 	0
+Round: 	195620	 APDTime	29762004536771	 PulseIndex: 	93	 Encode: 	0	 Decode: 	0
+Round: 	196090	 APDTime	29809004508291	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	196483	 APDTime	29848304563442	 PulseIndex: 	112	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	196509	 APDTime	29850904543433	 PulseIndex: 	104	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	196683	 APDTime	29868304476786	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	197046	 APDTime	29904604585760	 PulseIndex: 	121	 Encode: 	1	 Decode: 	1
+Round: 	198138	 APDTime	30353804586519	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	198791	 APDTime	30419104633153	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	198885	 APDTime	30428504572184	 PulseIndex: 	86	 Encode: 	1	 Decode: 	1
+Round: 	199517	 APDTime	30491704592631	 PulseIndex: 	103	 Encode: 	0	 Decode: 	0
+Round: 	199738	 APDTime	30513804500206	 PulseIndex: 	45	 Encode: 	1	 Decode: 	1
+Round: 	200015	 APDTime	30541504554376	 PulseIndex: 	70	 Encode: 	0	 Decode: 	0
+Round: 	200055	 APDTime	30545504644417	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	200165	 APDTime	30556504643247	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	200236	 APDTime	30563604601881	 PulseIndex: 	100	 Encode: 	0	 Decode: 	0
+Round: 	201211	 APDTime	30661104573077	 PulseIndex: 	73	 Encode: 	1	 Decode: 	1
+Round: 	201534	 APDTime	30693404469692	 PulseIndex: 	28	 Encode: 	0	 Decode: 	0
+Round: 	203326	 APDTime	30872604539011	 PulseIndex: 	48	 Encode: 	1	 Decode: 	1
+Round: 	204774	 APDTime	31357404688691	 PulseIndex: 	102	 Encode: 	1	 Decode: 	1
+Round: 	204857	 APDTime	31365704665090	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	205295	 APDTime	31409504714358	 PulseIndex: 	126	 Encode: 	0	 Decode: 	0
+Round: 	205300	 APDTime	31410004506525	 PulseIndex: 	10	 Encode: 	1	 Decode: 	1
+Round: 	205555	 APDTime	31435504556571	 PulseIndex: 	36	 Encode: 	1	 Decode: 	1
+Round: 	206162	 APDTime	31496204592860	 PulseIndex: 	61	 Encode: 	0	 Decode: 	0
+Round: 	206597	 APDTime	31539704656276	 PulseIndex: 	80	 Encode: 	0	 Decode: 	0
+Round: 	206978	 APDTime	31577804551145	 PulseIndex: 	33	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	207336	 APDTime	31613604537706	 PulseIndex: 	26	 Encode: 	1	 Decode: 	1
+Round: 	207682	 APDTime	31648204580360	 PulseIndex: 	44	 Encode: 	0	 Decode: 	0
+Round: 	207811	 APDTime	31661104700965	 PulseIndex: 	104	 Encode: 	0	 Decode: 	0
+Round: 	208128	 APDTime	31692804691667	 PulseIndex: 	98	 Encode: 	1	 Decode: 	1
+Round: 	208188	 APDTime	31698804709893	 PulseIndex: 	104	 Encode: 	0	 Decode: 	0
+Round: 	208981	 APDTime	31778104709825	 PulseIndex: 	104	 Encode: 	0	 Decode: 	0
+Round: 	209452	 APDTime	31825204705518	 PulseIndex: 	98	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	209623	 APDTime	31842304602613	 PulseIndex: 	44	 Encode: 	0	 Decode: 	0
+Round: 	209628	 APDTime	31842804674706	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	209876	 APDTime	31867604744509	 PulseIndex: 	122	 Encode: 	0	 Decode: 	0
+Round: 	211235	 APDTime	32343504646020	 PulseIndex: 	49	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	211442	 APDTime	32364204635374	 PulseIndex: 	48	 Encode: 	0	 Decode: 	0
+Round: 	211523	 APDTime	32372304734501	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	213004	 APDTime	32520404747161	 PulseIndex: 	91	 Encode: 	1	 Decode: 	1
+Round: 	213476	 APDTime	32567604692700	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	213488	 APDTime	32568804610901	 PulseIndex: 	16	 Encode: 	0	 Decode: 	0
+Round: 	213871	 APDTime	32607104759825	 PulseIndex: 	102	 Encode: 	0	 Decode: 	0
+Round: 	214157	 APDTime	32635704729739	 PulseIndex: 	86	 Encode: 	1	 Decode: 	1
+Round: 	214720	 APDTime	32692004750092	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	215960	 APDTime	32816004676949	 PulseIndex: 	51	 Encode: 	0	 Decode: 	0
+Round: 	216027	 APDTime	32822704713350	 PulseIndex: 	65	 Encode: 	0	 Decode: 	0
+Round: 	216121	 APDTime	32832104784547	 PulseIndex: 	97	 Encode: 	1	 Decode: 	1
+Round: 	217514	 APDTime	32971404782604	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	217658	 APDTime	32985804777636	 PulseIndex: 	90	 Encode: 	0	 Decode: 	0
+Round: 	218895	 APDTime	33449504835969	 PulseIndex: 	106	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	218952	 APDTime	33455204776697	 PulseIndex: 	72	 Encode: 	0	 Decode: 	0
+Round: 	219014	 APDTime	33461404855312	 PulseIndex: 	114	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	220863	 APDTime	33646304810901	 PulseIndex: 	86	 Encode: 	0	 Decode: 	0
+Round: 	222841	 APDTime	33844104706024	 PulseIndex: 	26	 Encode: 	0	 Decode: 	0
+Round: 	223393	 APDTime	33899304774110	 PulseIndex: 	54	 Encode: 	0	 Decode: 	0
+Round: 	223962	 APDTime	33956204804330	 PulseIndex: 	72	 Encode: 	0	 Decode: 	0
+Round: 	223969	 APDTime	33956904864083	 PulseIndex: 	94	 Encode: 	0	 Decode: 	0
+Round: 	224017	 APDTime	33961704774774	 PulseIndex: 	48	 Encode: 	0	 Decode: 	0
+Round: 	224156	 APDTime	33975604837592	 PulseIndex: 	78	 Encode: 	1	 Decode: 	1
+Round: 	225503	 APDTime	34450304925095	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	226529	 APDTime	34552904896340	 PulseIndex: 	86	 Encode: 	0	 Decode: 	0
+Round: 	227875	 APDTime	34687504894898	 PulseIndex: 	89	 Encode: 	0	 Decode: 	0
+Round: 	227878	 APDTime	34687804896958	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	228158	 APDTime	34715804852728	 PulseIndex: 	67	 Encode: 	0	 Decode: 	0
+Round: 	228287	 APDTime	34728704847874	 PulseIndex: 	60	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	228774	 APDTime	34777404827404	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	229210	 APDTime	34821004902816	 PulseIndex: 	74	 Encode: 	1	 Decode: 	1
+Round: 	229806	 APDTime	34880604803392	 PulseIndex: 	34	 Encode: 	0	 Decode: 	0
+Round: 	230345	 APDTime	34934504911539	 PulseIndex: 	78	 Encode: 	1	 Decode: 	1
+Round: 	230364	 APDTime	34936404793318	 PulseIndex: 	25	 Encode: 	0	 Decode: 	0
+Round: 	230560	 APDTime	34956004818822	 PulseIndex: 	39	 Encode: 	0	 Decode: 	0
+Round: 	230847	 APDTime	34984704931113	 PulseIndex: 	82	 Encode: 	1	 Decode: 	1
+Round: 	230978	 APDTime	34997804966140	 PulseIndex: 	107	 Encode: 	1	 Decode: 	1
+Round: 	231398	 APDTime	35379804948375	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	232486	 APDTime	35488604954648	 PulseIndex: 	73	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	233593	 APDTime	35599304982535	 PulseIndex: 	87	 Encode: 	0	 Decode: 	0
+Round: 	234806	 APDTime	35720604898054	 PulseIndex: 	49	 Encode: 	1	 Decode: 	1
+Round: 	235196	 APDTime	35759604990708	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	235413	 APDTime	35781305040571	 PulseIndex: 	110	 Encode: 	0	 Decode: 	0
+Round: 	236169	 APDTime	35856905040044	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	236584	 APDTime	35898405025278	 PulseIndex: 	97	 Encode: 	0	 Decode: 	0
+Round: 	237438	 APDTime	35983804869391	 PulseIndex: 	23	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	237500	 APDTime	35990005018066	 PulseIndex: 	91	 Encode: 	0	 Decode: 	0
+Round: 	237504	 APDTime	35990405016304	 PulseIndex: 	92	 Encode: 	0	 Decode: 	0
+Round: 	237512	 APDTime	35991204974039	 PulseIndex: 	64	 Encode: 	1	 Decode: 	1
+Round: 	238132	 APDTime	36393205050092	 PulseIndex: 	86	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	239396	 APDTime	36519605011768	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	239518	 APDTime	36531805060534	 PulseIndex: 	91	 Encode: 	0	 Decode: 	0
+Round: 	240654	 APDTime	36645404997139	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	241047	 APDTime	36684705044002	 PulseIndex: 	86	 Encode: 	1	 Decode: 	1
+Round: 	241215	 APDTime	36701505115228	 PulseIndex: 	109	 Encode: 	0	 Decode: 	0
+Round: 	242174	 APDTime	36797405100392	 PulseIndex: 	109	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	242523	 APDTime	36832304943315	 PulseIndex: 	23	 Encode: 	1	 Decode: 	1
+Round: 	243283	 APDTime	36908305049065	 PulseIndex: 	74	 Encode: 	0	 Decode: 	0
+Round: 	243842	 APDTime	36964204994852	 PulseIndex: 	44	 Encode: 	0	 Decode: 	0
+Round: 	244289	 APDTime	37348905049797	 PulseIndex: 	55	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	245303	 APDTime	37450305189400	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	246538	 APDTime	37573805128846	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	246837	 APDTime	37603705113213	 PulseIndex: 	84	 Encode: 	0	 Decode: 	0
+Round: 	246837	 APDTime	37603705165250	 PulseIndex: 	110	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	246846	 APDTime	37604605139152	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	247654	 APDTime	37685405132970	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	248484	 APDTime	37768405187592	 PulseIndex: 	113	 Encode: 	1	 Decode: 	1
+Round: 	248496	 APDTime	37769605199385	 PulseIndex: 	107	 Encode: 	0	 Decode: 	0
+Round: 	249228	 APDTime	37842805204877	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	250666	 APDTime	37986605121821	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	252441	 APDTime	38504105208654	 PulseIndex: 	90	 Encode: 	1	 Decode: 	1
+Round: 	252887	 APDTime	38548705263691	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	253490	 APDTime	38609005152542	 PulseIndex: 	62	 Encode: 	1	 Decode: 	1
+Round: 	253496	 APDTime	38609605158314	 PulseIndex: 	53	 Encode: 	0	 Decode: 	0
+Round: 	253806	 APDTime	38640605278595	 PulseIndex: 	125	 Encode: 	1	 Decode: 	1
+Round: 	254058	 APDTime	38665805162709	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	255116	 APDTime	38771605274362	 PulseIndex: 	119	 Encode: 	0	 Decode: 	0
+Round: 	255330	 APDTime	38793005180086	 PulseIndex: 	66	 Encode: 	0	 Decode: 	0
+Round: 	255401	 APDTime	38800105148653	 PulseIndex: 	46	 Encode: 	0	 Decode: 	0
+Round: 	255654	 APDTime	38825405282670	 PulseIndex: 	119	 Encode: 	1	 Decode: 	1
+Round: 	255834	 APDTime	38843405295814	 PulseIndex: 	112	 Encode: 	0	 Decode: 	0
+Round: 	256196	 APDTime	38879605186768	 PulseIndex: 	63	 Encode: 	1	 Decode: 	1
+Round: 	257365	 APDTime	38996505271317	 PulseIndex: 	107	 Encode: 	0	 Decode: 	0
+Round: 	257439	 APDTime	39343905337729	 PulseIndex: 	113	 Encode: 	1	 Decode: 	1
+Round: 	257520	 APDTime	39352005320104	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	258958	 APDTime	39495805284845	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	259776	 APDTime	39577605317082	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	259796	 APDTime	39579605339400	 PulseIndex: 	119	 Encode: 	1	 Decode: 	1
+Round: 	259823	 APDTime	39582305247508	 PulseIndex: 	73	 Encode: 	0	 Decode: 	0
+Round: 	260234	 APDTime	39623405174565	 PulseIndex: 	24	 Encode: 	1	 Decode: 	1
+Round: 	261413	 APDTime	39741305337480	 PulseIndex: 	107	 Encode: 	0	 Decode: 	0
+Round: 	261417	 APDTime	39741705355360	 PulseIndex: 	118	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	262551	 APDTime	39855105342010	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	263005	 APDTime	39900505253300	 PulseIndex: 	54	 Encode: 	0	 Decode: 	0
+Round: 	263654	 APDTime	39965405328208	 PulseIndex: 	87	 Encode: 	0	 Decode: 	0
+Round: 	263695	 APDTime	39969505242468	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	264420	 APDTime	40382005329857	 PulseIndex: 	70	 Encode: 	0	 Decode: 	0
+Round: 	264967	 APDTime	40436705318201	 PulseIndex: 	70	 Encode: 	1	 Decode: 	1
+Round: 	265242	 APDTime	40464205417903	 PulseIndex: 	115	 Encode: 	1	 Decode: 	1
+Round: 	265303	 APDTime	40470305416441	 PulseIndex: 	108	 Encode: 	0	 Decode: 	0
+Round: 	265644	 APDTime	40504405406960	 PulseIndex: 	105	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	265978	 APDTime	40537805289609	 PulseIndex: 	51	 Encode: 	0	 Decode: 	0
+Round: 	266563	 APDTime	40596305352224	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	267499	 APDTime	40689905349062	 PulseIndex: 	67	 Encode: 	1	 Decode: 	1
+Round: 	267519	 APDTime	40691905333448	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	268541	 APDTime	40794105316987	 PulseIndex: 	54	 Encode: 	1	 Decode: 	1
+Round: 	268576	 APDTime	40797605425138	 PulseIndex: 	106	 Encode: 	1	 Decode: 	1
+Round: 	268700	 APDTime	40810005318227	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	270525	 APDTime	40992505344185	 PulseIndex: 	56	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	272444	 APDTime	41524405298604	 PulseIndex: 	19	 Encode: 	1	 Decode: 	1
+Round: 	273683	 APDTime	41648305511702	 PulseIndex: 	119	 Encode: 	0	 Decode: 	0
+Round: 	276005	 APDTime	41880505447599	 PulseIndex: 	75	 Encode: 	0	 Decode: 	0
+Round: 	276091	 APDTime	41889105513671	 PulseIndex: 	106	 Encode: 	0	 Decode: 	0
+Round: 	276139	 APDTime	41893905464332	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	276225	 APDTime	41902505449222	 PulseIndex: 	67	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	276464	 APDTime	41926405508929	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	277696	 APDTime	42389605436244	 PulseIndex: 	55	 Encode: 	0	 Decode: 	0
+Round: 	278039	 APDTime	42423905556594	 PulseIndex: 	112	 Encode: 	1	 Decode: 	1
+Round: 	279502	 APDTime	42570205504033	 PulseIndex: 	74	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	279658	 APDTime	42585805423192	 PulseIndex: 	39	 Encode: 	1	 Decode: 	1
+Round: 	279686	 APDTime	42588605539400	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	280077	 APDTime	42627705446108	 PulseIndex: 	42	 Encode: 	1	 Decode: 	1
+Round: 	280871	 APDTime	42707105574568	 PulseIndex: 	110	 Encode: 	0	 Decode: 	0
+Round: 	281090	 APDTime	42729005466212	 PulseIndex: 	53	 Encode: 	0	 Decode: 	0
+Round: 	281802	 APDTime	42800205611267	 PulseIndex: 	125	 Encode: 	0	 Decode: 	0
+Round: 	282292	 APDTime	42849205511104	 PulseIndex: 	61	 Encode: 	1	 Decode: 	1
+Round: 	282640	 APDTime	42884005595699	 PulseIndex: 	103	 Encode: 	0	 Decode: 	0
+Round: 	282671	 APDTime	42887105526031	 PulseIndex: 	76	 Encode: 	1	 Decode: 	1
+Round: 	282690	 APDTime	42889005594348	 PulseIndex: 	106	 Encode: 	0	 Decode: 	0
+Round: 	282967	 APDTime	42916705440316	 PulseIndex: 	26	 Encode: 	1	 Decode: 	1
+Round: 	284063	 APDTime	43366305532650	 PulseIndex: 	56	 Encode: 	0	 Decode: 	0
+Round: 	284836	 APDTime	43443605620333	 PulseIndex: 	90	 Encode: 	0	 Decode: 	0
+Round: 	285211	 APDTime	43481105583199	 PulseIndex: 	85	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	285644	 APDTime	43524405606642	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	285691	 APDTime	43529105656780	 PulseIndex: 	119	 Encode: 	0	 Decode: 	0
+Round: 	285711	 APDTime	43531105633013	 PulseIndex: 	106	 Encode: 	1	 Decode: 	1
+Round: 	286174	 APDTime	43577405588416	 PulseIndex: 	80	 Encode: 	1	 Decode: 	1
+Round: 	286273	 APDTime	43587305625183	 PulseIndex: 	99	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	286371	 APDTime	43597105528346	 PulseIndex: 	51	 Encode: 	0	 Decode: 	0
+Round: 	287066	 APDTime	43666605571200	 PulseIndex: 	66	 Encode: 	1	 Decode: 	1
+Round: 	287480	 APDTime	43708005590250	 PulseIndex: 	74	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	287833	 APDTime	43743305685099	 PulseIndex: 	126	 Encode: 	0	 Decode: 	0
+Round: 	287944	 APDTime	43754405682055	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	288241	 APDTime	43784105500298	 PulseIndex: 	18	 Encode: 	1	 Decode: 	1
+Round: 	288310	 APDTime	43791005526812	 PulseIndex: 	33	 Encode: 	0	 Decode: 	0
+Round: 	288963	 APDTime	43856305593544	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	290264	 APDTime	43986405617789	 PulseIndex: 	69	 Encode: 	1	 Decode: 	1
+Round: 	290421	 APDTime	44342105644849	 PulseIndex: 	68	 Encode: 	1	 Decode: 	1
+Round: 	290672	 APDTime	44367205579124	 PulseIndex: 	40	 Encode: 	0	 Decode: 	0
+Round: 	290850	 APDTime	44385005732303	 PulseIndex: 	112	 Encode: 	1	 Decode: 	1
+Round: 	291062	 APDTime	44406205623718	 PulseIndex: 	55	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	291273	 APDTime	44427305741507	 PulseIndex: 	119	 Encode: 	1	 Decode: 	1
+Round: 	292949	 APDTime	44594905744326	 PulseIndex: 	116	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	293038	 APDTime	44603805751122	 PulseIndex: 	120	 Encode: 	1	 Decode: 	1
+Round: 	293666	 APDTime	44666605655933	 PulseIndex: 	69	 Encode: 	0	 Decode: 	0
+Round: 	293938	 APDTime	44693805607647	 PulseIndex: 	42	 Encode: 	1	 Decode: 	1
+Round: 	294380	 APDTime	44738005735191	 PulseIndex: 	109	 Encode: 	0	 Decode: 	0
+Round: 	295906	 APDTime	44890605738828	 PulseIndex: 	104	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	296056	 APDTime	44905605724314	 PulseIndex: 	86	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	296066	 APDTime	44906605629903	 PulseIndex: 	43	 Encode: 	0	 Decode: 	0
+Round: 	296181	 APDTime	44918105777221	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	297228	 APDTime	45362805769234	 PulseIndex: 	101	 Encode: 	0	 Decode: 	0
+Round: 	297255	 APDTime	45365505705429	 PulseIndex: 	63	 Encode: 	0	 Decode: 	0
+Round: 	297823	 APDTime	45422305715800	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	298383	 APDTime	45478305824156	 PulseIndex: 	124	 Encode: 	0	 Decode: 	0
+Round: 	300205	 APDTime	45660505825942	 PulseIndex: 	115	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	301167	 APDTime	45756705651328	 PulseIndex: 	27	 Encode: 	1	 Decode: 	1
+Round: 	301417	 APDTime	45781705745078	 PulseIndex: 	63	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	302152	 APDTime	45855205674909	 PulseIndex: 	36	 Encode: 	1	 Decode: 	1
+Round: 	302969	 APDTime	45936905777270	 PulseIndex: 	83	 Encode: 	0	 Decode: 	0
+Round: 	303129	 APDTime	45952905850618	 PulseIndex: 	112	 Encode: 	1	 Decode: 	1
+Round: 	303639	 APDTime	46343905872436	 PulseIndex: 	114	 Encode: 	1	 Decode: 	1
+Round: 	304900	 APDTime	46470005759870	 PulseIndex: 	41	 Encode: 	0	 Decode: 	0
+Round: 	305131	 APDTime	46493105861356	 PulseIndex: 	101	 Encode: 	1	 Decode: 	1
+Round: 	305415	 APDTime	46521505839881	 PulseIndex: 	77	 Encode: 	1	 Decode: 	1
+Round: 	307071	 APDTime	46687105864655	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	307098	 APDTime	46689805734573	 PulseIndex: 	20	 Encode: 	0	 Decode: 	0
+Round: 	307204	 APDTime	46700405785577	 PulseIndex: 	51	 Encode: 	1	 Decode: 	1
+Round: 	307487	 APDTime	46728705807418	 PulseIndex: 	54	 Encode: 	1	 Decode: 	1
+Round: 	307952	 APDTime	46775205901008	 PulseIndex: 	102	 Encode: 	1	 Decode: 	1
+Round: 	309980	 APDTime	46978005868659	 PulseIndex: 	79	 Encode: 	1	 Decode: 	1
+Round: 	311349	 APDTime	47454905855360	 PulseIndex: 	58	 Encode: 	0	 Decode: 	0
+Round: 	311785	 APDTime	47498505944529	 PulseIndex: 	97	 Encode: 	1	 Decode: 	1
+Round: 	312082	 APDTime	47528205798856	 PulseIndex: 	19	 Encode: 	1	 Decode: 	1
+Round: 	314070	 APDTime	47727005960099	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	314222	 APDTime	47742205951191	 PulseIndex: 	86	 Encode: 	1	 Decode: 	1
+Round: 	314422	 APDTime	47762205868410	 PulseIndex: 	53	 Encode: 	0	 Decode: 	0
+Round: 	314428	 APDTime	47762805916624	 PulseIndex: 	66	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	317498	 APDTime	48409805952247	 PulseIndex: 	61	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	318250	 APDTime	48485005945676	 PulseIndex: 	62	 Encode: 	0	 Decode: 	0
+Round: 	319252	 APDTime	48585205921272	 PulseIndex: 	35	 Encode: 	0	 Decode: 	0
+Round: 	320327	 APDTime	48692706061401	 PulseIndex: 	107	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	320778	 APDTime	48737806029098	 PulseIndex: 	96	 Encode: 	1	 Decode: 	1
+Round: 	321419	 APDTime	48801905944071	 PulseIndex: 	52	 Encode: 	1	 Decode: 	1
+Round: 	321483	 APDTime	48808305928572	 PulseIndex: 	38	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	321634	 APDTime	48823406085760	 PulseIndex: 	117	 Encode: 	1	 Decode: 	1
+Round: 	322009	 APDTime	48860906064263	 PulseIndex: 	110	 Encode: 	1	 Decode: 	1
+Round: 	322262	 APDTime	48886206062457	 PulseIndex: 	104	 Encode: 	0	 Decode: 	0
+Round: 	323826	 APDTime	49382605983978	 PulseIndex: 	36	 Encode: 	0	 Decode: 	0
+Round: 	323965	 APDTime	49396506135531	 PulseIndex: 	115	 Encode: 	1	 Decode: 	1
+Round: 	324149	 APDTime	49414906068685	 PulseIndex: 	75	 Encode: 	0	 Decode: 	0
+Round: 	324738	 APDTime	49473806087409	 PulseIndex: 	90	 Encode: 	1	 Decode: 	1
+Round: 	325496	 APDTime	49549605966896	 PulseIndex: 	31	 Encode: 	1	 Decode: 	1
+Round: 	325662	 APDTime	49566206038370	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	325955	 APDTime	49595506034707	 PulseIndex: 	60	 Encode: 	1	 Decode: 	1
+Round: 	327082	 APDTime	49708206047322	 PulseIndex: 	59	 Encode: 	1	 Decode: 	1
+Round: 	327201	 APDTime	49720106160511	 PulseIndex: 	118	 Encode: 	0	 Decode: 	0
+Round: 	328235	 APDTime	49823506005998	 PulseIndex: 	36	 Encode: 	1	 Decode: 	1
+Round: 	328357	 APDTime	49835706134890	 PulseIndex: 	105	 Encode: 	1	 Decode: 	1
+Round: 	328359	 APDTime	49835906079055	 PulseIndex: 	65	 Encode: 	0	 Decode: 	0
+Round: 	329533	 APDTime	49953306133883	 PulseIndex: 	87	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	329900	 APDTime	49990006068727	 PulseIndex: 	67	 Encode: 	1	 Decode: 	1
+Round: 	330258	 APDTime	50365806149314	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	330679	 APDTime	50407906070608	 PulseIndex: 	40	 Encode: 	0	 Decode: 	0
+Round: 	330839	 APDTime	50423906117769	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	331094	 APDTime	50449406149912	 PulseIndex: 	76	 Encode: 	0	 Decode: 	0
+Round: 	332206	 APDTime	50560606170356	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	332310	 APDTime	50571006236951	 PulseIndex: 	120	 Encode: 	1	 Decode: 	1
+Round: 	332919	 APDTime	50631906169509	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	335948	 APDTime	50934806142723	 PulseIndex: 	61	 Encode: 	0	 Decode: 	0
+Round: 	336338	 APDTime	50973806129694	 PulseIndex: 	53	 Encode: 	1	 Decode: 	1
+Round: 	336383	 APDTime	50978306222187	 PulseIndex: 	101	 Encode: 	0	 Decode: 	0
+Round: 	336938	 APDTime	51373806218044	 PulseIndex: 	72	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	337342	 APDTime	51414206105223	 PulseIndex: 	19	 Encode: 	0	 Decode: 	0
+Round: 	337516	 APDTime	51431606218796	 PulseIndex: 	76	 Encode: 	1	 Decode: 	1
+Round: 	337520	 APDTime	51432006202358	 PulseIndex: 	74	 Encode: 	1	 Decode: 	1
+Round: 	338192	 APDTime	51499206301900	 PulseIndex: 	108	 Encode: 	1	 Decode: 	1
+Round: 	338396	 APDTime	51519606241415	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	338417	 APDTime	51521706167445	 PulseIndex: 	42	 Encode: 	1	 Decode: 	1
+Round: 	338792	 APDTime	51559206248260	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	338806	 APDTime	51560606290250	 PulseIndex: 	107	 Encode: 	0	 Decode: 	0
+Round: 	339148	 APDTime	51594806231227	 PulseIndex: 	74	 Encode: 	1	 Decode: 	1
+Round: 	340137	 APDTime	51693706174843	 PulseIndex: 	37	 Encode: 	0	 Decode: 	0
+Round: 	340800	 APDTime	51760006331525	 PulseIndex: 	115	 Encode: 	1	 Decode: 	1
+Round: 	341589	 APDTime	51838906313828	 PulseIndex: 	102	 Encode: 	1	 Decode: 	1
+Round: 	342529	 APDTime	51932906192975	 PulseIndex: 	50	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	344163	 APDTime	52436306263259	 PulseIndex: 	55	 Encode: 	0	 Decode: 	0
+Round: 	344257	 APDTime	52445706359936	 PulseIndex: 	103	 Encode: 	1	 Decode: 	1
+Round: 	344503	 APDTime	52470306295628	 PulseIndex: 	80	 Encode: 	1	 Decode: 	1
+Round: 	344627	 APDTime	52482706326580	 PulseIndex: 	88	 Encode: 	1	 Decode: 	1
+Round: 	344811	 APDTime	52501106281871	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	344925	 APDTime	52512506363050	 PulseIndex: 	111	 Encode: 	1	 Decode: 	1
+Round: 	346308	 APDTime	52650806341578	 PulseIndex: 	83	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	346966	 APDTime	52716606406368	 PulseIndex: 	116	 Encode: 	0	 Decode: 	0
+Round: 	347334	 APDTime	52753406353300	 PulseIndex: 	98	 Encode: 	0	 Decode: 	0
+Round: 	349523	 APDTime	52972306242128	 PulseIndex: 	34	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	349614	 APDTime	52981406342697	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	350255	 APDTime	53385506433585	 PulseIndex: 	99	 Encode: 	1	 Decode: 	1
+Round: 	350524	 APDTime	53412406383837	 PulseIndex: 	74	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	350956	 APDTime	53455606403251	 PulseIndex: 	89	 Encode: 	1	 Decode: 	1
+Round: 	351053	 APDTime	53465306419692	 PulseIndex: 	95	 Encode: 	0	 Decode: 	0
+Round: 	351543	 APDTime	53514306381571	 PulseIndex: 	73	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	352040	 APDTime	53564006341372	 PulseIndex: 	57	 Encode: 	0	 Decode: 	0
+Round: 	353172	 APDTime	53677206339884	 PulseIndex: 	40	 Encode: 	0	 Decode: 	0
+Round: 	353354	 APDTime	53695406413442	 PulseIndex: 	86	 Encode: 	0	 Decode: 	0
+Round: 	353637	 APDTime	53723706383291	 PulseIndex: 	71	 Encode: 	0	 Decode: 	0
+Round: 	354342	 APDTime	53794206476858	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	355758	 APDTime	53935806403941	 PulseIndex: 	75	 Encode: 	0	 Decode: 	0
+Round: 	356071	 APDTime	53967106288350	 PulseIndex: 	13	 Encode: 	0	 Decode: 	0
+Round: 	356630	 APDTime	54363006366464	 PulseIndex: 	26	 Encode: 	0	 Decode: 	0
+Round: 	356832	 APDTime	54383206363782	 PulseIndex: 	30	 Encode: 	1	 Decode: 	1
+Round: 	357194	 APDTime	54419406528758	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	357829	 APDTime	54482906549634	 PulseIndex: 	112	 Encode: 	1	 Decode: 	1
+Round: 	359184	 APDTime	54618406431937	 PulseIndex: 	62	 Encode: 	1	 Decode: 	1
+Round: 	359421	 APDTime	54642106361722	 PulseIndex: 	16	 Encode: 	1	 Decode: 	1
+Round: 	359520	 APDTime	54652006442494	 PulseIndex: 	64	 Encode: 	0	 Decode: 	0
+Round: 	360482	 APDTime	54748206561722	 PulseIndex: 	121	 Encode: 	1	 Decode: 	1
+Round: 	361392	 APDTime	54839206504811	 PulseIndex: 	80	 Encode: 	0	 Decode: 	0
+Round: 	361737	 APDTime	54873706581574	 PulseIndex: 	122	 Encode: 	0	 Decode: 	0
+Round: 	362201	 APDTime	54920106508837	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	362375	 APDTime	54937506538442	 PulseIndex: 	88	 Encode: 	0	 Decode: 	0
+Round: 	363210	 APDTime	55361006542860	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	363859	 APDTime	55425906563694	 PulseIndex: 	89	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	364614	 APDTime	55501406555681	 PulseIndex: 	81	 Encode: 	0	 Decode: 	0
+Round: 	364895	 APDTime	55529506475550	 PulseIndex: 	46	 Encode: 	1	 Decode: 	1
+Round: 	365065	 APDTime	55546506555063	 PulseIndex: 	74	 Encode: 	0	 Decode: 	0
+Round: 	365552	 APDTime	55595206468433	 PulseIndex: 	40	 Encode: 	0	 Decode: 	0
+Round: 	365746	 APDTime	55614606636447	 PulseIndex: 	113	 Encode: 	1	 Decode: 	1
+Round: 	367014	 APDTime	55741406557853	 PulseIndex: 	69	 Encode: 	1	 Decode: 	1
+Round: 	367754	 APDTime	55815406651557	 PulseIndex: 	122	 Encode: 	1	 Decode: 	1
+Round: 	368747	 APDTime	55914706503117	 PulseIndex: 	31	 Encode: 	0	 Decode: 	0
+Round: 	368958	 APDTime	55935806619074	 PulseIndex: 	102	 Encode: 	0	 Decode: 	0
+Round: 	369402	 APDTime	55980206578343	 PulseIndex: 	75	 Encode: 	1	 Decode: 	1
+Round: 	369618	 APDTime	56341806649794	 PulseIndex: 	90	 Encode: 	1	 Decode: 	1
+Round: 	371134	 APDTime	56493406533405	 PulseIndex: 	24	 Encode: 	0	 Decode: 	0
+Round: 	371270	 APDTime	56507006662480	 PulseIndex: 	96	 Encode: 	0	 Decode: 	0
+Round: 	373294	 APDTime	56709406713946	 PulseIndex: 	114	 Encode: 	0	 Decode: 	0
+Round: 	373372	 APDTime	56717206594712	 PulseIndex: 	46	 Encode: 	1	 Decode: 	1
+Round: 	373377	 APDTime	56717706658588	 PulseIndex: 	83	 Encode: 	0	 Decode: 	0
+Round: 	373400	 APDTime	56720006730910	 PulseIndex: 	118	 Encode: 	0	 Decode: 	0
+Round: 	374605	 APDTime	56840506694074	 PulseIndex: 	98	 Encode: 	0	 Decode: 	0
+Round: 	374887	 APDTime	56868706692148	 PulseIndex: 	92	 Encode: 	1	 Decode: 	1
+Round: 	375374	 APDTime	56917406684181	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	375700	 APDTime	56950006632601	 PulseIndex: 	69	 Encode: 	1	 Decode: 	1
+Round: 	375803	 APDTime	56960306657444	 PulseIndex: 	73	 Encode: 	0	 Decode: 	0
+Round: 	375876	 APDTime	56967606649955	 PulseIndex: 	65	 Encode: 	1	 Decode: 	1
+Round: 	375887	 APDTime	56968706544005	 PulseIndex: 	23	 Encode: 	0	 Decode: 	0
+Round: 	376361	 APDTime	57356106725550	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	376816	 APDTime	57401606649016	 PulseIndex: 	48	 Encode: 	1	 Decode: 	1
+Round: 	377761	 APDTime	57496106634000	 PulseIndex: 	33	 Encode: 	0	 Decode: 	0
+Round: 	377861	 APDTime	57506106667216	 PulseIndex: 	61	 Encode: 	1	 Decode: 	1
+Round: 	377976	 APDTime	57517606683952	 PulseIndex: 	70	 Encode: 	1	 Decode: 	1
+Round: 	379169	 APDTime	57636906783153	 PulseIndex: 	108	 Encode: 	0	 Decode: 	0
+Round: 	379282	 APDTime	57648206783883	 PulseIndex: 	113	 Encode: 	1	 Decode: 	1
+Round: 	379382	 APDTime	57658206786404	 PulseIndex: 	115	 Encode: 	0	 Decode: 	0
+Round: 	379411	 APDTime	57661106804922	 PulseIndex: 	118	 Encode: 	1	 Decode: 	1
+Round: 	379577	 APDTime	57677706701900	 PulseIndex: 	73	 Encode: 	1	 Decode: 	1
+Round: 	380844	 APDTime	57804406785901	 PulseIndex: 	105	 Encode: 	0	 Decode: 	0
+Round: 	382035	 APDTime	57923506741163	 PulseIndex: 	84	 Encode: 	1	 Decode: 	1
+Round: 	382562	 APDTime	57976206715408	 PulseIndex: 	61	 Encode: 	1	 Decode: 	1
+Round: 	382862	 APDTime	58346206785328	 PulseIndex: 	77	 Encode: 	0	 Decode: 	0
+Round: 	383340	 APDTime	58394006799385	 PulseIndex: 	82	 Encode: 	0	 Decode: 	0
+Round: 	383480	 APDTime	58408006762343	 PulseIndex: 	64	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	383736	 APDTime	58433606790248	 PulseIndex: 	85	 Encode: 	1	 Decode: 	1
+Round: 	383738	 APDTime	58433806852358	 PulseIndex: 	108	 Encode: 	0	 Decode: 	1	 Error Code!
+Round: 	383829	 APDTime	58442906838854	 PulseIndex: 	105	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	384704	 APDTime	58530406793570	 PulseIndex: 	84	 Encode: 	0	 Decode: 	0
+Round: 	385375	 APDTime	58597506844506	 PulseIndex: 	104	 Encode: 	1	 Decode: 	1
+Round: 	385763	 APDTime	58636306673787	 PulseIndex: 	7	 Encode: 	1	 Decode: 	1
+Round: 	386038	 APDTime	58663806858082	 PulseIndex: 	111	 Encode: 	1	 Decode: 	1
+Round: 	387165	 APDTime	58776506820424	 PulseIndex: 	78	 Encode: 	0	 Decode: 	0
+Round: 	387989	 APDTime	58858906682738	 PulseIndex: 	15	 Encode: 	1	 Decode: 	1
+Round: 	388377	 APDTime	58897706775736	 PulseIndex: 	60	 Encode: 	0	 Decode: 	0
+Round: 	388775	 APDTime	58937506908543	 PulseIndex: 	124	 Encode: 	0	 Decode: 	0
+Round: 	389354	 APDTime	58995406763187	 PulseIndex: 	39	 Encode: 	1	 Decode: 	1
+Round: 	390116	 APDTime	59411606903071	 PulseIndex: 	96	 Encode: 	0	 Decode: 	0
+Round: 	391344	 APDTime	59534406920628	 PulseIndex: 	106	 Encode: 	1	 Decode: 	1
+Round: 	391932	 APDTime	59593206931276	 PulseIndex: 	108	 Encode: 	0	 Decode: 	0
+Round: 	392368	 APDTime	59636806916578	 PulseIndex: 	89	 Encode: 	0	 Decode: 	0
+Round: 	392842	 APDTime	59684206810122	 PulseIndex: 	47	 Encode: 	1	 Decode: 	0	 Error Code!
+Round: 	392999	 APDTime	59699906776995	 PulseIndex: 	20	 Encode: 	0	 Decode: 	0
+APD1 Code 0:	328	 Error Code 1:	45	 APD1 Ratio:	7.288889
+APD2 Code 1:	315	 Error Code 0:	47	 APD2 Ratio:	6.7021275
+Total Right Code:	643	 Total Error Code :	92	 Ratio:	6.9891305
