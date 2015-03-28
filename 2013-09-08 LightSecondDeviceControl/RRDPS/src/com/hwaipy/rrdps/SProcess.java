@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class SProcess {
 
   public static void main(String[] args) throws Exception {
-    File file = new File("/Volumes/HITACHI/新建文件夹/0325-原始数据解析/list.csv");
+    File file = new File("/Volumes/HITACHI/data/0325-原始数据解析/list.csv");
     BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "GB2312"));
     while (true) {
       String line = reader.readLine();
@@ -33,9 +33,9 @@ public class SProcess {
   }
 
   private static String parse(String[] files) throws Exception {
-    File path = new File("/Volumes/HITACHI/新建文件夹/0325-原始数据解析/");
-    long delay1 = 192941000l;
-    long delay2 = 192935600l;
+    File path = new File("/Volumes/HITACHI/data/0325-原始数据解析/");
+    long delay1 = 192940900l;
+    long delay2 = 192935400l;
     SExperiment experiment = new SExperiment(path, files);
     String id = files[0].substring(0, 14);
     String index = files[0].substring(17, 20);

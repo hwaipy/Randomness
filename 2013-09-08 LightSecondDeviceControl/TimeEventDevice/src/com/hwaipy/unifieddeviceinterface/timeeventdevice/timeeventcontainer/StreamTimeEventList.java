@@ -3,7 +3,6 @@ package com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 
 /**
  *
@@ -26,7 +25,7 @@ public class StreamTimeEventList implements TimeEventList {
 
   @Override
   public void set(TimeEvent event, int index) {
-    throw new UnsupportedOperationException("Not supported yet.");
+    list.set(index, event);
   }
 
   @Override
