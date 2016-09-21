@@ -136,8 +136,8 @@ public class MappingFileTimeEventList implements TimeEventList {
         }
         map = channel.map(FileChannel.MapMode.READ_WRITE, 0, channel.position());
         reOrder();
-        //TODO no need
-        check();
+//        TODO no need
+//        check();
     }
 
     private TimeEvent read() throws IOException {

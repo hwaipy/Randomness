@@ -6,5 +6,9 @@
         <group name="Daily"/>
         <group name="Randomness"/>
         <group name="2013-09-08 LightSecondDeviceControl"/>
+        <group name="2013-08-28 PolarizationControlSimulation">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/TimeEventData/src/com/hwaipy/unifieddeviceinterface/timeeventdevice/data/TimeEventDataManager.java</file>
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/TimeEventData/src/com/hwaipy/unifieddeviceinterface/timeeventdevice/data/process/TimeCalibrator.java</file>
+        </group>
     </open-files>
 </project-private>

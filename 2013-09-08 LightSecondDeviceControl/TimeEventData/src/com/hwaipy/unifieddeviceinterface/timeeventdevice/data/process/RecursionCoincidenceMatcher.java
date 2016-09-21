@@ -4,7 +4,6 @@ import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 
 /**
  *
