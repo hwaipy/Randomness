@@ -35,25 +35,25 @@ class TimeCalculator {
             | (b[2] << 16) | ((b[3] & 0x0F) << 24);
 
 //    if (coarseTime < lastCoarseTime && (lastCoarseTime > COARSE_TIME_LIMIT / 2) && (coarseTime < COARSE_TIME_LIMIT / 2)) {
-    if (coarseTime < lastCoarseTime - 160000) {
-      carry++;
+//    if (coarseTime < lastCoarseTime - 160000) {
+//      carry++;
 //      System.out.println("carry: " + carry + "\t" + channel + "\t" + count + "\t" + counts[0] + "\t\t\t" + lastCoarseTime + "\t" + coarseTime);
 //      System.out.println(lastCoarseTime * 6250 / 1e12);
 //      System.out.println(coarseTime * 6250 / 1e12);
-    }
+//    }
 //    System.out.println(coarseTime + "\t" + channel);
     long currentCarry = carry;
-//    if (coarseTime < lastCoarseTime && (lastCoarseTime > COARSE_TIME_LIMIT / 5 * 4) && (coarseTime < COARSE_TIME_LIMIT / 5)) {
-//      carry++;
-//      currentCarry = carry;
-//      lastCoarseTime = coarseTime;
-//    } else if (coarseTime > lastCoarseTime && (coarseTime > COARSE_TIME_LIMIT / 5 * 4) && (lastCoarseTime < COARSE_TIME_LIMIT / 5)) {
-//      currentCarry = carry - 1;
-//    } else {
-//      lastCoarseTime = coarseTime;
-//    }
+    if (coarseTime < lastCoarseTime && (lastCoarseTime > COARSE_TIME_LIMIT / 5 * 4) && (coarseTime < COARSE_TIME_LIMIT / 5)) {
+      carry++;
+      currentCarry = carry;
+      lastCoarseTime = coarseTime;
+    } else if (coarseTime > lastCoarseTime && (coarseTime > COARSE_TIME_LIMIT / 5 * 4) && (lastCoarseTime < COARSE_TIME_LIMIT / 5)) {
+      currentCarry = carry - 1;
+    } else {
+      lastCoarseTime = coarseTime;
+    }
 
-    lastCoarseTime = coarseTime;
+//    lastCoarseTime = coarseTime;
 
     long time = -getExactTime(fineTime, channel)
             + ((coarseTime + (currentCarry << 28)) * 6250);

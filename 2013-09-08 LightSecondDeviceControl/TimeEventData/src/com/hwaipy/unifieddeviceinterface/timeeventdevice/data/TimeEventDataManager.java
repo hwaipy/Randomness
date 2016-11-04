@@ -8,6 +8,7 @@ import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.Mapp
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -21,6 +22,7 @@ public class TimeEventDataManager {
   private static final String MappingFilesRoot = "TimeEventMappingFiles";
   private static final String suffix = "TimeEventMapping";
   private static final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY.MM.dd HH.mm.ss.SSS");
+  private static final AtomicInteger indicer = new AtomicInteger();
 
   public static TimeEventSegment loadTimeEventSegment(TimeEventLoader loader) throws IOException, DeviceException {
     final File folder = createMappingFileFolder();
@@ -56,7 +58,7 @@ public class TimeEventDataManager {
 
   //TODO 文件夹名有冲突隐患
   private static File createMappingFileFolder() {
-    File file = new File(MappingFilesRoot, getUniquePrefix());
+    File file = new File(MappingFilesRoot, getUniquePrefix() + "-" + indicer.getAndIncrement());
     file.mkdirs();
     return file;
   }

@@ -25,7 +25,7 @@ public class ApproachProcessContrast {
     private int loggingLevel = -1;
 
     public ApproachProcessContrast() {
-        random = new Random(10086);
+        random = new Random();
         wavePlates[0] = new WavePlate(Math.PI / 2, 0);
         wavePlates[1] = new WavePlate(Math.PI / 2, 0);
         wavePlates[2] = new WavePlate(Math.PI, 0);

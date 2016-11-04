@@ -5,6 +5,8 @@ import com.hwaipy.unifieddeviceinterface.timeeventdevice.TimeEvent;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventDataManager;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.TimeEventLoader;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.MergedTimeEventList;
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.RecursionCoincidenceMatcher;
+import com.hwaipy.unifieddeviceinterface.timeeventdevice.data.process.TimeCalibrator;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.pxi40ps1data.PXI40PS1Loader;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventList;
 import com.hwaipy.unifieddeviceinterface.timeeventdevice.timeeventcontainer.TimeEventSegment;
@@ -14,7 +16,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.concurrent.CountDownLatch;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import lightseconddataanalyzer.fourfold.CoincidenceScaner;
+import lightseconddataanalyzer.pxianalyzer.SkippedIteratable;
 
 /**
  *
@@ -22,15 +28,34 @@ import lightseconddataanalyzer.fourfold.CoincidenceScaner;
  */
 public class SyncTest3 {
 
-  public static void main(String[] args) throws IOException, DeviceException {
-    File pxiFileA = new File("/Users/Hwaipy/Desktop/2016-09-17/20160917213402-ATDC.dat");
-    TimeEventLoader pxiLoaderA = new PXI40PS1Loader(pxiFileA, null);
-    TimeEventSegment pxiSegmentA = TimeEventDataManager.loadTimeEventSegment(pxiLoaderA);
-    System.out.println("A Loaded");
-    File pxiFileB = new File("/Users/Hwaipy/Desktop/2016-09-17/non.dat");
-    TimeEventLoader pxiLoaderB = new PXI40PS1Loader(pxiFileB, null);
-    TimeEventSegment pxiSegmentB = TimeEventDataManager.loadTimeEventSegment(pxiLoaderB);
-    System.out.println("B Loaded");
+  private static TimeEventSegment pxiSegmentA;
+  private static TimeEventSegment pxiSegmentB;
+
+  public static void main(String[] args) throws IOException, DeviceException, InterruptedException {
+    final File pxiFileA = new File("/Users/Hwaipy/Desktop/2016-09-09/20160909200503-ATDC.dat");
+    final File pxiFileB = new File("/Users/Hwaipy/Desktop/2016-09-09/20160909200505-BTDC.dat");
+    final CountDownLatch loadLatch = new CountDownLatch(2);
+    new Thread(() -> {
+      try {
+        TimeEventLoader pxiLoaderA = new PXI40PS1Loader(pxiFileA, null);
+        pxiSegmentA = TimeEventDataManager.loadTimeEventSegment(pxiLoaderA);
+        System.out.println("A Loaded");
+        loadLatch.countDown();
+      } catch (IOException | DeviceException ex) {
+        Logger.getLogger(SyncTest3.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }).start();
+    new Thread(() -> {
+      try {
+        TimeEventLoader pxiLoaderB = new PXI40PS1Loader(pxiFileB, null);
+        pxiSegmentB = TimeEventDataManager.loadTimeEventSegment(pxiLoaderB);
+        System.out.println("B Loaded");
+        loadLatch.countDown();
+      } catch (IOException | DeviceException ex) {
+        Logger.getLogger(SyncTest3.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }).start();
+    loadLatch.await();
 
     System.out.print("TDC-A: ");
     for (int i = 0; i < 16; i++) {
@@ -47,23 +72,23 @@ public class SyncTest3 {
     TimeEventList syncListB = pxiSegmentB.getEventList(2);
     System.out.println("PXIA:\tSync " + syncListA.size());
     System.out.println("PXIB:\tSync " + syncListB.size());
-//    checkSync(syncListA);
-//    checkSync(syncListB);
+    checkSync(syncListA);
+    checkSync(syncListB);
 
-//    long coarseDelay = syncListB.get(0).getTime() - syncListA.get(0).getTime();
-//    System.out.println("CoarseDelay " + coarseDelay);
-//    RecursionCoincidenceMatcher cmSync = new RecursionCoincidenceMatcher(syncListA, syncListB, 1000000, coarseDelay);
-//    System.out.println("Sync coincidence find " + cmSync.find());
-//    for (int i = 8; i < 12; i++) {
-//      new TimeCalibrator(new SkippedIteratable<>(cmSync, 9), pxiSegmentB.getEventList(i)).calibrate();
-//    }
-    TimeEventList triggerList = pxiSegmentA.getEventList(0);
+    long coarseDelay = syncListB.get(0).getTime() - syncListA.get(0).getTime();
+    System.out.println("CoarseDelay " + coarseDelay);
+    RecursionCoincidenceMatcher cmSync = new RecursionCoincidenceMatcher(syncListA, syncListB, 1000000, coarseDelay);
+    System.out.println("Sync coincidence find " + cmSync.find());
+    for (int i = 5; i < 10; i++) {
+      new TimeCalibrator(new SkippedIteratable<>(cmSync, 9), pxiSegmentB.getEventList(i)).calibrate();
+    }
+    TimeEventList triggerList = pxiSegmentB.getEventList(5);
     TimeEventList[] signalLists = new TimeEventList[9];
-//    for (int i = 0; i < 4; i++) {
-//      signalLists[i] = pxiSegmentB.getEventList(i + 8);
-//    }
-    for (int i = 0; i < 9; i++) {
-      signalLists[i] = pxiSegmentA.getEventList(i + 6);
+    for (int i = 0; i < 4; i++) {
+      signalLists[i] = pxiSegmentB.getEventList(i + 6);
+    }
+    for (int i = 0; i < 5; i++) {
+      signalLists[i + 4] = pxiSegmentA.getEventList(i + 10);
     }
     System.out.print("TDC: ");
     for (int i = 0; i < 9; i++) {
@@ -72,7 +97,7 @@ public class SyncTest3 {
     System.out.println();
 
 //    long[] delays = new long[]{0, -5500, -3500, -7000, 1500, -1000, 1200, -1500, 500};
-    long[] delays = new long[]{-4000, -9200, -7500, -11000, -7000, -10000, -7500, -10500, -8500};
+    long[] delays = new long[]{-9000, -14200, -12500, -16000, -7000, -10000, -7500, -10500, -8500};
     for (int i = 0; i < 9; i++) {
       TimeEventList list = signalLists[i];
       for (int j = 0; j < list.size(); j++) {
@@ -82,7 +107,7 @@ public class SyncTest3 {
         }
       }
     }
-    long triggerDelay = -700000;
+    long triggerDelay = -708000;
     for (int i = 0; i < triggerList.size(); i++) {
       TimeEvent te = triggerList.get(i);
       if (te.getTime() > 0) {
@@ -104,16 +129,16 @@ public class SyncTest3 {
     }
     doSampling(triggerList, signalLists);
 
-//    for (TimeEventList signalList : signalLists) {
-//      System.out.println("list---");
-//      Iterator<TimeEvent> it222 = signalList.iterator();
-//      while (it222.hasNext()) {
-//        TimeEvent next = it222.next();
-//        if (next.getTime() == 1728086845942l) {
-//          System.out.println(next.getTime() + ", " + next.getChannel());
-//        }
-//      }
-//    }
+    for (TimeEventList signalList : signalLists) {
+      System.out.println("list---");
+      Iterator<TimeEvent> it222 = signalList.iterator();
+      while (it222.hasNext()) {
+        TimeEvent next = it222.next();
+        if (next.getTime() == 97871750729286l || next.getTime() == 97871750731919l) {
+          System.out.println(next.getTime() + ", " + next.getChannel());
+        }
+      }
+    }
   }
 
   private static boolean checkSync(TimeEventList list) {
@@ -123,7 +148,7 @@ public class SyncTest3 {
     while (iterator.hasNext()) {
       TimeEvent te2 = iterator.next();
       double delta = te2.getTime() - te1.getTime();
-      if (delta > 15000000) {
+      if (delta > 15000000 || delta < 0) {
         System.out.println("Wrong in " + te2 + ":      " + delta);
         check = false;
       }

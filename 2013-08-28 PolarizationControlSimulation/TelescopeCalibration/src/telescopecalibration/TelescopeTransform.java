@@ -23,12 +23,13 @@ public class TelescopeTransform extends MuellerMatrix {
 //  }
   public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH) {
     return new TelescopeTransform(MuellerMatrix.merge(
+            new WavePlate(Math.PI, Math.PI / 4),
             new WavePlate(PA, 0),
             new Rotate(RV),
             new WavePlate(PB, 0),
             new Rotate(RH),
-            new WavePlate(PC, 0),
-            new WavePlate(Math.PI, 0)
+            new WavePlate(PC, 0)
+    //,                new WavePlate(Math.PI, 0)
     ).getMatrix());
   }
 }

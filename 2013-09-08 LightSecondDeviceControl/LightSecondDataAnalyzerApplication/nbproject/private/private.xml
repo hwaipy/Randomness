@@ -17,6 +17,7 @@
         <group name="2014-06-14 CrystalOptics"/>
         <group name="2013-09-08 LightSecondDeviceControl"/>
         <group name="2013-08-28 PolarizationControlSimulation">
+            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/synctest/Deframer.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/fourfold/CoincidenceScaner.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/synctest/SyncTest2.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-09-08%20LightSecondDeviceControl/LightSecondDataAnalyzerApplication/src/lightseconddataanalyzer/synctest/SyncTest3.java</file>
