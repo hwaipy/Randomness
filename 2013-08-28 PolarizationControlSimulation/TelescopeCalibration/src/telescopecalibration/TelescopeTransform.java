@@ -21,15 +21,21 @@ public class TelescopeTransform extends MuellerMatrix {
 //    QuarterWavePlate qwp1 = new QuarterWavePlate(random.nextDouble() * Math.PI);
 //    return new TelescopeTransform(MuellerMatrix.merge(hwp, qwp2, qwp1).getMatrix());
 //  }
-  public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH) {
+  public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH, boolean mir) {
+    return create(PA, PB, PC, RV, RH, 0, 0, mir);
+  }
+
+  public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH, double phase, double rotate, boolean mir) {
     return new TelescopeTransform(MuellerMatrix.merge(
-            new WavePlate(Math.PI, Math.PI / 4),
+            new WavePlate(phase, 0),
+            new Rotate(rotate),
+            //            new WavePlate(mir ? Math.PI : 0, Math.PI / 4),
+            //                                    new WavePlate(Math.PI, Math.PI / 4),
             new WavePlate(PA, 0),
             new Rotate(RV),
             new WavePlate(PB, 0),
             new Rotate(RH),
             new WavePlate(PC, 0)
-    //,                new WavePlate(Math.PI, 0)
     ).getMatrix());
   }
 }

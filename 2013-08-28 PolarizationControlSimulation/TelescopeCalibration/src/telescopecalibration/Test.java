@@ -17,10 +17,10 @@ public class Test {
   public static void main(String[] args) throws M1ProcessException {
     boolean isMT = true;
 
-//    double[] zeros = isMT ? new double[]{90.05, 146.58, 99.99} : new double[]{125.42, 174.72, 137.86};
-//    double[] comp = isMT ? new double[]{80.1, 127.5, 61.4} : new double[]{115.3, -89.2, 138.2};
-    double[] zeros = new double[]{30, 72, 11};
-    double[] comp = new double[]{-9, 44.98, 55.4};
+    double[] zeros = isMT ? new double[]{90.05, 146.58, 99.99} : new double[]{125.42, 174.72, 137.86};
+    double[] comp = isMT ? new double[]{80.1, 127.5, 61.4} : new double[]{115.3, -89.2, 138.2};
+//    double[] zeros = new double[]{30, 72, 11};
+//    double[] comp = new double[]{-9, 44.98, 55.4};
     double[] compLogic = new double[3];
     for (int i = 0; i < 3; i++) {
       compLogic[i] = comp[i] - zeros[i];
@@ -34,20 +34,18 @@ public class Test {
     Matrix<Complex> compMatrix = hwp.getMatrix().times(qwp2.getMatrix()).times(qwp1.getMatrix());
     Matrix<Complex> fibreMatrix = compMatrix.inverse();
 
-//    double mirrorPhase = -0.44;//MT
+    double mirrorPhase = -0.44;//MT
 //    double mirrorPhase = -0.92;//JF
-    double mirrorPhase = 2.7;//Simu
-    Matrix<Complex> mirror = ComplexMatrix.valueOf(new Complex[][]{{Complex.ONE, Complex.ZERO}, {Complex.ZERO, Complex.valueOf(Math.cos(mirrorPhase), Math.sin(mirrorPhase))}});
-    hwp = HalfWavePlate.create(compLogic[2] + 22.5 / 180 * Math.PI);
-    qwp2 = QuarterWavePlate.create(compLogic[1] + 45.0 / 180 * Math.PI);
+//    double mirrorPhase = 2.7;//Simu
+//    Matrix<Complex> mirror = ComplexMatrix.valueOf(new Complex[][]{{Complex.ONE, Complex.ZERO}, {Complex.ZERO, Complex.valueOf(Math.cos(mirrorPhase), Math.sin(mirrorPhase))}});
+//    hwp = HalfWavePlate.create(compLogic[2] + 0.0 / 180 * Math.PI);
+//    qwp2 = QuarterWavePlate.create(compLogic[1] + 0.0 / 180 * Math.PI);
 
-    Matrix<Complex> input = getLinearPolState(0);
-
-    Matrix<Complex> output = transform(input, fibreMatrix, qwp1.getMatrix(), qwp2.getMatrix(), hwp.getMatrix(), mirror);
-    System.out.println(measure(output, 0) / measure(output, Math.PI / 2));
-    System.out.println(measure(output, Math.PI / 4) / measure(output, -Math.PI / 4));
-    System.out.println();
-
+//    Matrix<Complex> input = getLinearPolState(0);
+//    Matrix<Complex> output = transform(input, fibreMatrix, qwp1.getMatrix(), qwp2.getMatrix(), hwp.getMatrix(), mirror);
+//    System.out.println(measure(output, 0) / measure(output, Math.PI / 2));
+//    System.out.println(measure(output, Math.PI / 4) / measure(output, -Math.PI / 4));
+//    System.out.println();
 //    qwp1 = QuarterWavePlate.create(Math.PI / 4);
 //    qwp2 = QuarterWavePlate.create(Math.PI / 4);
 //    hwp = HalfWavePlate.create((5.5 + 90) / 180 * Math.PI);
@@ -59,11 +57,31 @@ public class Test {
 //    double p = -2.758;
 //    System.out.println(Math.cos(p));
 //    System.out.println(Math.sin(p));
-    Matrix<Complex> Unew = mirror.inverse().times(compMatrix);
-    double[] measurements = calculateMeasurements(Unew);
-    double[] aow = calculateAngleOfWP(measurements);
-    for (double d : aow) {
-      System.out.println(d / Math.PI * 180);
+    for (int i = 90; i <= 90; i++) {
+      double mp = i / 180.0 * Math.PI;
+      ComplexMatrix mirror = ComplexMatrix.valueOf(new Complex[][]{{Complex.ONE, Complex.ZERO}, {Complex.ZERO, Complex.valueOf(Math.cos(mp), Math.sin(mp))}});
+      System.out.println(mirror);
+      Matrix<Complex> Unew = mirror.inverse().times(compMatrix);
+      double[] measurements = calculateMeasurements(Unew.inverse());
+      double[] aow = calculateAngleOfWP(measurements);
+      System.out.println(compMatrix);
+      System.out.println(Unew);
+      System.out.print(i + "\t");
+      for (int qi = 0; qi < 3; qi++) {
+        System.out.print((aow[qi]) / Math.PI * 180 + zeros[qi]);
+        System.out.print("\t");
+      }
+      System.out.println();
+      Matrix<Complex> newCompMatrix = HalfWavePlate.create(aow[2]).getMatrix().times(QuarterWavePlate.create(aow[1]).getMatrix()).times(QuarterWavePlate.create(aow[0]).getMatrix());
+      System.out.println(newCompMatrix.times(compMatrix.inverse()));
+//
+//      input = getLinearPolState(Math.PI / 4);
+//      mp = -mp;
+//      mirror = ComplexMatrix.valueOf(new Complex[][]{{Complex.ONE, Complex.ZERO}, {Complex.ZERO, Complex.valueOf(Math.cos(mp), Math.sin(mp))}});
+//      output = transform(input, fibreMatrix, QuarterWavePlate.create(aow[0]).getMatrix(), QuarterWavePlate.create(aow[1]).getMatrix(), HalfWavePlate.create(aow[2]).getMatrix(), mirror);
+//      System.out.println(measure(output, 0) / measure(output, Math.PI / 2));
+//      System.out.println(measure(output, Math.PI / 4) / measure(output, -Math.PI / 4));
+//      System.out.println();
     }
   }
 

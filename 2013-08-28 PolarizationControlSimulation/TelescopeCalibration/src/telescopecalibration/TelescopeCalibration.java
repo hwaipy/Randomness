@@ -24,18 +24,18 @@ public class TelescopeCalibration {
     TelescopeCalibration tc = new TelescopeCalibration();
     ComplexMatrix UT = tc.makeTelescopeU();
     System.out.println(UT);
-    
+
     double[] v12 = tc.calculateMeasurements(UT);
 //    System.out.println(Arrays.toString(v12));
     double[] awps = tc.calculateAngleOfWP(v12);
     Matrix<Complex> UWP = tc.calculateUWP(awps);
-    
+
     System.out.println(UWP);
-    
+
     Matrix<Complex> UFinal = UWP.times(UT);
 
     System.out.println(UFinal);
-    
+
     double uniPha = -0.695;
     Matrix<Complex> uU = UFinal.times(Complex.valueOf(Math.cos(uniPha), Math.sin(uniPha)));
 //    System.out.println(uU);

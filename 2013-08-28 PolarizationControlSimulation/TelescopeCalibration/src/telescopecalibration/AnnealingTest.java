@@ -52,7 +52,7 @@ public class AnnealingTest {
       J = J();
       double dE = J - lastJ;
       if (dE > 0) {
-//      } else if (Math.exp((dE / T)) > random.nextDouble()) {
+      } else if (Math.exp((dE / T)) > random.nextDouble()) {
       } else {
         rollback();
       }

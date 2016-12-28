@@ -4,7 +4,6 @@ import org.jscience.mathematics.number.Complex;
 import org.jscience.mathematics.vector.ComplexMatrix;
 import org.jscience.mathematics.vector.Matrix;
 import simulationconsole.entanglement.HalfWavePlate;
-import simulationconsole.entanglement.QuarterWavePlate;
 
 /**
  *
@@ -13,29 +12,16 @@ import simulationconsole.entanglement.QuarterWavePlate;
 public class TestBackAndForward {
 
   public static void main(String[] args) {
-    boolean isMT = true;
-
-    double[] zeros = isMT ? new double[]{90.05, 146.58, 99.99} : new double[]{125.42, 174.72, 137.86};
-    double[] comp = isMT ? new double[]{80.1, 127.5+19+45, 61.4} : new double[]{115.3, -89.2, 138.2};
-    double[] compLogic = new double[3];
-    for (int i = 0; i < 3; i++) {
-      compLogic[i] = comp[i] - zeros[i];
-      System.out.println(compLogic[i]);
-    }
-    System.out.println();
-
-    QuarterWavePlate qwp1 = QuarterWavePlate.create(compLogic[0]);
-    QuarterWavePlate qwp2 = QuarterWavePlate.create(compLogic[1]);
-    HalfWavePlate hwp = HalfWavePlate.create(compLogic[2]);
-
-    Matrix<Complex> input = getLinearPolState(0);
-//    Matrix<Complex> output = transform(input, reflect, HalfWavePlate.create(-compLogic[2]).getMatrix(), QuarterWavePlate.create(-compLogic[1]).getMatrix(), reflect, QuarterWavePlate.create(compLogic[1]).getMatrix(), HalfWavePlate.create(-compLogic[2]).getMatrix());
-//    Matrix<Complex> output = transform(input, reflect, QuarterWavePlate.create(-compLogic[1]).getMatrix(), reflect, QuarterWavePlate.create(compLogic[1]).getMatrix());
-    Matrix<Complex> output = transform(input, reflect, QuarterWavePlate.create(compLogic[1]).getMatrix());
-    System.out.println(output);
-    System.out.println();
-    System.out.println(measure(output, 0) / measure(output, Math.PI / 2));
-    System.out.println(measure(output, Math.PI / 4) / measure(output, -Math.PI / 4));
+    double rH = 0.4;
+    double rV = 0.6;
+    M1Simulation s = new M1Simulation();
+    M1Simulation.M1SimulationResult result = s.calculate(rH, rV);
+    double a1 = result.angles[0];
+    double a2 = result.angles[1];
+    double a3 = result.angles[2];
+    System.out.println(a1);
+    System.out.println(a2);
+    System.out.println(a3);
   }
   private static Matrix<Complex> reflect = ComplexMatrix.valueOf(new Complex[][]{{Complex.ONE, Complex.ZERO}, {Complex.ZERO, Complex.valueOf(-1, 0)}});
 
@@ -66,4 +52,16 @@ public class TestBackAndForward {
     }
     return state;
   }
+
+//  public static Matrix<Complex> createTeleU(double PA, double PB, double PC, double RV, double RH) {
+//    return transform(
+////            HalfWavePlate.create(Math.PI / 4),
+//            WavePlate(PA, 0),
+//            new Rotate(RV),
+//            new WavePlate(PB, 0),
+//            new Rotate(RH),
+//            new WavePlate(PC, 0)
+//    //,                new WavePlate(Math.PI, 0)
+//    ).getMatrix()
+//);
 }
