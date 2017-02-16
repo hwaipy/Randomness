@@ -1,0 +1,242 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+19 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$2.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$3$$anonfun$apply$2.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$3.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$4$$anonfun$apply$3.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$4.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$5$$anonfun$apply$4.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$5.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$BeamProjector$$calculateSpot$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$BeamProjector$$calculateSpot$2.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$plot$1$$anonfun$apply$mcVI$sp$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$plot$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$project$1$$anonfun$apply$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$project$1.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/GaussianBeam.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian$.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian$delayedInit$body.class
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian.class
+binary dependencies:
+2 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /Users/Hwaipy/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+19 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$3
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$3$$anonfun$apply$2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$4
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$4$$anonfun$apply$3
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$5
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$5$$anonfun$apply$4
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$BeamProjector$$calculateSpot$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$BeamProjector$$calculateSpot$2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$plot$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$plot$1$$anonfun$apply$mcVI$sp$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$project$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector$$anonfun$project$1$$anonfun$apply$1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> GaussianBeam
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> MultiGaussian
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> MultiGaussian$
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> MultiGaussian$delayedInit$body
+used names:
+113 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> *
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> +
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> -
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> /
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> ::
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> <
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> <init>
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> >
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> A
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> A1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Any
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> AnyRef
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> App
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> B
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BeamProjector
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Boolean
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> BufferedImage
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> CanBuildFrom
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Coll
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Color
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Double
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> E
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> E0
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> File
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Function1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Function2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> GaussianBeam
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> I
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> ImageIO
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> IndexedSeq
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Int
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> List
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> MultiGaussian
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Nil
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Nothing
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Object
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Predef
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Range
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> RenderedImage
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> RichInt
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> String
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> T1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> T2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> That
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Tuple2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> U
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> Unit
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> _1
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> _2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> a
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> apply
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> awt
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> b
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> beam
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> beams
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> calculateSpot
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> canBuildFrom
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> exp
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> file
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> foreach
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> getRGB
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> gray
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> image
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> imageio
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> immutable
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> intWrapper
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> io
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> java
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> javax
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> l
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> map
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> math
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> max
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> maxI
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> min
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> minI
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> p
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> package
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> plot
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> pow
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> project
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> projector
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> r
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> reduce
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> resolution
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> scala
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> setRGB
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> sqrt
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> subResolution
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> toInt
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> toList
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> unary_-
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> until
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> write
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$2
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$3
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$4
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$5
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$6
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> x$7
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> xRange
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> xSubRange
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> xUnitSize
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> y
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> yRange
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> ySubRange
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> yUnitSize
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> z
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> zr
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> λ
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> ω0
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> ωz
+product stamps:
+19 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$2.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$3$$anonfun$apply$2.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$3.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$4$$anonfun$apply$3.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$4.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$5$$anonfun$apply$4.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$5.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$BeamProjector$$calculateSpot$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$BeamProjector$$calculateSpot$2.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$plot$1$$anonfun$apply$mcVI$sp$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$plot$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$project$1$$anonfun$apply$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector$$anonfun$project$1.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/BeamProjector.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/GaussianBeam.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian$.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian$delayedInit$body.class -> lastModified(1487001951000)
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/scala-2.11/classes/MultiGaussian.class -> lastModified(1487001951000)
+source stamps:
+1 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> hash(d45d2082ee704e491263be0dafd5719dfb373c9e)
+binary stamps:
+2 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1474584629000)
+/Users/Hwaipy/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> lastModified(1457496963000)
+class names:
+2 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
+/Users/Hwaipy/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.App
+internal apis:
+1 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwgdyCWQAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAjc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw26ZhwnQAAUVzcQB+AAwedQXydAAGbm90aWZ5c3EAfgAMW32lInQADUJlYW1Qcm9qZWN0b3JzcQB+AAzWGoiGdAAEd2FpdHNxAH4ADOrXLFV0AA0kYXNJbnN0YW5jZU9mc3EAfgAMvBvauXQABHBsb3RzcQB+AAxLOHMFdAAGZXF1YWxzc3EAfgAMS1Q/iHQAB3Byb2plY3RzcQB+AAyHfbl8dAAMYXNJbnN0YW5jZU9mc3EAfgAMKwo4PXQADmV4ZWN1dGlvblN0YXJ0c3EAfgAMVxeSfXQADHN5bmNocm9uaXplZHNxAH4ADHvc0U90AA0kaXNJbnN0YW5jZU9mc3EAfgAMd6wyX3QABG1haW5zcQB+AAyk9HlxdAAJbm90aWZ5QWxsc3EAfgAM1+SkOHQADGlzSW5zdGFuY2VPZnNxAH4ADHcrhuR0AAxHYXVzc2lhbkJlYW1zcQB+AAzlpnzPdAAOcGxvdCRkZWZhdWx0JDVzcQB+AAzrkN6EdAAJcHJvamVjdG9yc3EAfgAMLjK4dHQABjxpbml0PnNxAH4ADCSBKop0AAI9PXNxAH4ADLg1eZB0AARiZWFtc3EAfgAM71WiIXQABWNsb25lc3EAfgAMecGaynQAEXByb2plY3QkZGVmYXVsdCQ1c3EAfgAMZ9yG0nQABiRpbml0JHNxAH4ADBLzg5R0AAh0b1N0cmluZ3NxAH4ADDFRPfR0AARhcmdzc3EAfgAMIx6/gXQAAiE9c3EAfgAMcuBtSnQACGdldENsYXNzc3EAfgAMJMB+aHQADU11bHRpR2F1c3NpYW5zcQB+AAw1J7/TdAACbmVzcQB+AAy9Ja4zdAACZXFzcQB+AAwxEmb7dAALZGVsYXllZEluaXRzcQB+AAw+SExqdAACIyNzcQB+AAzjnjBcdAAIZmluYWxpemVzcQB+AAy9HUGMdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAADc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBdeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAcQB+AEd1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAACdAAac2NhbGEuZGVwcmVjYXRlZE92ZXJyaWRpbmd0ABBzY2FsYS5kZXByZWNhdGVkc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AHZzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AXUwACWluaGVyaXRlZHEAfgBdTAAHcGFyZW50c3EAfgBdeHEAfgB7c3EAfgB2dXEAfgBYAAAAAHNxAH4AdnVxAH4AWAAAAAFzcgANeHNidGkuYXBpLkRlZlK+n+J8tDZpAgACTAAKcmV0dXJuVHlwZXQAEEx4c2J0aS9hcGkvVHlwZTtbAA92YWx1ZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9QYXJhbWV0ZXJMaXN0O3hxAH4AXnEAfgBndXEAfgBoAAAAAXNyABR4c2J0aS5hcGkuQW5ub3RhdGlvbt4OgaL2XAqyAgACWwAJYXJndW1lbnRzdAAfW0x4c2J0aS9hcGkvQW5ub3RhdGlvbkFyZ3VtZW50O0wABGJhc2VxAH4AhXhwdXIAH1tMeHNidGkuYXBpLkFubm90YXRpb25Bcmd1bWVudDtRnaaPOCUPeAIAAHhwAAAAAXNyABx4c2J0aS5hcGkuQW5ub3RhdGlvbkFyZ3VtZW501kWx2AMbF3wCAAJMAARuYW1lcQB+AA1MAAV2YWx1ZXEAfgANeHB0AAB0ACooIm1haW4gc2hvdWxkIG5vdCBiZSBvdmVycmlkZGVuIiwiMi4xMS4wIilzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgB6dAAUZGVwcmVjYXRlZE92ZXJyaWRpbmdzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AHpzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AJ9zcQB+AGoAcQB+ACd1cQB+AGwAAAAAc3EAfgCSdAAEVW5pdHEAfgCYdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4AhXhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4Ab3QABVBsYWlucQB+AEFzcgAXeHNidGkuYXBpLlBhcmFtZXRlcml6ZWQWbO5pA8m7fwIAAkwACGJhc2VUeXBlcQB+AJNbAA10eXBlQXJndW1lbnRzdAARW0x4c2J0aS9hcGkvVHlwZTt4cQB+AHpzcQB+AJJ0AAVBcnJheXEAfgCYdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAFzcQB+AJJ0AAZTdHJpbmdzcQB+AJZzcQB+AJl1cQB+AJwAAAADc3EAfgCedAAEamF2YXNxAH4AnnQABGxhbmdxAH4Ao3NxAH4AdnVxAH4AugAAAARzcQB+AJJ0AANBcHBxAH4AmHNxAH4AknQAC0RlbGF5ZWRJbml0cQB+AJhzcQB+AJJ0AAZPYmplY3RxAH4AvnNxAH4AknQAA0FueXEAfgCYc3EAfgBacQB+AGd1cQB+AGgAAAAAc3EAfgBqAHEAfgAtdXEAfgBsAAAAAH5xAH4AbnQACENsYXNzRGVmdXEAfgByAAAAAHNxAH4AdnEAfgB8c3EAfgB2c3EAfgB+c3EAfgB2dXEAfgBYAAAAAHNxAH4AdnVxAH4AWAAAAABzcQB+AHZ1cQB+ALoAAAACc3EAfgCScQB+AMxzcQB+AJZzcQB+AJl1cQB+AJwAAAADc3EAfgCecQB+AMJzcQB+AJ5xAH4AxHEAfgCjc3EAfgCScQB+AM5zcQB+AJZzcQB+AJl1cQB+AJwAAAACc3EAfgCecQB+AKFxAH4Ao3NxAH4AWnEAfgBndXEAfgBoAAAAAHNxAH4AagBxAH4AE3VxAH4AbAAAAABxAH4A03VxAH4AcgAAAABzcQB+AHZxAH4AfHNxAH4AdnNxAH4AfnNxAH4AdnVxAH4AWAAAAABzcQB+AHZ1cQB+AFgAAAAAc3EAfgB2dXEAfgC6AAAAAnNxAH4AknEAfgDMc3EAfgCWc3EAfgCZdXEAfgCcAAAAA3NxAH4AnnEAfgDCc3EAfgCecQB+AMRxAH4Ao3NxAH4AknEAfgDOc3EAfgCWc3EAfgCZdXEAfgCcAAAAAnNxAH4AnnEAfgChcQB+AKN1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAHNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWjg5DK91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdABgL1VzZXJzL0h3YWlweS9HaXRIdWIvUmFuZG9tbmVzcy8yMDE3LTAyLTEzIE11bHRpR2F1c3NpYW4vTXVsdGlHYXVzc2lhbi90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAU1F0ggu5wTkkSY74Nr9Vxnfs3PJ4=
+external apis:
+0 items
+source infos:
+1 items
+/Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/src/main/scala/com/hwaipy/optics/freespace/multigaussian/MultiGaussian.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWjg5DK91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAYC9Vc2Vycy9Id2FpcHkvR2l0SHViL1JhbmRvbW5lc3MvMjAxNy0wMi0xMyBNdWx0aUdhdXNzaWFuL011bHRpR2F1c3NpYW4vdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS8=

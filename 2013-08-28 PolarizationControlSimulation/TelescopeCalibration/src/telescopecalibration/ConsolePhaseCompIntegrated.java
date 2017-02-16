@@ -28,8 +28,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 public class ConsolePhaseCompIntegrated {
 
   public static void main(String[] args) throws IOException {
-    String dateS = LocalDateTime.now().minusHours(8).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-    args = new String[]{"/Users/Hwaipy/Documents/Dropbox/LabWork/工程/2016-07-21 丽江站建设/8.每日实验数据/" + dateS + "/偏振补偿/偏振补偿.xls"};
+    String dateS = LocalDateTime.now().minusHours(8 + 24).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+    args = new String[]{"/Users/Hwaipy/Dropbox/LabWork/工程/2016-07-21 丽江站建设/8.每日实验数据/" + dateS + "/偏振补偿/偏振补偿.xls"};
 //    args = new String[]{"../../../实验计划/" + dateS + "/偏振补偿/偏振补偿.xls"};
     File file = new File(args[0]);
     LinkedList<double[]> angles = loadAngles(file);
@@ -39,8 +39,9 @@ public class ConsolePhaseCompIntegrated {
       double rV = angle[1];
       double rotate = angle[2];
       double phase = angle[3];
+      boolean tomoQWP = angle[5] > 0.5;
       M1Simulation s = new M1Simulation();
-      M1Simulation.M1SimulationResult result = s.calculate(rH, rV, phase / 180 * Math.PI, rotate / 180 * Math.PI, false);
+      M1Simulation.M1SimulationResult result = s.calculate(rH, rV, phase / 180 * Math.PI, rotate / 180 * Math.PI, false, tomoQWP);
       results.add(result.getAngles());
     });
     for (int i = 1; i < results.size(); i++) {
@@ -69,9 +70,6 @@ public class ConsolePhaseCompIntegrated {
     try (PrintWriter printWriter = new PrintWriter(outputFile)) {
       for (int i = 1; i < results.size(); i++) {
         double[] angle = results.get(i);
-//        double a1 = angle[0] / Math.PI * 180 - 15.1;
-//        double a2 = angle[1] / Math.PI * 180 + 51.3;
-//        double a3 = angle[2] / Math.PI * 180 - 15.3;
         double a1 = angle[0] / Math.PI * 180 - 14.471;
         double a2 = angle[1] / Math.PI * 180 + 51.315;
         double a3 = angle[2] / Math.PI * 180 - 15.865;
@@ -103,6 +101,11 @@ public class ConsolePhaseCompIntegrated {
     HSSFWorkbook workbook = new HSSFWorkbook(is);
     HSSFSheet sheet = workbook.getSheetAt(0);
     LinkedList<double[]> angles = new LinkedList<>();
+    boolean hasTomoQWP = false;
+    try {
+      hasTomoQWP = sheet.getRow(0).getCell(10).getStringCellValue().equals("TomoQWP");
+    } catch (Exception e) {
+    }
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
       HSSFRow row = sheet.getRow(i);
       double A = row.getCell(0).getNumericCellValue();
@@ -110,7 +113,8 @@ public class ConsolePhaseCompIntegrated {
       double AS = row.getCell(2).getNumericCellValue() - (row.getCell(4).getNumericCellValue() - row.getCell(3).getNumericCellValue());
       double phase = row.getCell(8).getNumericCellValue();
       double HWP = row.getCell(9).getNumericCellValue();
-      angles.add(new double[]{A, E, AS, phase, HWP});
+      double tomoQWP = hasTomoQWP ? row.getCell(10).getNumericCellValue() : 0;
+      angles.add(new double[]{A, E, AS, phase, HWP, tomoQWP});
     }
     return angles;
   }

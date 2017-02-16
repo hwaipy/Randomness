@@ -1,0 +1,6 @@
+name := "MultiGaussian"
+version := "0.1.0"
+scalaVersion := "2.11.8"
+organization := "com.hydra"
+libraryDependencies += "org.jscience" % "jscience" % "4.3.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"

@@ -22,11 +22,12 @@ public class TelescopeTransform extends MuellerMatrix {
 //    return new TelescopeTransform(MuellerMatrix.merge(hwp, qwp2, qwp1).getMatrix());
 //  }
   public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH, boolean mir) {
-    return create(PA, PB, PC, RV, RH, 0, 0, mir);
+    return create(PA, PB, PC, RV, RH, 0, 0, mir, false);
   }
 
-  public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH, double phase, double rotate, boolean mir) {
+  public static TelescopeTransform create(double PA, double PB, double PC, double RV, double RH, double phase, double rotate, boolean mir, boolean tomoQWP) {
     return new TelescopeTransform(MuellerMatrix.merge(
+            new WavePlate(tomoQWP ? -Math.PI / 2 : 0, Math.PI / 4),
             new WavePlate(phase, 0),
             new Rotate(rotate),
             //            new WavePlate(mir ? Math.PI : 0, Math.PI / 4),

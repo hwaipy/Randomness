@@ -16,17 +16,21 @@ public class M1Simulation {
   }
 
   public M1SimulationResult calculate(double rH, double rV) {
-    return calculate(rH, rV, 0, 0, true);
+    return calculate(rH, rV, 0, 0, true, false);
   }
 
   public M1SimulationResult calculate(double rH, double rV, double phase, double rotate, boolean mir) {
+    return calculate(rH, rV, 0, 0, true, false);
+  }
+
+  public M1SimulationResult calculate(double rH, double rV, double phase, double rotate, boolean mir, boolean tomoQWP) {
     rH = -(rH - 32.75);
     rV = -(rV);
 //    TelescopeTransform tt = TelescopeTransform.create(0.2310963252426152, -1.236449209171316, 0.419646965349516, (-45.0001 / 180. * Math.PI), (-20.0000001 / 180. * Math.PI));
 //    TelescopeTransform tt = TelescopeTransform.create(0.3110963252426152, -1.236449209171316, 0.419646965349516, (rV / 180. * Math.PI), (rH / 180. * Math.PI));
 //    TelescopeTransform tt = TelescopeTransform.create(0.28, -1.33, 0.48, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, mir);
 //    TelescopeTransform tt = TelescopeTransform.create(0.43, -1.19, 0.25, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, mir);
-    TelescopeTransform tt = TelescopeTransform.create(0.38, -1.33, 0.40, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, mir);
+    TelescopeTransform tt = TelescopeTransform.create(0.38, -1.33, 0.40, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, mir, tomoQWP);
     WavePlate qwp1 = new WavePlate(Math.PI / 2, 0);
     WavePlate qwp2 = new WavePlate(Math.PI / 2, 0);
     WavePlate hwp = new WavePlate(Math.PI, 0);
@@ -66,19 +70,19 @@ public class M1Simulation {
     } catch (M1ProcessException ex) {
     }
     if (m1Process != null) {
-      double[] result = m1Process.getResults();
-      qwp1.setTheta(15.1 / 180 * Math.PI);
-      qwp2.setTheta(-51.3 / 180 * Math.PI);
-      hwp.setTheta(15.3 / 180 * Math.PI);
+//      double[] result = m1Process.getResults();
+//      qwp1.setTheta(15.1 / 180 * Math.PI);
+//      qwp2.setTheta(-51.3 / 180 * Math.PI);
+//      hwp.setTheta(15.3 / 180 * Math.PI);
 //      System.out.println("" + (result[0] / Math.PI * 180 - 15.1));
 //      System.out.println("" + (result[1] / Math.PI * 180 + 51.3));
 //      System.out.println("" + (result[2] / Math.PI * 180 - 15.3));
-      TelescopeTransform ttReal = TelescopeTransform.create(0.38, -1.33, 0.40, (rV / 180. * Math.PI), (rH / 180. * Math.PI), 60.0 / 180.0 * Math.PI, rotate, mir);
-      double p = -56;
-      Polarization resultH = Polarization.H.transform(ttReal).transform(qwp1).transform(qwp2).transform(hwp).transform(new WavePlate(p, 0));
-      Polarization resultD = Polarization.D.transform(ttReal).transform(qwp1).transform(qwp2).transform(hwp).transform(new WavePlate(p, 0));
-      cH = resultH.getH() / resultH.getV();
-      cD = resultD.getD() / resultD.getA();
+//      TelescopeTransform ttReal = TelescopeTransform.create(0.38, -1.33, 0.40, (rV / 180. * Math.PI), (rH / 180. * Math.PI), 60.0 / 180.0 * Math.PI, rotate, mir, tomoQWP);
+//      double p = -56;
+//      Polarization resultH = Polarization.H.transform(ttReal).transform(qwp1).transform(qwp2).transform(hwp).transform(new WavePlate(p, 0));
+//      Polarization resultD = Polarization.D.transform(ttReal).transform(qwp1).transform(qwp2).transform(hwp).transform(new WavePlate(p, 0));
+//      cH = resultH.getH() / resultH.getV();
+//      cD = resultD.getD() / resultD.getA();
 //      System.out.print(cH + "\t" + cD + "\t");
     }
     return new M1SimulationResult(m1Process != null, cH, cD,
@@ -117,7 +121,7 @@ public class M1Simulation {
     M1Simulation s = new M1Simulation();
 //    s.generateRandomTelescopeTransform();
 //    M1SimulationResult result = s.calculate(20 + 32.75, 45);
-    M1SimulationResult result = s.calculate(rH, rV, phase, rotate, true);
+    M1SimulationResult result = s.calculate(rH, rV, phase, rotate, true, false);
     double a1 = result.angles[0] / Math.PI * 180 - 15.1;
     double a2 = result.angles[1] / Math.PI * 180 + 51.3;
     double a3 = result.angles[2] / Math.PI * 180 - 15.3;
@@ -128,7 +132,7 @@ public class M1Simulation {
 
     rH = -(rH - 32.75);
     rV = -(rV);
-    TelescopeTransform teleU = TelescopeTransform.create(0.28, -1.33, 0.48, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, true);
+    TelescopeTransform teleU = TelescopeTransform.create(0.28, -1.33, 0.48, (rV / 180. * Math.PI), (rH / 180. * Math.PI), phase, rotate, true, false);
     MuellerMatrix wavePlateTransU = MuellerMatrix.merge(new WavePlate(Math.PI / 2, result.angles[0]), new WavePlate(Math.PI / 2, result.angles[1]), new WavePlate(Math.PI, result.angles[2]));
     Polarization output = Polarization.D.transform(teleU).transform(wavePlateTransU);
     System.out.println(output);
