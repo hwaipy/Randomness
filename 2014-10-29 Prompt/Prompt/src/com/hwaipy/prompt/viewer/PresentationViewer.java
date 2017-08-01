@@ -23,7 +23,7 @@ public class PresentationViewer extends JPanel {
 
     private static final int TOTAL_TIME = 40 * 60;
     private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static final Font SENTENCE_FONT = new Font("Helvetica", Font.PLAIN, 50);
+    private static final Font SENTENCE_FONT = new Font("Helvetica", Font.PLAIN, 100);
     private static final Font TIMER_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 100);
     private static final Color HIGHLIGHT_COLOR = Color.BLACK;
     private static final Color TIMER_COLOR = Color.GRAY.darker();

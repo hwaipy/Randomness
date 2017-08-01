@@ -11,5 +11,13 @@
         <group name="2013-09-08 LightSecondDeviceControl">
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/lab/Dispersion.java</file>
         </group>
+        <group>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/lab/Integrator.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/QuasiPhaseMatchFunction.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/lab/Dispersion.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/lab/Beating.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/lab/Luokan.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2014-06-14%20CrystalOptics/SPDCSpectrumCorrelation/src/com/hwaipy/physics/nonlinearoptics/spectrumcorrelation/CorrelationTest.java</file>
+        </group>
     </open-files>
 </project-private>

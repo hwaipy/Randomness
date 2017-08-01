@@ -11,11 +11,10 @@
             <file>file:/Users/Hwaipy/Documents/Dropbox/Code/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/TwoPhotonState.java</file>
         </group>
         <group name="Randomness"/>
-        <group>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/WavePlate.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/HalfWavePlate.java</file>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/QuarterWavePlate.java</file>
-        </group>
         <group name="2013-08-28 PolarizationControlSimulation"/>
+        <group>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/WavePlate.java</file>
+            <file>file:/Users/Hwaipy/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/HalfWavePlate.java</file>
+        </group>
     </open-files>
 </project-private>

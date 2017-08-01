@@ -4,7 +4,7 @@
 		module="multigaussian$sources_2.11"
 		revision="0.1.0"
 		status="integration"
-		publication="20170214000924"
+		publication="20170318143613"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

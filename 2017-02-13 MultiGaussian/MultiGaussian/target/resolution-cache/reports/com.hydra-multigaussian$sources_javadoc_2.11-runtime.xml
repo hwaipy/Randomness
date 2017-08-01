@@ -7,7 +7,7 @@
 		revision="0.1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170214000924"/>
+		date="20170318143611"/>
 	<dependencies>
 		<module organisation="org.jscience" name="jscience">
 			<revision name="4.3.1" status="release" pubdate="20121012205454" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
@@ -18,25 +18,12 @@
 					<artifact name="jscience" type="jar" ext="jar" status="no" details="" size="682642" time="0" location="/Users/Hwaipy/.ivy2/cache/org.jscience/jscience/jars/jscience-4.3.1.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/jscience/jscience/4.3.1/jscience-4.3.1.jar"/>
 					</artifact>
-					<artifact name="jscience" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="758735" time="13317" location="/Users/Hwaipy/.ivy2/cache/org.jscience/jscience/srcs/jscience-4.3.1-sources.jar">
+					<artifact name="jscience" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="758735" time="0" location="/Users/Hwaipy/.ivy2/cache/org.jscience/jscience/srcs/jscience-4.3.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/jscience/jscience/4.3.1/jscience-4.3.1-sources.jar"/>
 					</artifact>
-					<artifact name="jscience" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1694708" time="40759" location="/Users/Hwaipy/.ivy2/cache/org.jscience/jscience/docs/jscience-4.3.1-javadoc.jar">
+					<artifact name="jscience" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="1694708" time="0" location="/Users/Hwaipy/.ivy2/cache/org.jscience/jscience/docs/jscience-4.3.1-javadoc.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/jscience/jscience/4.3.1/jscience-4.3.1-javadoc.jar"/>
 					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.javolution" name="javolution">
-			<revision name="5.2.3" status="release" pubdate="20070906192908" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://javolution.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
-				<metadata-artifact status="no" details="" size="2461" time="0" location="/Users/Hwaipy/.ivy2/cache/org.javolution/javolution/ivy-5.2.3.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/javolution/javolution/5.2.3/javolution-5.2.3.pom"/>
-				<caller organisation="com.hydra" name="multigaussian$sources_javadoc_2.11" conf="compile, runtime" rev="5.2.3" rev-constraint-default="5.2.3" rev-constraint-dynamic="5.2.3" callerrev="0.1.0"/>
-				<artifacts>
-					<artifact name="javolution" type="src" ext="jar" extra-classifier="sources" status="failed" details="" size="0" time="0"/>
-					<artifact name="javolution" type="jar" ext="jar" status="no" details="" size="294661" time="0" location="/Users/Hwaipy/.ivy2/cache/org.javolution/javolution/jars/javolution-5.2.3.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/javolution/javolution/5.2.3/javolution-5.2.3.jar"/>
-					</artifact>
-					<artifact name="javolution" type="doc" ext="jar" extra-classifier="javadoc" status="failed" details="" size="0" time="0"/>
 				</artifacts>
 			</revision>
 		</module>

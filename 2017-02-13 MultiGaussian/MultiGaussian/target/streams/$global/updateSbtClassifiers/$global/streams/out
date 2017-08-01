@@ -747,9 +747,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.9!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.9!apply-macro.jar
-[debug] :: resolution report :: resolve 627ms :: artifacts dl 20ms
+[debug] :: resolution report :: resolve 1083ms :: artifacts dl 111ms
 [debug] 	report for com.hydra#multigaussian$sbt_2.11;0.1.0 default produced in /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/resolution-cache/reports/com.hydra-multigaussian$sbt_2.11-default.xml
-[debug] 	resolve done (627ms resolve - 20ms download)
+[debug] 	resolve done (1083ms resolve - 111ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: com.hydra#multigaussian$sources_2.11;0.1.0
 [debug] 	confs: [default]
@@ -1119,6 +1119,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.9!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.9!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.9!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 121ms :: artifacts dl 26ms
+[debug] :: resolution report :: resolve 210ms :: artifacts dl 43ms
 [debug] 	report for com.hydra#multigaussian$sources_2.11;0.1.0 default produced in /Users/Hwaipy/GitHub/Randomness/2017-02-13 MultiGaussian/MultiGaussian/target/resolution-cache/reports/com.hydra-multigaussian$sources_2.11-default.xml
-[debug] 	resolve done (121ms resolve - 26ms download)
+[debug] 	resolve done (210ms resolve - 43ms download)

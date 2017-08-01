@@ -28,7 +28,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 public class ConsolePhaseCompIntegrated {
 
   public static void main(String[] args) throws IOException {
-    String dateS = LocalDateTime.now().minusHours(8 + 24).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+    String dateS = LocalDateTime.now().minusHours(8).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
     args = new String[]{"/Users/Hwaipy/Dropbox/LabWork/工程/2016-07-21 丽江站建设/8.每日实验数据/" + dateS + "/偏振补偿/偏振补偿.xls"};
 //    args = new String[]{"../../../实验计划/" + dateS + "/偏振补偿/偏振补偿.xls"};
     File file = new File(args[0]);
@@ -41,7 +41,7 @@ public class ConsolePhaseCompIntegrated {
       double phase = angle[3];
       boolean tomoQWP = angle[5] > 0.5;
       M1Simulation s = new M1Simulation();
-      M1Simulation.M1SimulationResult result = s.calculate(rH, rV, phase / 180 * Math.PI, rotate / 180 * Math.PI, false, tomoQWP);
+      M1Simulation.M1SimulationResult result = s.calculate(rH, rV, phase / 180 * Math.PI, rotate / 180 * Math.PI, false, tomoQWP, 0);
       results.add(result.getAngles());
     });
     for (int i = 1; i < results.size(); i++) {

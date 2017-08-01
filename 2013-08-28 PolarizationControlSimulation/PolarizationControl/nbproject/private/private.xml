@@ -6,14 +6,12 @@
             <file>file:/Users/Hwaipy/Documents/Dropbox/Code/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/m1/M1Process.java</file>
         </group>
         <group name="Randomness"/>
-        <group>
-            <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/device/WavePlate.java</file>
-        </group>
         <group name="2013-08-28 PolarizationControlSimulation">
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/approach/ApproachProcess7.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/device/FiberTransform.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/approach/ApproachProcessContrast.java</file>
             <file>file:/Users/Hwaipy/Documents/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/PolarizationControl/src/com/hwaipy/science/polarizationcontrol/approach/ApproachProcessOnboard.java</file>
         </group>
+        <group/>
     </open-files>
 </project-private>
