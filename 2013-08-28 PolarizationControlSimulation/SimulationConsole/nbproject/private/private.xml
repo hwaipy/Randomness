@@ -12,9 +12,6 @@
         </group>
         <group name="Randomness"/>
         <group name="2013-08-28 PolarizationControlSimulation"/>
-        <group>
-            <file>file:/Users/Hwaipy/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/WavePlate.java</file>
-            <file>file:/Users/Hwaipy/GitHub/Randomness/2013-08-28%20PolarizationControlSimulation/SimulationConsole/src/simulationconsole/entanglement/HalfWavePlate.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

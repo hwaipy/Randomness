@@ -72,13 +72,16 @@ public class PresentationViewer extends JPanel {
                 if (firstSlide) {
                     firstSlide = false;
                 } else {
-                    lineGappingImageEntries.add(new LineImageEntry(slideGappingImage, y, y + slideGappingImage.getHeight(), 0));
+                    lineGappingImageEntries.add(new LineImageEntry(slideGappingImage, y, y + slideGappingImage.getHeight(), 0, 0));
                     y += slideGappingImage.getHeight() + LINE_GAP;
                 }
             }
-            Collection<BufferedImage> lineImages = ParagraphDrawer.draw(SENTENCE_FONT, HIGHLIGHT_COLOR, paragraph, width);
-            for (BufferedImage lineImage : lineImages) {
-                LineImageEntry entry = new LineImageEntry(lineImage, y, y + lineImage.getHeight(), time);
+            ParagraphDrawer paragraphDrawer = new ParagraphDrawer(SENTENCE_FONT, HIGHLIGHT_COLOR, paragraph, width);
+            ArrayList<BufferedImage> lineImages = paragraphDrawer.getImages();
+            ArrayList<Integer> wordsCounts = paragraphDrawer.getWordsCounts();
+            for (int j = 0; j < lineImages.size(); j++) {
+                BufferedImage lineImage = lineImages.get(j);
+                LineImageEntry entry = new LineImageEntry(lineImage, y, y + lineImage.getHeight(), time, wordsCounts.get(j));
                 lineImageEntries.add(entry);
                 y += lineImage.getHeight() + LINE_GAP;
             }
@@ -133,26 +136,38 @@ public class PresentationViewer extends JPanel {
     }
 
     public void setViewLine(int index) {
-        currentLine = index;
-        int targetPosition = getViewPositionOfLine(index);
+        System.out.println("view: "+index);
+        int wordCount = 0;
+        int lineNumber = 0;
+        for (int i = 0; i < lineImageEntries.size(); i++) {
+            LineImageEntry entry = lineImageEntries.get(i);
+            int lineWordCount = entry.wordCount;
+            if (index >= wordCount && index <= (wordCount + lineWordCount)) {
+                lineNumber = i;
+                break;
+            }
+            wordCount += lineWordCount;
+        }
+
+        currentLine = lineNumber;
+        int targetPosition = getViewPositionOfLine(lineNumber);
         lineViewAnimator.setTargetPosition(targetPosition);
     }
 
-    public void increaseViewLine(boolean positive) {
-        if (positive) {
-            currentLine++;
-        } else {
-            currentLine--;
-        }
-        if (currentLine < 0) {
-            currentLine = 0;
-        } else if (currentLine >= lineImageEntries.size()) {
-            currentLine = lineImageEntries.size() - 1;
-        }
-        int targetPosition = getViewPositionOfLine(currentLine);
-        lineViewAnimator.setTargetPosition(targetPosition);
-    }
-
+//    public void increaseViewLine(boolean positive) {
+//        if (positive) {
+//            currentLine++;
+//        } else {
+//            currentLine--;
+//        }
+//        if (currentLine < 0) {
+//            currentLine = 0;
+//        } else if (currentLine >= lineImageEntries.size()) {
+//            currentLine = lineImageEntries.size() - 1;
+//        }
+//        int targetPosition = getViewPositionOfLine(currentLine);
+//        lineViewAnimator.setTargetPosition(targetPosition);
+//    }
     public void timerStart() {
         timerAnimator.start(System.nanoTime());
     }
@@ -301,12 +316,14 @@ public class PresentationViewer extends JPanel {
         private final int videoTime;
         private double startTime;
         private double endTime;
+        private int wordCount;
 
-        private LineImageEntry(BufferedImage image, int top, int bottom, int videoTime) {
+        private LineImageEntry(BufferedImage image, int top, int bottom, int videoTime, int wordCount) {
             this.image = image;
             this.top = top;
             this.bottom = bottom;
             this.videoTime = videoTime;
+            this.wordCount = wordCount;
         }
 
         private int getCenter() {

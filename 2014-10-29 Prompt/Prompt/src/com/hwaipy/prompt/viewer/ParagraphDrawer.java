@@ -28,6 +28,7 @@ public class ParagraphDrawer {
     private final String paragraph;
     private final int width;
     private final ArrayList<BufferedImage> imageList = new ArrayList<>();
+    private final ArrayList<Integer> wordsCountList = new ArrayList<>();
 
     public ParagraphDrawer(Font font, Color color, String paragraph, int width) {
         this.font = font;
@@ -37,8 +38,8 @@ public class ParagraphDrawer {
         init();
     }
 
-    public Collection<BufferedImage> getImages() {
-        return Collections.unmodifiableCollection(imageList);
+    public ArrayList<BufferedImage> getImages() {
+        return imageList;
     }
 
     private void init() {
@@ -56,6 +57,7 @@ public class ParagraphDrawer {
         Rectangle blankBounds = fontMetrics.getStringBounds(" ", g2d).getBounds();
         g2d.setFont(font);
         g2d.setColor(color);
+        int painted = 0;
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
             Rectangle wordBounds = fontMetrics.getStringBounds(word, g2d).getBounds();
@@ -65,6 +67,8 @@ public class ParagraphDrawer {
                 g2dLine.drawImage(renderer, 0, 0, null);
                 g2dLine.dispose();
                 imageList.add(image);
+                wordsCountList.add(painted);
+                painted = 0;
                 y = 0;
                 x = 0;
                 i--;
@@ -75,6 +79,7 @@ public class ParagraphDrawer {
                 g2d.drawString(word, x, y + ascent);
                 x += wordBounds.width;
                 x += blankBounds.width;
+                painted++;
             }
         }
         g2d.dispose();
@@ -83,6 +88,7 @@ public class ParagraphDrawer {
         g2dLine.drawImage(renderer, 0, 0, null);
         g2dLine.dispose();
         imageList.add(image);
+        wordsCountList.add(painted);
     }
 
     public static Collection<BufferedImage> draw(Font font, Color color, String paragraph, int width) {
@@ -120,4 +126,8 @@ public class ParagraphDrawer {
 //        System.out.println(fontMetrics.getHeight());
 //        System.out.println(fontMetrics.getStringBounds("abcABCGHPhg", g));
 //    }
+
+    public ArrayList<Integer> getWordsCounts() {
+        return wordsCountList;
+    }
 }

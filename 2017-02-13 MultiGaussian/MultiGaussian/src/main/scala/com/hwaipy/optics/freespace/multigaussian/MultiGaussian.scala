@@ -6,20 +6,24 @@ import javax.imageio.ImageIO
 
 import org.jscience.mathematics.number.Complex
 
+import scala.util.Random
+
 object MultiGaussian extends App {
-  val executor = Executors.newFixedThreadPool(4)
-  for (count <- 1 until 11; distance <- 1 until 11) {
-    executor.submit(new Runnable {
-      override def run(): Unit = {
-        calculate(count, distance)
-      }
-    })
-  }
-  executor.shutdown
+  //  val executor = Executors.newFixedThreadPool(4)
+  //  for (count <- 2 until 3; distance <- 1 until 11) {
+  //    executor.submit(new Runnable {
+  //      override def run(): Unit = {
+  //        calculate(count, distance)
+  //      }
+  //    })
+  //  }
+  //  executor.shutdown
+
+  calculateWithPhase(5, 5)
 
   private def calculate(count: Int, distance: Int) = {
     val beams = (0 until count).map(x => {
-      (0 until 1).map(y => {
+      (0 until count).map(y => {
         new GaussianBeam(1e-3, 1, 0.81e-6, x = 1e-3 * x * distance, y = 1e-3 * y * distance)
       })
     }).flatten.toList
@@ -31,23 +35,49 @@ object MultiGaussian extends App {
     val mainEnerge = ID.mainBeamEnerge
     ID.plot(new File(s"beam $count*$count-$distance.png"),
       f"""Collimator Matrix $count * $count
-          |Single Beam ω0 = 1 mm
-          |Beam Distance: $distance mm
-          |
+         |Single Beam ω0 = 1 mm
+         |Beam Distance: $distance mm
+         |
           |The screen is placed at z = 100 km with size of 200 m
-          |Beam center: x = ${center._1 * 1e3}%1.3f mm, y = ${center._2 * 1e3}%1.3f mm
-          |Main Beam (1/e2):
-          |    Diameter: $diameter%1.3f m
-          |    Divergence: ${diameter / 1e5 * 1e6}%1.3f µrad
-          |    Energe: ${mainEnerge * 100}%1.3f%%
-          | """.stripMargin)
+         |Beam center: x = ${center._1 * 1e3}%1.3f mm, y = ${center._2 * 1e3}%1.3f mm
+         |Main Beam (1/e2):
+         |    Diameter: $diameter%1.3f m
+         |    Divergence: ${diameter / 1e5 * 1e6}%1.3f µrad
+         |    Energe: ${mainEnerge * 100}%1.3f%%
+         | """.stripMargin)
+  }
+
+  private def calculateWithPhase(count: Int, distance: Int) = {
+    val beams = (0 until count).map(x => {
+      (0 until count).map(y => {
+        new GaussianBeam(1e-3, 1, 0.81e-6, x = 1e-3 * x * distance, y = 1e-3 * y * distance, phi0 = Random.nextDouble() * 2 * math.Pi)
+      })
+    }).flatten.toList
+
+    val projector = new BeamProjector(beams)
+    val ID = projector.projectI(1e5, (-100, 100), (-100, 100), 1000)
+    val center = ID.center
+    val diameter = ID.radius * 2
+    val mainEnerge = ID.mainBeamEnerge
+    ID.plot(new File(s"beam $count*$count-$distance.png"),
+      f"""Collimator Matrix $count * $count
+         |Single Beam ω0 = 1 mm
+         |Beam Distance: $distance mm
+         |
+              |The screen is placed at z = 100 km with size of 200 m
+         |Beam center: x = ${center._1 * 1e3}%1.3f mm, y = ${center._2 * 1e3}%1.3f mm
+         |Main Beam (1/e2):
+         |    Diameter: $diameter%1.3f m
+         |    Divergence: ${diameter / 1e5 * 1e6}%1.3f µrad
+         |    Energe: ${mainEnerge * 100}%1.3f%%
+         | """.stripMargin)
   }
 }
 
-class GaussianBeam(ω0: Double, E0: Double, λ: Double, x: Double = 0, y: Double = 0) {
+class GaussianBeam(ω0: Double, E0: Double, λ: Double, x: Double = 0, y: Double = 0, phi0: Double = 0) {
   private def E(r: Double, z: Double): Complex = {
     val amp = E0 * ω0 / ωz(z) * math.exp(-math.pow(r / ωz(z), 2))
-    val phase = -k * z - k * math.pow(r, 2) / 2 / R(z)
+    val phase = -k * z - k * math.pow(r, 2) / 2 / R(z) + phi0
     Complex.valueOf(amp * math.cos(phase), amp * math.sin(phase))
   }
 
@@ -91,11 +121,23 @@ class BeamProjector(beams: List[GaussianBeam]) {
 
 class IntensityDistribution(I: List[List[Double]], xRange: Tuple2[Double, Double], yRange: Tuple2[Double, Double]) {
   private def centerPixal = {
-    val totalI = I.map(line => line.sum).sum
-    val xCenter = I.map(line => line.zipWithIndex.map(z => z._1 * z._2).sum).sum / totalI
-    val yCenter = I.zipWithIndex.map(lineZ => {
-      lineZ._1.map(z => z * lineZ._2).sum
-    }).sum / totalI
+    //    val totalI = I.map(line => line.sum).sum
+    //    val xCenter = I.map(line => line.zipWithIndex.map(z => z._1 * z._2).sum).sum / totalI
+    //    val yCenter = I.zipWithIndex.map(lineZ => {
+    //      lineZ._1.map(z => z * lineZ._2).sum
+    //    }).sum / totalI
+    //    (xCenter, yCenter)
+
+    var xCenter = 0
+    var yCenter = 0
+    var currentMax = -1.0
+    I.zipWithIndex.foreach(line => line._1.zipWithIndex.foreach(z => {
+      if (z._1 > currentMax) {
+        currentMax = z._1
+        yCenter = z._2
+        xCenter = line._2
+      }
+    }))
     (xCenter, yCenter)
   }
 
